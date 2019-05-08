@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/dashboard_id"
+            android:title="DASHBOARD"
+            android:icon="@drawable/dashboard">
+
+        </item>
+    </group>
+
+
+    <item android:title="SALES"
+        >
+        <menu>
+            <group android:checkableBehavior="single"
+                android:title="Sales">
+
+               <!-- <item
+                    android:id="@+id/all_sales_id"
+                    android:title="ALL SALES"
+                    android:icon="@drawable/all_sales">
+
+                </item>-->
+
+                <item
+                    android:id="@+id/invoice_id"
+                    android:title="INVOICE"
+                    android:icon="@drawable/invoice">
+
+                </item>
+
+                <item
+                    android:id="@+id/purchase_id"
+                    android:title="PURCHASE"
+                    android:icon="@drawable/purchase">
+
+                </item>
+
+                <item
+                    android:id="@+id/purchase_order_id"
+                    android:title="PURCHASE ORDER"
+                    android:icon="@drawable/purchase_order">
+
+                </item>
+
+                <item
+                    android:id="@+id/customer_id"
+                    android:title="CUSTOMER"
+                    android:icon="@drawable/customers">
+
+                </item>
+
+                <item
+                    android:id="@+id/product_id"
+                    android:title="PRODUCTS AND SERVICES"
+                    android:icon="@drawable/products_and_service">
+
+                </item>
+
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="TAXES">
+        <menu>
+            <group android:checkableBehavior="single"
+                android:title="Taxes">
+
+                <item
+                    android:id="@+id/taxes_information_id"
+                    android:title="TAXES INFORMATION"
+                    android:icon="@drawable/tax">
+
+                </item>
+
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="SCHEMES">
+        <menu>
+            <group android:checkableBehavior="single"
+                android:title="Schemes">
+
+                <item
+                    android:id="@+id/schemes_information_id"
+                    android:title="SCHEMES INFORMATION"
+                    android:icon="@drawable/schemes">
+
+                </item>
+
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="ACCOUNT CHART">
+        <menu>
+            <group android:checkableBehavior="single"
+                android:title="Account Chart">
+
+                <item
+                    android:id="@+id/account_chart_id"
+                    android:title="ACCOUNT CHART"
+                    android:icon="@drawable/ic_bar_chart">
+
+                </item>
+
+            </group>
+        </menu>
+    </item>
+
+
+    <item android:title="REPORTS">
+        <menu>
+            <group android:checkableBehavior="single"
+                android:title="Reports">
+
+                <item
+                    android:id="@+id/stock_report_id"
+                    android:title="STOCK REPORT"
+                    android:icon="@drawable/stock_report">
+
+                </item>
+
+                <item
+                    android:id="@+id/purchase_report_id"
+                    android:title="PURCHASE REPORT"
+                    android:icon="@drawable/purchase_report">
+
+                </item>
+
+                <item
+                    android:id="@+id/stockledger_report_id"
+                    android:title="STOCK LEDGER REPORT"
+                    android:icon="@drawable/stock_report">
+
+                </item>
+
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="HELP">
+        <menu>
+            <group android:checkableBehavior="single"
+                android:title="Reports">
+
+                <item
+                    android:id="@+id/help_id"
+                    android:title="HELP"
+                    android:icon="@drawable/help">
+
+                </item>
+
+            </group>
+        </menu>
+    </item>
+</menu>

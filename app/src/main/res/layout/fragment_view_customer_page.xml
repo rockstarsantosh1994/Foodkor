@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="10dp"
+    android:background="@color/Honeydew"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context=".SALES.customer.ViewCustomerPage">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view"
+                android:layout_width="350dp"
+                android:layout_height="fill_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                card_view:cardBackgroundColor="#FFFFFF"
+                card_view:contentPadding="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/personalinfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="PERSONAL INFORMATION"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="17dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/customernamet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/personalinfo"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Registration Type :-"
+                        android:textColor="@color/black"
+                        android:textSize="17dp" />
+
+
+                    <Spinner
+                        android:id="@+id/regidtrationnames"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/customernamet"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <EditText
+                        android:id="@+id/firstnamee"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/regidtrationnames"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:editable="true"
+                        android:hint="FIRST NAME " />
+
+                    <EditText
+                        android:id="@+id/middlenamee"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/firstnamee"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:editable="true"
+                        android:hint="MIDDLE NAME" />
+
+                    <EditText
+                        android:id="@+id/lastnamee"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/middlenamee"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:editable="true"
+                        android:hint="LAST NAME" />
+
+                    <EditText
+                        android:id="@+id/emaile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lastnamee"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:editable="true"
+                        android:hint="EMAIL ID" />
+
+                    <EditText
+                        android:id="@+id/phonee"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/emaile"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:editable="true"
+                        android:hint="PHONE NUMBER" />
+
+                    <EditText
+                        android:id="@+id/gstine"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/phonee"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:editable="true"
+                        android:hint="GSTIN" />
+
+                    <EditText
+                        android:id="@+id/pane"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/gstine"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:editable="true"
+                        android:hint="PAN" />
+
+                    <EditText
+                        android:id="@+id/et_companyname"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/pane"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:editable="true"
+                        android:hint="COMPANY NAME" />
+
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view1"
+                android:layout_width="350dp"
+                android:layout_height="fill_parent"
+                android:layout_below="@id/card_view"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                card_view:cardBackgroundColor="#FFFFFF"
+                card_view:contentPadding="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/billinginfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="BILLING INFORMATION"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="17dp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/baddresse"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/billinginfo"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dp"
+                        android:editable="true"
+                        android:hint="BILLING ADDRESS" />
+
+                    <EditText
+                        android:id="@+id/et_billzip"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/baddresse"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dp"
+                        android:editable="true"
+                        android:inputType="number"
+                        android:hint="BILLING ZIP" />
+
+                    <TextView
+                        android:id="@+id/countryt1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/et_billzip"
+                        android:layout_marginLeft="20dp"
+                        android:text="Country"
+                        android:textSize="17dp" />
+
+
+                    <Spinner
+                        android:id="@+id/countrys1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/countryt1"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/statet1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/countrys1"
+                        android:layout_marginLeft="20dp"
+                        android:text="State"
+                        android:textSize="17dp" />
+
+
+                    <Spinner
+                        android:id="@+id/states1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/statet1"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/cityt1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/states1"
+                        android:layout_marginLeft="20dp"
+                        android:text="City"
+                        android:textSize="17dp" />
+
+
+                    <Spinner
+                        android:id="@+id/citys1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/cityt1"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view2"
+                android:layout_width="350dp"
+                android:layout_height="fill_parent"
+                android:layout_below="@id/card_view1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                card_view:cardBackgroundColor="#FFFFFF"
+                card_view:contentPadding="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/shippinginfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="SHIPPING INFORMATION"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="17dp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/saddresse"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/shippinginfo"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:editable="true"
+                        android:hint="SHIPPING ADDRESS" />
+
+                    <EditText
+                        android:id="@+id/et_shipzip"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/saddresse"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dp"
+                        android:editable="true"
+                        android:inputType="number"
+                        android:hint="SHIPPING ZIP" />
+
+                    <TextView
+                        android:id="@+id/countryt2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/et_shipzip"
+                        android:layout_marginLeft="20dp"
+                        android:text="Country"
+                        android:textSize="17dp" />
+
+
+                    <Spinner
+                        android:id="@+id/countrys2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/countryt2"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/statet2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/countrys2"
+                        android:layout_marginLeft="20dp"
+                        android:text="State"
+                        android:textSize="17dp" />
+
+
+                    <Spinner
+                        android:id="@+id/states2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/statet2"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/cityt2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/states2"
+                        android:layout_marginLeft="20dp"
+                        android:text="City"
+                        android:textSize="17dp" />
+
+
+                    <Spinner
+                        android:id="@+id/citys2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/cityt2"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <Button
+                        android:id="@+id/updateb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/citys2"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="10dp"
+                        android:onClick="onClick"
+                        android:text="UPDATE" />
+
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+</RelativeLayout>

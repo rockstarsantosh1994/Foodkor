@@ -1,0 +1,160 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+xmlns:card_view="http://schemas.android.com/apk/res-auto"
+android:background="@drawable/bg_login"
+tools:context="com.example.xxovek.foodkor.SCHEMES.UpdateSchemesFragment"
+android:layout_marginBottom="10dp">
+
+<android.support.v7.widget.CardView
+    android:id="@+id/card_view2"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_below="@id/card_view1"
+    android:layout_centerHorizontal="true"
+    card_view:cardBackgroundColor="#FFFFFF"
+    card_view:contentPadding="0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_schemename"
+            android:textSize="17dp"
+            android:layout_marginLeft="20dp"
+            android:text="Scheme Name" />
+
+        <EditText
+            android:id="@+id/et_schemename"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_schemename"
+            android:hint="Enter scheme name"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_productservice"
+            android:textSize="17dp"
+            android:layout_marginLeft="20dp"
+            android:text="Product name/service"
+            android:layout_below="@+id/et_schemename"
+            android:layout_marginTop="15dp"/>
+
+        <Spinner
+            android:id="@+id/sp_productname"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_productservice"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:textAlignment="center" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_fromdate"
+            android:textSize="17dp"
+            android:layout_marginLeft="20dp"
+            android:text="From date"
+            android:layout_below="@+id/sp_productname"
+            android:layout_marginTop="15dp"/>
+
+        <EditText
+            android:id="@+id/et_fromdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_fromdate"
+            android:editable="false"
+            android:hint="Enter from date"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_uptodate"
+            android:textSize="17dp"
+            android:layout_marginLeft="20dp"
+            android:text="Upto date"
+            android:layout_below="@+id/et_fromdate"
+            android:layout_marginTop="15dp"/>
+
+        <EditText
+            android:id="@+id/et_uptodate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_uptodate"
+            android:editable="false"
+            android:hint="Enter upto date"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_onpurchase"
+            android:textSize="17dp"
+            android:layout_marginLeft="20dp"
+            android:text="On purchase"
+            android:layout_below="@+id/et_uptodate"
+            android:layout_marginTop="15dp"/>
+
+        <EditText
+            android:id="@+id/et_onpurchase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_onpurchase"
+            android:hint="Enter On purchase"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_freeqty"
+            android:textSize="17dp"
+            android:layout_marginLeft="20dp"
+            android:text="Free quantity"
+            android:layout_below="@+id/et_onpurchase"
+            android:layout_marginTop="15dp"/>
+
+        <EditText
+            android:id="@+id/et_freeqty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_freeqty"
+            android:hint="Enter Free quantity"/>
+
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="2"
+    android:layout_below="@+id/card_view2"
+    >
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="cancel"
+        android:layout_weight="1"
+        android:id="@+id/btn_cancel"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save and Close"
+        android:layout_weight="1"
+        android:id="@+id/btn_save"/>
+
+</LinearLayout>
+
+</RelativeLayout>
+

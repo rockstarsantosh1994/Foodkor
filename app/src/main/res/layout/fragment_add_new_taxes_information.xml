@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="10dp"
+    android:background="@color/Honeydew"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.xxovek.foodkor.TAXES.AddNewTaxesInformationFragment">
+
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view2"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_below="@id/card_view1"
+        android:layout_centerHorizontal="true"
+        card_view:cardBackgroundColor="#FFFFFF"
+        card_view:contentPadding="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/taxnamet"
+                android:textSize="17dp"
+                android:layout_marginLeft="20dp"
+                android:text="Tax Name" />
+
+            <EditText
+                android:id="@+id/taxnamee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/taxnamet"
+                android:hint="Enter tax name"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/taxtypet"
+                android:textSize="17dp"
+                android:layout_marginLeft="20dp"
+                android:text="Tax Type"
+                android:layout_below="@+id/taxnamee"
+                android:layout_marginTop="15dp"/>
+
+
+            <Spinner
+                android:id="@+id/taxtypee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/taxtypet"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/taxpercentt"
+                android:textSize="17dp"
+                android:layout_marginLeft="20dp"
+                android:text="Tax Percent"
+                android:layout_below="@+id/taxtypee"
+                android:layout_marginTop="15dp"/>
+
+            <EditText
+                android:id="@+id/taxpercente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/taxpercentt"
+                android:hint="Enter tax percent"
+                android:inputType="number"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/taxdescpt"
+                android:textSize="17dp"
+                android:layout_marginLeft="20dp"
+                android:text="Tax Description"
+                android:layout_below="@+id/taxpercente"
+                android:layout_marginTop="15dp"/>
+
+            <EditText
+                android:id="@+id/taxdescpe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/taxdescpt"
+                android:hint="Enter tax Descriptions"/>
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_below="@+id/card_view2"
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cancel"
+            android:layout_weight="1"
+            android:id="@+id/btn_cancel"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save and Close"
+            android:layout_weight="1"
+            android:id="@+id/btn_save"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
+

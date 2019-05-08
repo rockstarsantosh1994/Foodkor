@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.xxovek.foodkor.SALES.purchase.PurchaseTabActivity">
+    <item
+        android:id="@+id/action_purchase"
+        android:orderInCategory="100"
+        android:title="Purchase"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_acceptedpurchaseorder"
+        android:orderInCategory="100"
+        android:title="Accepted Purchase Order"
+        app:showAsAction="never" />
+</menu>
