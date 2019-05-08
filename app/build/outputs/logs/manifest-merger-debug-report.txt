@@ -63,10 +63,10 @@ MERGED from [com.android.volley:volley:1.0.0] /home/xxovek/.gradle/caches/transf
 		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:8:9-35
 	android:theme
 		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:13:9-40
-activity#com.example.xxovek.foodkor.MainActivity
+activity#com.example.xxovek.foodkor.LOGIN_AND_REGISTRATION.MainActivity
 ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:14:9-20:20
 	android:name
-		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:14:19-47
+		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:14:19-70
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:15:13-19:29
 action#android.intent.action.MAIN
