@@ -201,7 +201,7 @@ public class Customers extends Fragment implements MyRecyclerViewAdapter.ItemCli
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                 builder.setIcon(android.R.drawable.ic_lock_power_off);
                 builder.setTitle("Delete");
-                builder.setMessage("Do you really want to delte?");
+                builder.setMessage("Do you really want to delete?");
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {

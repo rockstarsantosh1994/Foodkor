@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed May 08 11:40:59 IST 2019
+#Wed May 08 12:34:01 IST 2019
 0.baseType=DIRECTORY
 0.base=/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/transforms/dexMerger/debug/16
 0.path=classes.dex
