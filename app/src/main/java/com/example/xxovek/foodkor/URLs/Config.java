@@ -6,10 +6,10 @@ package com.example.xxovek.foodkor.URLs;
 
 public class Config {
 
-     //private static final String ROOT_URL = "http://192.168.0.106/Foodcor/src/";
-    //private static final String ROOT_URL = "http://192.168.0.106/Foodcor/src1/";
-    //private static final String ROOT_URL = "http://app.fastinvo.com/src/";
-      private static final String ROOT_URL = "http://khajana.xxovek.com/src/";
+        //private static final String ROOT_URL = "http://192.168.0.106/Foodcor/src/";
+        //private static final String ROOT_URL = "http://192.168.0.106/Foodcor/src1/";
+        //private static final String ROOT_URL = "http://app.fastinvo.com/src/";
+       private static final String ROOT_URL = "http://khajana.xxovek.com/src/";
     //private static final String ROOT_URL = "http://192.168.43.203/Foodcor/src/";
 
     public static final String USER_LOGIN_URL = ROOT_URL + "userLogin.php";

@@ -1,4 +1,4 @@
-package com.example.xxovek.foodkor;
+package com.example.xxovek.foodkor.LOGIN_AND_REGISTRATION;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
@@ -24,8 +24,9 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
+import com.example.xxovek.foodkor.HomeActivity;
+import com.example.xxovek.foodkor.R;
 import com.example.xxovek.foodkor.URLs.Config;
-import com.example.xxovek.foodkor.URLs.MyValidator1;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -97,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void goToMainActivity(){
-        Intent i = new Intent(this,HomeActivity.class);
+        Intent i = new Intent(this, HomeActivity.class);
         startActivity(i);
     }
 

@@ -1,4 +1,4 @@
-package com.example.xxovek.foodkor;
+package com.example.xxovek.foodkor.LOGIN_AND_REGISTRATION;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
+import com.example.xxovek.foodkor.LOGIN_AND_REGISTRATION.MainActivity;
+import com.example.xxovek.foodkor.R;
 
 
 public class SignUpFragment extends Fragment {
@@ -54,7 +56,7 @@ public class SignUpFragment extends Fragment {
         tv_signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getContext(),MainActivity.class);
+                Intent intent=new Intent(getContext(), MainActivity.class);
                 startActivity(intent);
             }
         });
