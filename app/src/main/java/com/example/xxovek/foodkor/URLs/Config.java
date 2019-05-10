@@ -49,5 +49,8 @@ public class Config {
     public static final String PURCHSE_ORDER_RECEIVED_URL = ROOT_URL +"PurchaseOrderRecieved.php";
     public static final String DISPLAY_PURCHASE_FOR_CUSTOMER_URL = ROOT_URL +"displayPurchaseForCustomer.php";
     public static final String USER_REGISTRATION_URL = ROOT_URL +"userRegistration.php";
+    public static final String FETCH_UNIT_URL = ROOT_URL +"fetch_itemunit_android.php";
+    public static final String FETCH_PAY_TERMS_URL = ROOT_URL +"fetch_payterms1.php";
+
 
 }

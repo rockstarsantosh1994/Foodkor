@@ -1,279 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/relative12"
-    android:layout_marginBottom="10dp"
-    android:background="@color/Honeydew"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    tools:context=".SALES.invoice.AddNewInvoice">
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="10dp">
 
             <android.support.v7.widget.CardView
                 android:id="@+id/card_view"
-                android:layout_width="350dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
                 card_view:cardBackgroundColor="#FFFFFF"
                 card_view:contentPadding="0dp">
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/customernamet"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/customernamet"
-                        android:textSize="17dp"
                         android:layout_marginLeft="20dp"
-                        android:text="Customer Name :-" />
-
+                        android:layout_marginTop="10dp"
+                        android:text="Customer Name"
+                        android:textColor="@color/black"
+                        android:textSize="17dp" />
 
                     <Spinner
                         android:id="@+id/customernames"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/customernamet"
-                        android:gravity="center"
-                        android:textAlignment="center"/>
-
-
-                </RelativeLayout>
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:id="@+id/card_view1"
-                android:layout_width="350dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="10dp"
-                android:layout_below="@id/card_view"
-                android:layout_centerHorizontal="true"
-                card_view:cardBackgroundColor="#FFFFFF"
-                card_view:contentPadding="0dp">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/termst"
-                        android:textSize="17dp"
-                        android:layout_marginLeft="20dp"
-                        android:text="Terms :-" />
-
-
-                    <Spinner
-                        android:id="@+id/termss"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/termst"
-                        android:gravity="center"
-                        android:textAlignment="center"/>
-
-                    <TextView
-                        android:id="@+id/invoicedatet"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="50dp"
-                        android:layout_below="@+id/termss"
-                        android:textSize="17dp"
-                        android:text="Invoice Date" />
-
-                    <TextView
-                        android:id="@+id/duedatet"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/termss"
-                        android:gravity="end"
-                        android:layout_marginRight="50dp"
-                        android:layout_toRightOf="@+id/invoicedatet"
-                        android:textSize="17dp"
-                        android:text="Due Date" />
-
-                    <EditText
-                        android:id="@+id/invoicedatee"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:layout_marginLeft="20dp"
-                        android:editable="false"
-                        android:layout_below="@+id/invoicedatet"
-                        android:hint="(dd/mm/yyyy)" />
-
-                    <EditText
-                        android:id="@+id/duedatee"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="end"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginLeft="60dp"
-                        android:layout_toRightOf="@+id/invoicedatee"
-                        android:textStyle="bold"
-                        android:editable="false"
-                        android:layout_below="@+id/duedatet"
-                        android:hint="(dd/mm/yyyy)" />
-
-
-                </RelativeLayout>
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:id="@+id/card_view2"
-                android:layout_width="350dp"
-                android:layout_height="210dp"
-                android:layout_marginTop="10dp"
-                android:layout_below="@id/card_view1"
-                android:layout_centerHorizontal="true"
-                card_view:cardBackgroundColor="#FFFFFF"
-                card_view:contentPadding="0dp">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/emailt"
-                        android:textSize="17dp"
-                        android:layout_marginLeft="20dp"
-                        android:text="Email id :-" />
+                        android:layout_below="@+id/customernamet" />
 
                     <EditText
                         android:id="@+id/emaile"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/emailt"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/emaile"
-                        android:id="@+id/billingaddresst"
-                        android:textSize="17dp"
-                        android:layout_marginLeft="20dp"
-                        android:text="Billing Address :-" />
+                        android:layout_below="@id/customernames"
+                        android:hint="Email Id" />
 
                     <EditText
                         android:id="@+id/billingaddresse"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/billingaddresst"/>
+                        android:layout_below="@id/emaile"
+                        android:hint="Billing Address" />
 
                     <TextView
+                        android:id="@+id/termst"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/placeofsupplyt"
                         android:layout_below="@id/billingaddresse"
-                        android:textSize="17dp"
                         android:layout_marginLeft="20dp"
-                        android:text="Place of Supply:-" />
-
+                        android:layout_marginTop="10dp"
+                        android:text="Terms"
+                        android:textColor="@color/black"
+                        android:textSize="17dp" />
 
                     <Spinner
-                        android:id="@+id/placeofsupplys"
-                        android:layout_width="fill_parent"
+                        android:id="@+id/termss"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/placeofsupplyt"
-                        android:gravity="center"
-                        android:textAlignment="center"/>
+                        android:layout_below="@+id/termst" />
 
-                </RelativeLayout>
-            </android.support.v7.widget.CardView>
-
-
-            <android.support.v7.widget.CardView
-                android:id="@+id/card_view3"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_below="@id/card_view2"
-                android:layout_centerHorizontal="true"
-                card_view:cardBackgroundColor="#FFFFFF"
-                card_view:contentPadding="0dp">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <EditText
+                        android:id="@+id/invoicedatee"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textview12"
-                        android:text="TEXT"
-                        android:textSize="20dp"/>
+                        android:layout_below="@id/termss"
+                        android:hint="Invoice Date"
+                        android:editable="false"
+                        />
 
-                </RelativeLayout>
+                    <EditText
+                        android:id="@+id/duedatee"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/termss"
+                        android:layout_toRightOf="@id/invoicedatee"
+                        android:editable="false"
+                        android:hint="Due Date"
+                        />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/showalertdialog"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:gravity="center|bottom"
+                        android:src="@android:drawable/ic_input_add"
+                        app:fabSize="auto" />
+
+                    <LinearLayout
+                        android:id="@+id/container1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="vertical">
+                    </LinearLayout>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btn_getdata"
+                        android:layout_marginBottom="10dp"
+                        android:text="Save Product"
+                        android:textAllCaps="false"/>
+
+                </LinearLayout>
             </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/card_view4"
-            android:layout_width="350dp"
-            android:layout_height="510dp"
-            android:layout_marginTop="10dp"
-            android:layout_below="@id/card_view3"
-            android:layout_centerHorizontal="true"
-            card_view:cardBackgroundColor="#FFFFFF"
-            card_view:contentPadding="0dp">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/placeofsupplyt1"
-                android:textSize="17dp"
-                android:layout_marginLeft="20dp"
-                android:text="Place of Supply:-" />
-
-        </RelativeLayout>
-
-
-
-        </android.support.v7.widget.CardView>
-
-            <Button
-                android:id="@+id/button12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/card_view4"
-                android:text="new"/>
-
-            <GridLayout
-                android:id="@+id/mylayout"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:padding="10dp"
-                android:layout_below="@id/button12">
-
-                <EditText
-                    android:id="@+id/edittt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="Item Name"
-                    android:padding="20dp"
-                    android:textColor="@color/black"/>
-
-            </GridLayout>
-
-
-        </RelativeLayout>
+        </LinearLayout>
 
     </ScrollView>
 
-</RelativeLayout>
+
+    <!--<ScrollView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="200dp"-->
+    <!--android:minHeight="0dp">-->
+    <!--<LinearLayout-->
+    <!--android:id="@+id/container1"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginBottom="20dp"-->
+    <!--android:orientation="vertical">-->
+    <!--</LinearLayout>-->
+    <!--</ScrollView>-->
+
+    <!--<Button-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:id="@+id/btn_getdata"-->
+    <!--android:layout_marginBottom="10dp"-->
+    <!--android:text="Get All Ids"-->
+    <!--android:textAllCaps="false"/>-->
+
+
+
+</LinearLayout>

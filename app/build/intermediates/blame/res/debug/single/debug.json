@@ -148,6 +148,10 @@
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable/abc_ic_voice_search_api_material.xml"
     },
     {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_identification.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_identification.png"
+    },
+    {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable_abc_btn_colored_material.xml.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable/abc_btn_colored_material.xml"
     },
@@ -160,16 +164,20 @@
         "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-xxhdpi/purchase_order.png"
     },
     {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_visitor.xml.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_visitor.xml"
+    },
+    {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable-xxhdpi-v4/abc_list_selector_disabled_holo_light.9.png"
     },
     {
-        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable_abc_ratingbar_indicator_material.xml.flat",
-        "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable/abc_ratingbar_indicator_material.xml"
-    },
-    {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-mdpi_help.png.flat",
         "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-mdpi/help.png"
+    },
+    {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable_abc_ratingbar_indicator_material.xml.flat",
+        "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable/abc_ratingbar_indicator_material.xml"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_pressed_holo_light.9.png.flat",
@@ -190,6 +198,10 @@
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable-hdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_visitor.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-mdpi/ic_visitor.png"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_customers.png.flat",
@@ -236,6 +248,10 @@
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/4cc0cab74d77b8612416128f90903e65/res/drawable/design_password_eye.xml"
     },
     {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_envelope.xml.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_envelope.xml"
+    },
+    {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable-xxxhdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png"
     },
@@ -272,6 +288,10 @@
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable/abc_ic_go_search_api_material.xml"
     },
     {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_identification.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_identification.png"
+    },
+    {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable-xhdpi-v4/abc_scrubber_control_off_mtrl_alpha.png"
     },
@@ -300,6 +320,10 @@
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable-xhdpi-v4/abc_ic_menu_share_mtrl_alpha.png"
     },
     {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_pin_code.xml.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_pin_code.xml"
+    },
+    {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-ldpi_dashboard.png.flat",
         "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-ldpi/dashboard.png"
     },
@@ -314,6 +338,10 @@
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable-mdpi-v4/abc_tab_indicator_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_agenda.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-mdpi/ic_agenda.png"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
@@ -360,6 +388,10 @@
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable-mdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
     },
     {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_visitor.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-hdpi/ic_visitor.png"
+    },
+    {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_fast_food.xml.flat",
         "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_fast_food.xml"
     },
@@ -368,12 +400,12 @@
         "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-xxxhdpi/help.png"
     },
     {
-        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
-        "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable-hdpi-v4/abc_textfield_default_mtrl_alpha.9.png"
-    },
-    {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_like.png.flat",
         "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_like.png"
+    },
+    {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
+        "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable-hdpi-v4/abc_textfield_default_mtrl_alpha.9.png"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_normal_pressed.9.png.flat",
@@ -416,12 +448,16 @@
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/4cc0cab74d77b8612416128f90903e65/res/layout/design_navigation_item_subheader.xml"
     },
     {
-        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_text_select_handle_middle_mtrl_light.png.flat",
-        "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable-hdpi-v4/abc_text_select_handle_middle_mtrl_light.png"
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_visitor.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_visitor.png"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_like.png.flat",
         "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-ldpi/ic_like.png"
+    },
+    {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_text_select_handle_middle_mtrl_light.png.flat",
+        "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable-hdpi-v4/abc_text_select_handle_middle_mtrl_light.png"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
@@ -476,12 +512,20 @@
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable/abc_cab_background_internal_bg.xml"
     },
     {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_remove_red_eye_black_24dp.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_remove_red_eye_black_24dp.png"
+    },
+    {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable-hdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
     },
     {
-        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_remove_red_eye_black_24dp.png.flat",
-        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_remove_red_eye_black_24dp.png"
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_pin_code.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-ldpi/ic_pin_code.png"
+    },
+    {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_envelope.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_envelope.png"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/anim_abc_slide_in_top.xml.flat",
@@ -534,6 +578,10 @@
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_pin_code.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-hdpi/ic_pin_code.png"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
@@ -608,6 +656,10 @@
         "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-ldpi/ic_launcher_foreground.png"
     },
     {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_visitor.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_visitor.png"
+    },
+    {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/layout_navigation_drawer_header.xml.flat",
         "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/res/layout/navigation_drawer_header.xml"
     },
@@ -654,6 +706,10 @@
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_star_half_black_36dp.png.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable-xxhdpi-v4/abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_envelope.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-hdpi/ic_envelope.png"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/color-v23_abc_tint_spinner.xml.flat",
@@ -744,6 +800,10 @@
         "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-ldpi/ic_fast_food.png"
     },
     {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_pin_code.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_pin_code.png"
+    },
+    {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/color_abc_primary_text_material_dark.xml.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/color/abc_primary_text_material_dark.xml"
     },
@@ -824,6 +884,10 @@
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable-ldrtl-mdpi-v17/abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_identification.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_identification.png"
+    },
+    {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/layout_fragment_view_purchase_page.xml.flat",
         "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/res/layout/fragment_view_purchase_page.xml"
     },
@@ -872,6 +936,10 @@
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable-xxhdpi-v4/abc_btn_check_to_on_mtrl_015.png"
     },
     {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_envelope.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_envelope.png"
+    },
+    {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-mdpi_customer.png.flat",
         "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-mdpi/customer.png"
     },
@@ -902,6 +970,10 @@
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable-xhdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
+    },
+    {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_visitor.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-ldpi/ic_visitor.png"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_launcher_background.png.flat",
@@ -1068,6 +1140,10 @@
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable-mdpi-v4/abc_list_focused_holo.9.png"
     },
     {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_pin_code.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_pin_code.png"
+    },
+    {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable-xxhdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
     },
@@ -1142,6 +1218,10 @@
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/layout_abc_screen_simple_overlay_action_mode.xml.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/layout/abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_visitor.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_visitor.png"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_text_select_handle_middle_mtrl_light.png.flat",
@@ -1528,6 +1608,10 @@
         "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-xxxhdpi/purchase_report.png"
     },
     {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_envelope.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-mdpi/ic_envelope.png"
+    },
+    {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/layout_select_dialog_singlechoice_material.xml.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/layout/select_dialog_singlechoice_material.xml"
     },
@@ -1652,6 +1736,10 @@
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable-mdpi-v4/abc_text_select_handle_right_mtrl_light.png"
     },
     {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_pin_code.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-mdpi/ic_pin_code.png"
+    },
+    {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/layout_abc_screen_toolbar.xml.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/layout/abc_screen_toolbar.xml"
     },
@@ -1686,6 +1774,10 @@
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_delete.png.flat",
         "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_delete.png"
+    },
+    {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_agenda.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_agenda.png"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
@@ -1738,6 +1830,10 @@
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/99b1c8d2e859a8ae43658d030da533b4/res/drawable-mdpi-v4/notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_agenda.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_agenda.png"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable_abc_seekbar_thumb_material.xml.flat",
@@ -1798,6 +1894,10 @@
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable-xhdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_identification.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-ldpi/ic_identification.png"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_fast_food.png.flat",
@@ -1988,6 +2088,10 @@
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/layout/abc_select_dialog_material.xml"
     },
     {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_identification.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-hdpi/ic_identification.png"
+    },
+    {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/layout_abc_action_mode_bar.xml.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/layout/abc_action_mode_bar.xml"
     },
@@ -2156,6 +2260,10 @@
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable-hdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png"
     },
     {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_envelope.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-ldpi/ic_envelope.png"
+    },
+    {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable-mdpi-v4/abc_list_selector_disabled_holo_light.9.png"
     },
@@ -2308,6 +2416,10 @@
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable-ldrtl-xxxhdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_agenda.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_agenda.png"
+    },
+    {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/color_abc_search_url_text.xml.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/color/abc_search_url_text.xml"
     },
@@ -2318,6 +2430,10 @@
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-hdpi_stock_report.png.flat",
         "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-hdpi/stock_report.png"
+    },
+    {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_agenda.xml.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_agenda.xml"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
@@ -2346,6 +2462,10 @@
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/layout_design_navigation_menu.xml.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/4cc0cab74d77b8612416128f90903e65/res/layout/design_navigation_menu.xml"
+    },
+    {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_identification.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-mdpi/ic_identification.png"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_launcher_background.xml.flat",
@@ -2428,6 +2548,10 @@
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable-ldrtl-hdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_agenda.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-ldpi/ic_agenda.png"
+    },
+    {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable-xxxhdpi-v4/abc_text_select_handle_right_mtrl_light.png"
     },
@@ -2462,6 +2586,10 @@
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable-xxhdpi-v4/abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/layout_dialog_login.xml.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/res/layout/dialog_login.xml"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
@@ -2568,12 +2696,20 @@
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable-xxhdpi-v4/abc_text_select_handle_middle_mtrl_dark.png"
     },
     {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_pin_code.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_pin_code.png"
+    },
+    {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/layout_support_simple_spinner_dropdown_item.xml.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/layout/support_simple_spinner_dropdown_item.xml"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
         "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_identification.xml.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_identification.xml"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_products_and_service.png.flat",
@@ -2612,12 +2748,20 @@
         "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/res/drawable/bg_login.xml"
     },
     {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/layout_row.xml.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/res/layout/row.xml"
+    },
+    {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-ldrtl-mdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable-ldrtl-mdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_focused_holo.9.png.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable-hdpi-v4/abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_envelope.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_envelope.png"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_fast_food.png.flat",
@@ -2662,6 +2806,10 @@
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_star_black_48dp.png.flat",
         "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/res/drawable-xxxhdpi-v4/abc_ic_star_black_48dp.png"
+    },
+    {
+        "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_agenda.png.flat",
+        "source": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/generated/res/pngs/debug/drawable-hdpi/ic_agenda.png"
     },
     {
         "merged": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
