@@ -79,6 +79,7 @@ public class AddNewInvoice extends Fragment implements View.OnClickListener{
     private CardViewAdapter mAdapter;
    // MainActivity main;
 
+
     FloatingActionButton fab_dialog;
     EditText textIn,textIn1,et_invoicedate,et_duedate;
     Button buttonAdd, btn_getallids;

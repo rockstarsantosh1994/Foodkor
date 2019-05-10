@@ -9,8 +9,8 @@ public class Config {
         //private static final String ROOT_URL = "http://192.168.0.106/Foodcor/src/";
         //private static final String ROOT_URL = "http://192.168.0.106/Foodcor/src1/";
         //private static final String ROOT_URL = "http://app.fastinvo.com/src/";
-       private static final String ROOT_URL = "http://khajana.xxovek.com/src/";
-    //private static final String ROOT_URL = "http://192.168.43.203/Foodcor/src/";
+        private static final String ROOT_URL = "http://khajana.xxovek.com/src/";
+        //private static final String ROOT_URL = "http://192.168.43.203/Foodcor/src/";
 
     public static final String USER_LOGIN_URL = ROOT_URL + "userLogin.php";
     public static final String ALL_SALES_TYPE_URL= ROOT_URL + "AllSalesType.php";
@@ -51,6 +51,4 @@ public class Config {
     public static final String USER_REGISTRATION_URL = ROOT_URL +"userRegistration.php";
     public static final String FETCH_UNIT_URL = ROOT_URL +"fetch_itemunit_android.php";
     public static final String FETCH_PAY_TERMS_URL = ROOT_URL +"fetch_payterms1.php";
-
-
 }
