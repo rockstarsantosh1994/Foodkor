@@ -56,9 +56,9 @@ MERGED from [com.android.volley:volley:1.1.0] /home/xxovek/.gradle/caches/transf
 	android:label
 		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:10:9-41
 	android:roundIcon
-		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:11:9-54
+		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:11:9-56
 	android:icon
-		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:9:9-43
+		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:9:9-51
 	android:allowBackup
 		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:8:9-35
 	android:theme
@@ -81,14 +81,6 @@ activity#com.example.xxovek.foodkor.HomeActivity
 ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:21:9-50
 	android:name
 		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:21:19-47
-activity#com.example.xxovek.foodkor.MovieAdapter
-ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:22:9-50
-	android:name
-		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:22:19-47
-activity#com.example.xxovek.foodkor.RecyclerAdapter2
-ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:23:9-54
-	android:name
-		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:23:19-51
 uses-sdk
 INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml

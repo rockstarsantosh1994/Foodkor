@@ -967,7 +967,6 @@ public class AddNewInvoice extends Fragment implements View.OnClickListener{
 //                EditText sw = (EditText)addView.findViewById(id);
 //                Toast.makeText(MainActivity.this, sw.getText().toString(), Toast.LENGTH_SHORT).show();
 //
-
                 for(int i=1;i<=len;i++) {
 
 //                    try {
@@ -981,8 +980,6 @@ public class AddNewInvoice extends Fragment implements View.OnClickListener{
 
 
                 }
-
-
                 for(int i=1;i<=len;i++) {
 
 
@@ -999,23 +996,16 @@ public class AddNewInvoice extends Fragment implements View.OnClickListener{
                     Toast.makeText(AddNewInvoice.this.getContext(), "List Data\n\n" + e2.toString(), Toast.LENGTH_SHORT).show();
                 }
                 Toast.makeText(AddNewInvoice.this.getContext(), "List a is\n\n" + a.toString(), Toast.LENGTH_SHORT).show();
-
             }
         });
-
         return view;
     }
-
 
     @Override
     public void onClick(View v) {
 
         int id = v.getId();
         switch (id) {
-
-
-
         }
-
     }
 }

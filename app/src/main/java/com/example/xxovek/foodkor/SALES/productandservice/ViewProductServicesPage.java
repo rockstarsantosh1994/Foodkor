@@ -305,7 +305,6 @@ public class ViewProductServicesPage extends Fragment {
                                 //id1 = spinnerMap.get(sp_productservice.getSelectedItemPosition());
 
                                 //String Text = sp_productservice.getSelectedItem().toString();
-                                //String value = GetClassCode.getCode(Text);//here u have to pass the value that is selected on the spinner
 
                                 // Toast.makeText(getContext(), "Value"+value, Toast.LENGTH_SHORT).show()
                                 //
