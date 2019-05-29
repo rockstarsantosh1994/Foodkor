@@ -359,12 +359,14 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        //If we are getting success from server
+
                         if(TextUtils.isEmpty(response)){
                             //Creating a shared preference
                             Toast.makeText(getContext(), "Unable to fetch terms data"+response.toString(), Toast.LENGTH_LONG).show();
 
-                        }else{
+                        }
+                        //If we are getting success from server
+                        else{
 
                             try {
 
