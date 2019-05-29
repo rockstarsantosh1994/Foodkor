@@ -52,7 +52,7 @@ public class Invoices extends Fragment implements MyRecyclerViewAdapter.ItemClic
     public int i;
     public MyRecyclerViewAdapter adapter;
     RecyclerView recyclerView;
-
+    String company_id;
 
 
     public Invoices() {
@@ -69,7 +69,7 @@ public class Invoices extends Fragment implements MyRecyclerViewAdapter.ItemClic
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerview);
         SharedPreferences prf = getContext().getSharedPreferences("Options", getContext().MODE_PRIVATE);
         final String person_id=prf.getString("person_id", "");
-        final String company_id=prf.getString("company_id","");
+        company_id=prf.getString("company_id","");
         final String company_flag=prf.getString("company_flag","");
         final String isAdmin=prf.getString("isAdmin","");
 
@@ -229,6 +229,77 @@ public class Invoices extends Fragment implements MyRecyclerViewAdapter.ItemClic
 
         switch(id){
             case R.id.ib_delete:
+                final String st_delid= adapter.getItem(position);
+                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                builder.setIcon(android.R.drawable.ic_lock_power_off);
+                builder.setTitle("Delete");
+                builder.setMessage("Do you really want to delete?");
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                        Toast.makeText(getContext(), "st_delid\n"+st_delid, Toast.LENGTH_SHORT).show();
+                        StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.REMOVE_TRANSACTION_MASTER_RECORD_URL,
+                                new Response.Listener<String>() {
+                                    @Override
+                                    public void onResponse(String response) {
+                                        //If we are getting success from server
+                                        if(TextUtils.isEmpty(response)){
+                                            //Creating a shared preference
+                                            Toast.makeText(getContext(), "Unable to delete product data"+response.toString(), Toast.LENGTH_LONG).show();
+
+                                        }else{
+
+                                            Toast.makeText(getContext(), "Customer Deleted Successfully", Toast.LENGTH_SHORT).show();
+                                            Fragment fragment = new Invoices();
+                                            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                                            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                                            fragmentTransaction.replace(R.id.main_container, fragment);
+                                            fragmentTransaction.addToBackStack(null);
+                                            fragmentTransaction.commit();
+                                            adapter.notifyDataSetChanged();
+                                        }
+                                    }
+                                },
+                                new Response.ErrorListener() {
+                                    @Override
+                                    public void onErrorResponse(VolleyError error) {
+                                        //You can handle error here if you want
+                                    }
+                                }){
+                            @Override
+                            protected Map<String, String> getParams() throws AuthFailureError {
+                                Map<String,String> params = new HashMap<>();
+                                //Adding parameters to request
+
+                                params.put("transactionId", st_delid);
+                                params.put("formid", String.valueOf(1));
+                                params.put("company_id", company_id);
+//                params.put("password", password);
+
+                                //returning parameter
+                                return params;
+                            }
+                        };
+
+                        //Adding the string request to the queue
+                        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+                        requestQueue.add(stringRequest);
+
+                    }
+                });
+
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(getContext(), "Delete Operation Cancelled", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                AlertDialog dialog = builder.create();
+                dialog.show();
+
+               // Toast.makeText(getContext(), "Delete Button Clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.t2: String user_id1 = adapter.getItem(position);
                 // Toast.makeText(getContext(), "getitem is  " + user_id1.toString() + " on row number " + position, Toast.LENGTH_SHORT).show();

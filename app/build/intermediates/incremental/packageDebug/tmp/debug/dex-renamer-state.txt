@@ -1,4 +1,4 @@
-#Tue May 14 16:28:23 IST 2019
+#Wed May 29 11:40:22 IST 2019
 base.0=/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex

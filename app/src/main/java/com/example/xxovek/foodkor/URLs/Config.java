@@ -6,10 +6,11 @@ package com.example.xxovek.foodkor.URLs;
 
 public class Config {
 
+
         //private static final String ROOT_URL = "http://192.168.0.106/Foodcor/src/";
-        //private static final String ROOT_URL = "http://192.168.0.106/Foodcor/src1/";
+          private static final String ROOT_URL = "http://192.168.0.106/Foodcor/src1/";
         //private static final String ROOT_URL = "http://app.fastinvo.com/src/";
-         private static final String ROOT_URL = "http://khajana.xxovek.com/src/";
+         //private static final String ROOT_URL = "http://khajana.xxovek.com/src/";
         //private static final String ROOT_URL = "http://192.168.43.203/Foodcor/src/";
 
                         public static final String USER_LOGIN_URL = ROOT_URL + "userLogin.php";
@@ -51,4 +52,7 @@ public class Config {
                         public static final String USER_REGISTRATION_URL = ROOT_URL +"userRegistration.php";
                         public static final String FETCH_UNIT_URL = ROOT_URL +"fetch_itemunit_android.php";
                         public static final String FETCH_PAY_TERMS_URL = ROOT_URL +"fetch_payterms1.php";
+                        public static final String FETCH_APPEND_ITEM_TABLE_URL = ROOT_URL +"fetchappenditemtable.php";
+                        public static final String REMOVE_TRANSACTION_MASTER_RECORD_URL = ROOT_URL +"removetransactionmasterrecord.php";
+
 }

@@ -106,14 +106,14 @@ public final class R {
         public static final int right = 0x7f0800eb;
         public static final int right_icon = 0x7f0800ec;
         public static final int right_side = 0x7f0800ed;
-        public static final int start = 0x7f080121;
-        public static final int status_bar_latest_event_content = 0x7f080126;
-        public static final int tag_transition_group = 0x7f080136;
-        public static final int text = 0x7f080144;
-        public static final int text2 = 0x7f080145;
-        public static final int time = 0x7f08014e;
-        public static final int title = 0x7f08014f;
-        public static final int top = 0x7f080154;
+        public static final int start = 0x7f080122;
+        public static final int status_bar_latest_event_content = 0x7f080127;
+        public static final int tag_transition_group = 0x7f080137;
+        public static final int text = 0x7f080145;
+        public static final int text2 = 0x7f080146;
+        public static final int time = 0x7f08014f;
+        public static final int title = 0x7f080150;
+        public static final int top = 0x7f080155;
     }
     public static final class integer {
         public static final int cancel_button_image_alpha = 0x7f090004;

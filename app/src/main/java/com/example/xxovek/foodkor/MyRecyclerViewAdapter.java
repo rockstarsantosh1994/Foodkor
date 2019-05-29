@@ -93,6 +93,9 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             holder.ib_delete.setVisibility(View.GONE);
 
         }
+        else if(flag.equals("5")){
+
+        }
 
 
 

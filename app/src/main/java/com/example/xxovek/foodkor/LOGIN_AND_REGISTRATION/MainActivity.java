@@ -54,14 +54,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ViewPager mViewPager;
     public String a1,a2,a3,a4,a5,a6;
     String email,password;
-    private AwesomeValidation awesomeValidation;
+   // private AwesomeValidation awesomeValidation;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
+
         tv_signup=findViewById(R.id.tv_signup);
         prf = getApplicationContext().getSharedPreferences("Options", Context.MODE_PRIVATE);
         editor = prf.edit();
@@ -74,9 +74,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         usernamee_main = (EditText) findViewById(R.id.usernamee_main);
         passworde_main = (EditText) findViewById(R.id.passworde_main);
 
-        //adding validation to edittexts
-        awesomeValidation.addValidation(this, R.id.usernamee_main, Patterns.EMAIL_ADDRESS, R.string.email_error);
-        //awesomeValidation.addValidation(this, R.id.passworde_main," \"^[A-Za-z\\\\s]{1,}[\\\\.]{0,1}[A-Za-z\\\\s]{0,}$\"", R.string.pass_error);
 
 
         loginb_main.setOnClickListener(this);
@@ -110,88 +107,112 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.loginb_main:
 
 
-            if(awesomeValidation.validate()) {
+                String emailAddress = usernamee_main.getText().toString().trim();
+                if (passworde_main.getText().toString().length() < 6) {
+                    passworde_main.setError("password minimum contain 6 character");
+                            passworde_main.requestFocus();
+                }
+                if (passworde_main.getText().toString().equals("")) {
+                    passworde_main.setError("please enter password");
+                            passworde_main.requestFocus();
+                }
+                if (!android.util.Patterns.EMAIL_ADDRESS.matcher(emailAddress).matches()) {
+                    usernamee_main.setError("please enter valid email address");
+                            usernamee_main.requestFocus();
+                }
+                if (usernamee_main.getText().toString().equals("")) {
+                    usernamee_main.setError("please enter email address");
+                            usernamee_main.requestFocus();
+                }
+                if (!emailAddress.equals("") &&
+                        passworde_main.getText().toString().length() >= 6 &&
+                        !passworde_main.getText().toString().trim().equals("")
+                        && android.util.Patterns.EMAIL_ADDRESS.matcher(emailAddress).matches()) {
+                    // do  your action
 
-                // final String email = usernamee_main.getText().toString().trim();
-                //final String password = passworde_main.getText().toString().trim();
-                email = usernamee_main.getText().toString();
-                password = passworde_main.getText().toString();
-                // final String LOGIN_URL = "http://192.168.0.112/Foodcor/src/userLogin.php";
+                    // final String email = usernamee_main.getText().toString().trim();
+                    //final String password = passworde_main.getText().toString().trim();
+                    email = usernamee_main.getText().toString();
+                    password = passworde_main.getText().toString();
+                    // final String LOGIN_URL = "http://192.168.0.112/Foodcor/src/userLogin.php";
 
-                //Creating a string request
-                StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.USER_LOGIN_URL,
-                        new Response.Listener<String>() {
-                            @Override
-                            public void onResponse(String response) {
+                    //Creating a string request
+                    StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.USER_LOGIN_URL,
+                            new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
 
-                                try {
-                                    JSONObject json = new JSONObject(response);
-                                    Toast.makeText(MainActivity.this, "162" + json, Toast.LENGTH_SHORT).show();
+                                    try {
+                                        JSONObject json = new JSONObject(response);
+                                        Toast.makeText(MainActivity.this, "162" + json, Toast.LENGTH_SHORT).show();
 
-                                    a1 = (json.getString("msg"));
-                                    a2 = (json.getString("person_id"));
-                                    a3 = (json.getString("company_id"));
-                                    a4 = (json.getString("company_flag"));
-                                    a5 = (json.getString("isAdmin"));
+                                        a1 = (json.getString("msg"));
+                                        a2 = (json.getString("person_id"));
+                                        a3 = (json.getString("company_id"));
+                                        a4 = (json.getString("company_flag"));
+                                        a5 = (json.getString("isAdmin"));
 
-                                    //Toast.makeText(MainActivity.this, "Data from Json\n"+a1+"\n"+a2+"\n"+a3+"\n"+a4+"\n"+a5 , Toast.LENGTH_LONG).show();
+                                        //Toast.makeText(MainActivity.this, "Data from Json\n"+a1+"\n"+a2+"\n"+a3+"\n"+a4+"\n"+a5 , Toast.LENGTH_LONG).show();
 
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+
+                                    //If we are getting success from server
+                                    if (a1.equals("0")) {
+                                        //Creating a shared preference
+                                        Toast.makeText(MainActivity.this, "Invalid username or password" + response.toString(), Toast.LENGTH_LONG).show();
+
+                                    } else {
+
+                                        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("Options", Context.MODE_PRIVATE);
+                                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                                        editor.putBoolean("logged", true).apply();
+                                        editor.putString("person_id", a2);// Storing string
+                                        editor.putString("company_id", a3);// Storing string
+                                        editor.putString("company_flag", a4);// Storing string
+                                        editor.putString("isAdmin", a5);// Storing string
+
+
+                                        editor.commit();
+
+                                        Toast.makeText(MainActivity.this, response.toString(), Toast.LENGTH_LONG).show();
+
+                                        Toast.makeText(MainActivity.this, a2.toString() + a3.toString() + a4.toString() + a5.toString(), Toast.LENGTH_LONG).show();
+
+                                        //Starting profile activity
+                                        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                                        startActivity(intent);
+                                    }
                                 }
-
-                                //If we are getting success from server
-                                if (a1.equals("0")) {
-                                    //Creating a shared preference
-                                    Toast.makeText(MainActivity.this, "Invalid username or password" + response.toString(), Toast.LENGTH_LONG).show();
-
-                                } else {
-
-                                    SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("Options", Context.MODE_PRIVATE);
-                                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                                    editor.putBoolean("logged", true).apply();
-                                    editor.putString("person_id", a2);// Storing string
-                                    editor.putString("company_id", a3);// Storing string
-                                    editor.putString("company_flag", a4);// Storing string
-                                    editor.putString("isAdmin", a5);// Storing string
-
-
-                                    editor.commit();
-
-                                    Toast.makeText(MainActivity.this, response.toString(), Toast.LENGTH_LONG).show();
-
-                                    Toast.makeText(MainActivity.this, a2.toString() + a3.toString() + a4.toString() + a5.toString(), Toast.LENGTH_LONG).show();
-
-                                    //Starting profile activity
-                                    Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-                                    startActivity(intent);
+                            },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    //You can handle error here if you want
                                 }
-                            }
-                        },
-                        new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                //You can handle error here if you want
-                            }
-                        }) {
-                    @Override
-                    protected Map<String, String> getParams() throws AuthFailureError {
-                        Map<String, String> params = new HashMap<>();
-                        //Adding parameters to request
-                        params.put("uname", email);
-                        params.put("pwd", password);
+                            }) {
+                        @Override
+                        protected Map<String, String> getParams() throws AuthFailureError {
+                            Map<String, String> params = new HashMap<>();
+                            //Adding parameters to request
+                            params.put("uname", email);
+                            params.put("pwd", password);
 
-                        //returning parameter
-                        return params;
-                    }
-                };
+                            //returning parameter
+                            return params;
+                        }
+                    };
 
-                //Adding the string request to the queue
-                RequestQueue requestQueue = Volley.newRequestQueue(this);
-                requestQueue.add(stringRequest);
+                    //Adding the string request to the queue
+                    RequestQueue requestQueue = Volley.newRequestQueue(this);
+                    requestQueue.add(stringRequest);
 
-                break;
-            }
+                    break;
+
+                }
+
+
         }
 
     }
