@@ -43,7 +43,7 @@
                         android:textSize="17dp" />
 
                     <Spinner
-                        android:id="@+id/customernames"
+                        android:id="@+id/spin_customernames"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/customernamet" />
@@ -74,20 +74,20 @@
                         android:textSize="17dp" />
 
                     <Spinner
-                        android:id="@+id/termss"
+                        android:id="@+id/spin_terms"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/termst" />
 
                     <EditText
-                        android:id="@+id/invoicedatee"
+                        android:id="@+id/et_invoicedate"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/termss"
                         android:hint="Invoice Date" />
 
                     <EditText
-                        android:id="@+id/duedatee"
+                        android:id="@+id/et_duedate"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/termss"
