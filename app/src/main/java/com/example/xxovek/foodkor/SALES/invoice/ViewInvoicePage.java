@@ -89,12 +89,14 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
         et_billaddress=view.findViewById(R.id.et_billingaddress);
 
 
+        //Attaching PayTerms Value to Spinner...
+        getPayTermsSpin();
+
         //Attaching CustomerName to Spinner....
         getCustomerNameSpin();
 
 
-        //Attaching PayTerms Value to Spinner...
-        getPayTermsSpin();
+
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.FETCH_APPEND_ITEM_TABLE_URL,
                 new Response.Listener<String>() {
@@ -226,7 +228,7 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
 
     //fetching customername data
     public void getCustomerNameSpin(){
-        stringRequest3 = new StringRequest(Request.Method.POST, Config.DISPLAY_CUSTOMERS_URL,
+        stringRequest3 = new StringRequest(Request.Method.POST, Config.FETCH_CUSTOMER_FOR_VIEW_INVOICE_URL,
                             new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -250,31 +252,24 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
                                 List<String> cl7 = new ArrayList<String>();
                                 List<String> cl8 = new ArrayList<String>();
 
-
                                 JSONArray json_data = new JSONArray(response);
                                 int len = json_data.length();
                                 String len1 = String.valueOf(len);
+
                                 // Toast.makeText(getContext(), json_data.toString(), Toast.LENGTH_SHORT).show();
 
                                 for (int i = 0; i < json_data.length(); i++) {
                                     JSONObject json = json_data.getJSONObject(i);
-                                    cl1.add(json.getString("pid"));
+                                    cl1.add(json.getString("PersonId"));
                                     cl2.add((json.getString("name")));
-
-
-
-
-                                    // a= a + "Age : "+json.getString("c_phone")+"\n";
-                                    //j= j + "Job : "+json.getString("Job")+"\n";
                                 }
-            //                    Toast.makeText(getContext(), n.toString(), Toast.LENGTH_SHORT).show();
 
                                 Integer a1 = cl1.size();
                                 String a2 = String.valueOf(a1);
                                 String[] spinnerArray = new String[cl1.size()];
                                 spinnerMap = new HashMap<Integer, String>();
 
-                                // Toast.makeText(getContext(), "the size is" + a2.toString(), Toast.LENGTH_SHORT).show();
+                                 Toast.makeText(getContext(), "the size is" + cl2.toString(), Toast.LENGTH_SHORT).show();
 
 
                                 for (int i = 0; i <cl1.size(); i++)
@@ -344,6 +339,7 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
                         Map<String,String> params = new HashMap<>();
                         //Adding parameters to request
                         params.put("company_id", company_id);
+                        params.put("formid", String.valueOf(1));
             //                params.put("password", password);
 
                         //returning parameter
@@ -373,7 +369,7 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
 
                             try {
 
-                                Toast.makeText(getContext(), "111"+response.toString(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getContext(), "PayTerms Data Response \n\n"+response.toString(), Toast.LENGTH_SHORT).show();
 
                                 List<String> al1 = new ArrayList<String>();
 
@@ -387,12 +383,6 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
                                     JSONObject json = json_data.getJSONObject(i);
                                     al1.add("NET-".concat(json.getString("Paytermval")));
 
-
-
-
-
-                                    // a= a + "Age : "+json.getString("c_phone")+"\n";
-                                    //j= j + "Job : "+json.getString("Job")+"\n";
                                 }
 //                    Toast.makeText(getContext(), n.toString(), Toast.LENGTH_SHORT).show();
 
@@ -493,7 +483,8 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
         };
 
         //Adding the string request to the queue
-
+        RequestQueue requestQueue3 = Volley.newRequestQueue(getContext());
+        requestQueue3.add(stringRequest4);
     }
 
     //fetching address by customer id..

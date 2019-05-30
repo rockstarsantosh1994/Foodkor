@@ -55,5 +55,6 @@ public class Config {
                         public static final String FETCH_APPEND_ITEM_TABLE_URL = ROOT_URL +"fetchappenditemtable.php";
                         public static final String REMOVE_TRANSACTION_MASTER_RECORD_URL = ROOT_URL +"removetransactionmasterrecord.php";
                         public static final String FETCH_INFO_ADDRESS_BY_ID_URL = ROOT_URL +"fetchaddressinfobyid.php";
+                        public static final String FETCH_CUSTOMER_FOR_VIEW_INVOICE_URL = ROOT_URL +"fetch_customer1.php";
 
 }
