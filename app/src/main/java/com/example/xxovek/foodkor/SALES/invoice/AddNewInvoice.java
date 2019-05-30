@@ -499,8 +499,8 @@ public class AddNewInvoice extends Fragment implements View.OnClickListener{
 
 
 
-                etUsername = dialogView.findViewById(R.id.etUserName);
-                etPassword = dialogView.findViewById(R.id.etPassword);
+                etUsername = dialogView.findViewById(R.id.ethsn);
+                etPassword = dialogView.findViewById(R.id.ethsn);
                 etbqty = dialogView.findViewById(R.id.etbqty);
                 etrate = dialogView.findViewById(R.id.etrate);
                 etdiscount = dialogView.findViewById(R.id.etdiscount);

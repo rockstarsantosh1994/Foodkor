@@ -84,7 +84,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/termss"
-                        android:hint="Invoice Date" />
+                        android:hint="Invoice Date"
+                        android:editable="false"/>
 
                     <EditText
                         android:id="@+id/et_duedate"
@@ -92,10 +93,11 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/termss"
                         android:layout_toRightOf="@id/invoicedatee"
-                        android:hint="Due Date" />
+                        android:hint="Due Date"
+                        android:editable="false"/>
 
                     <android.support.design.widget.FloatingActionButton
-                        android:id="@+id/showalertdialog"
+                        android:id="@+id/fab_addinvoice"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
