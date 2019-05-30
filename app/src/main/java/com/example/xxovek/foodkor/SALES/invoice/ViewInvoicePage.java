@@ -52,14 +52,14 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
     RecyclerView rv_viewitem;
     private String st_transactionid;
     public MyRecyclerViewAdapter adapter;
-    public StringRequest stringRequest3,stringRequest4;
+    public StringRequest stringRequest3,stringRequest4,stringRequest5;
     Spinner spin_customername,spin_terms;
     HashMap spinnerMap,spinnerMap1;
     String[] spinnerArray;
     String st_customervalue;
-    String company_id,st_termsvalue;
+    String company_id,st_termsvalue,a1,a2;
     int nosofdays;
-    EditText et_invoicedate,et_duedate;
+    EditText et_invoicedate,et_duedate,et_billaddress;
 
     public ViewInvoicePage() {
         // Required empty public constructor
@@ -86,6 +86,7 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
         spin_terms=view.findViewById(R.id.spin_terms);
         et_invoicedate=view.findViewById(R.id.et_invoicedate);
         et_duedate=view.findViewById(R.id.et_duedate);
+        et_billaddress=view.findViewById(R.id.et_billingaddress);
 
 
         //Attaching CustomerName to Spinner....
@@ -306,6 +307,8 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
 
                                         st_customervalue = (String) spinnerMap.get(spin_customername.getSelectedItemPosition());
 
+                                        //Calling functionf for getting Customer Address based on their Id...
+                                        getAddressById();
 
                                         Toast.makeText(getContext(), "Customer Name value"+st_customervalue, Toast.LENGTH_SHORT).show();
                                     }
@@ -490,12 +493,64 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
         };
 
         //Adding the string request to the queue
-        RequestQueue requestQueue4 = Volley.newRequestQueue(getContext());
-        requestQueue4.add(stringRequest4);
 
     }
 
+    //fetching address by customer id..
+    public void getAddressById(){
+        stringRequest5 = new StringRequest(Request.Method.POST, Config.FETCH_INFO_ADDRESS_BY_ID_URL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        //If we are getting success from server
+                        if(TextUtils.isEmpty(response)){
+                            //Creating a shared preference
+                            Toast.makeText(getContext(), "Unable to fetch address data"+response.toString(), Toast.LENGTH_LONG).show();
 
+                        }else{
+
+                            try {
+                                JSONObject json = new JSONObject(response);
+                                Toast.makeText(getContext(), "162" + json, Toast.LENGTH_SHORT).show();
+
+                                a1 = (json.getString("contactId"));
+                                a2 = (json.getString("contactAddress"));
+
+                                et_billaddress.setText(a2);
+                                Toast.makeText(getContext(), "A2\n\n"+a2, Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(MainActivity.this, "Data from Json\n"+a1+"\n"+a2+"\n"+a3+"\n"+a4+"\n"+a5 , Toast.LENGTH_LONG).show();
+
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+
+
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        //You can handle error here if you want
+                    }
+                }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> params = new HashMap<>();
+                //Adding parameters to request
+                params.put("company_id", company_id);
+                params.put("custid",st_customervalue);
+                //                params.put("password", password);
+
+                //returning parameter
+                return params;
+            }
+        };
+
+        //Adding the string request to the queue
+        RequestQueue requestQueue4 = Volley.newRequestQueue(getContext());
+        requestQueue4.add(stringRequest5);
+    }
     @Override
     public void onItemClick(View view, int position) {
 
