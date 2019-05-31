@@ -1180,7 +1180,7 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
                                     @Override
                                     public void afterTextChanged(Editable s) {
 
-                                        Toast.makeText(getContext(), "et amount is "+s.toString(), Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getContext(), "et amount is"+s.toString(), Toast.LENGTH_SHORT).show();
                                         String etdiscount3 = s.toString();
 
                                         try {
@@ -1191,12 +1191,12 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
 
                                             etamount2 = String.valueOf(etamount1);
 
-                                            Toast.makeText(getContext(), "sdfdbfdf"+etamount2.toString(), Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(getContext(), "sdfdbfdf"+etamount2, Toast.LENGTH_SHORT).show();
 
                                         }catch(NumberFormatException ex) {
 
                                         }
-                                        etamount.setText(etamount2.toString());
+                                        etamount.setText(etamount2);
 
 
                                     }
@@ -1223,12 +1223,13 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
                 //Adding parameters to request
                 params.put("company_id", company_id);
                 params.put("itemunitid", spinner2.getSelectedItem().toString());
-                params.put("itemnameid", st_spinner1);
+                params.put("itemnameid", st_spinner1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          );
 //                params.put("password", password);
 
                 //returning parameter
-                return params;
+               return params;
             }
+
         };
 
         RequestQueue requestQueue10 = Volley.newRequestQueue(getContext());
