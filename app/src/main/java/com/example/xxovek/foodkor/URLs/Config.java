@@ -58,5 +58,6 @@ public class Config {
                         public static final String FETCH_CUSTOMER_FOR_VIEW_INVOICE_URL = ROOT_URL +"fetch_customer1.php";
                         public static final String UPDATE_PRODUCT_URL = ROOT_URL +"fetchProductForUpdate.php";
                         public static final String FETCH_ITEM_UNIT_URL = ROOT_URL +"fetchitemunitinformation.php";
+                        public static final String FETCH_ITEM_TAX1_URL = ROOT_URL +"fetch_itemtax1.php";
 
 }

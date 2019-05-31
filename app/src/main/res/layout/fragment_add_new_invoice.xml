@@ -108,6 +108,14 @@
                         android:src="@android:drawable/ic_input_add"
                         app:fabSize="auto" />
 
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rv_addinvoice">
+
+
+                    </android.support.v7.widget.RecyclerView>
+
                     <LinearLayout
                         android:id="@+id/container1"
                         android:layout_width="match_parent"
