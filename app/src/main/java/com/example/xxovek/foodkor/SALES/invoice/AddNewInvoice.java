@@ -129,6 +129,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
         //Getting Item data like packing_qty,subpacking_qty,Quantity.....
         getItemDataByUnitId();
 
+
         n= new ArrayList<String>();
         e1= new ArrayList<String>();
         e2= new ArrayList<String>();
@@ -166,11 +167,8 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
         a= new ArrayList<String>();
 
         fab_dialog=view.findViewById(R.id.showalertdialog);
-//        textIn = findViewById(R.id.textin);
-//        textIn1 = findViewById(R.id.textin1);
 
-//        buttonAdd = findViewById(R.id.add);
-        spin_customername=view.findViewById(R.id.customernames);
+     spin_customername=view.findViewById(R.id.customernames);
         spin_terms=view.findViewById(R.id.termss);
         et_invoicedate=view.findViewById(R.id.invoicedatee);
         et_duedate=view.findViewById(R.id.duedatee);
