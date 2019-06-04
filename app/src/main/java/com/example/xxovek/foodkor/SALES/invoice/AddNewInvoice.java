@@ -50,6 +50,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+import static java.lang.String.*;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -252,18 +254,28 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
                 ethsn = dialogView.findViewById(R.id.ethsn);
                 etqty = dialogView.findViewById(R.id.etqty);
-                etqty.setText("1");
+               // etqty.setText("1");
                 etbqty = dialogView.findViewById(R.id.etbqty);
-                etbqty.setText("1");
+                //etbqty.setText("1");
                 etrate = dialogView.findViewById(R.id.etrate);
                 etdiscount = dialogView.findViewById(R.id.etdiscount);
                 etdiscount.setText("0.00");
                 etamount = dialogView.findViewById(R.id.etamount);
 
+                spinner2.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                    @Override
+                    public void onFocusChange(View v, boolean hasFocus) {
+                        int current_edittext1=Integer.parseInt(etbqty.getText().toString());
 
-
-
-                etqty.addTextChangedListener(new TextWatcher() {
+                        if(st_unitid==String.valueOf(1)) {
+                            /*  if(current_edittext1 > st_totalqty){*/
+                            etqty.setText(st_totalqty);
+                            etbqty.setText(st_totalqty);
+                        /*}*/
+                        }
+                    }
+                });
+                /*etqty.addTextChangedListener(new TextWatcher() {
                     @Override
                     public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -277,7 +289,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
 
                         //Toast.makeText(getContext(), "et amount is "+s.toString(), Toast.LENGTH_SHORT).show();
-/*
+*//*
                                         int current_edittext1=Integer.parseInt(etbqty.getText().toString());
 
                                         if(st_unitid==String.valueOf(1)){
@@ -285,8 +297,8 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                                 etqty.setText(st_totalqty);
                                                 etbqty.setText(st_totalqty);
                                             }
-                                        }*/
-             /*   int current_edittext1=Integer.parseInt(etbqty.getText().toString());
+                                        }*//*
+             *//*   int current_edittext1=Integer.parseInt(etbqty.getText().toString());
 
 
                 if(current_edittext1 > st_totalqty){
@@ -299,7 +311,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                     Toast.makeText(getContext(), "161" + s.toString(), Toast.LENGTH_SHORT).show();
                     // etbqty.setText(s.toString());
                 }
-*/
+*//*
 
                     }
 
@@ -307,7 +319,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                     public void afterTextChanged(Editable s) {
 
                         Toast.makeText(AddNewInvoice.this.getContext(),a4.toString(),Toast.LENGTH_SHORT);
-                                      /*  try {
+                                      *//*  try {
                                             int ia4 = Integer.parseInt(a4.toString());
                                             String ietbqty = (etbqty.getText().toString());
                                             int ietbqty1 = Integer.parseInt(ietbqty);
@@ -325,7 +337,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                         }catch (NumberFormatException e)
                                         {
                                             // handle the exception
-                                        }*/
+                                        }*//*
                         Toast.makeText(getContext(), "s\n"+s, Toast.LENGTH_SHORT).show();
                         int current_edittext1=Integer.parseInt(etqty.getText().toString());
 
@@ -345,7 +357,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                     }
 
                 });
-
+*/
                 Button btnLogin = dialogView.findViewById(R.id.btnLogin);
 
 //                Toast.makeText(AddNewInvoice.this.getContext(), a1.toString(), Toast.LENGTH_SHORT).show();
@@ -431,7 +443,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
                                 JSONArray json_data = new JSONArray(response);
                                 int len = json_data.length();
-                                String len1 = String.valueOf(len);
+                                String len1 = valueOf(len);
                                 // Toast.makeText(getContext(), json_data.toString(), Toast.LENGTH_SHORT).show();
 
                                 for (int i = 0; i < json_data.length(); i++) {
@@ -441,7 +453,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
                                 }
                                 Integer a1 = al1.size();
-                                String a2 = String.valueOf(a1);
+                                String a2 = valueOf(a1);
                                 spinnerArray4 = new String[al1.size()];
                                 spinnerMap4 = new HashMap<Integer, String>();
 
@@ -555,7 +567,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
                                 JSONArray json_data = new JSONArray(response);
                                 int len = json_data.length();
-                                String len1 = String.valueOf(len);
+                                String len1 = valueOf(len);
                                 // Toast.makeText(getContext(), json_data.toString(), Toast.LENGTH_SHORT).show();--
                                 for (int i = 0; i < json_data.length(); i++) {
                                     JSONObject json = json_data.getJSONObject(i);
@@ -645,7 +657,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                 //Adding parameters to request
                 params.put("company_id", company_id);
                 int type=1;
-                params.put("Ttype", String.valueOf(type));
+                params.put("Ttype", valueOf(type));
 //                params.put("password", password);
 
                 //returning parameter
@@ -733,7 +745,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
                                             double etamount1 = etrate1-(etrate1*etdiscount1*0.01);
 
-                                            etamount2 = String.valueOf(etamount1);
+                                            etamount2 = valueOf(etamount1);
 
                                             Toast.makeText(getContext(), "sdfdbfdf"+etamount2.toString(), Toast.LENGTH_SHORT).show();
 
@@ -816,7 +828,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
                                 JSONArray json_data = new JSONArray(response);
                                 int len = json_data.length();
-                                String len1 = String.valueOf(len);
+                                String len1 = valueOf(len);
                                 // Toast.makeText(getContext(), json_data.toString(), Toast.LENGTH_SHORT).show();
 
                                 for (int i = 0; i < json_data.length(); i++) {
@@ -833,7 +845,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 //                    Toast.makeText(getContext(), n.toString(), Toast.LENGTH_SHORT).show();
 
                                 Integer a1 = cl1.size();
-                                String a2 = String.valueOf(a1);
+                                String a2 = valueOf(a1);
                                 spinnerArray = new String[cl1.size()];
                                 spinnerMap = new HashMap<Integer, String>();
 
@@ -939,7 +951,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
                                 JSONArray json_data = new JSONArray(response);
                                 int len = json_data.length();
-                                String len1 = String.valueOf(len);
+                                String len1 = valueOf(len);
                                 // Toast.makeText(getContext(), json_data.toString(), Toast.LENGTH_SHORT).show();
 
                                 for (int i = 0; i < json_data.length(); i++) {
@@ -956,7 +968,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 //                    Toast.makeText(getContext(), n.toString(), Toast.LENGTH_SHORT).show();
 
                                 Integer a1 = al1.size();
-                                String a2 = String.valueOf(a1);
+                                String a2 = valueOf(a1);
                                 spinnerArray = new String[al1.size()];
                                 spinnerMap1 = new HashMap<Integer, String>();
 
@@ -1082,7 +1094,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
                                 JSONArray json_data = new JSONArray(response);
                                 int len = json_data.length();
-                                String len1 = String.valueOf(len);
+                                String len1 = valueOf(len);
                                 // Toast.makeText(getContext(), json_data.toString(), Toast.LENGTH_SHORT).show();--
                                 for (int i = 0; i < json_data.length(); i++) {
                                     JSONObject json = json_data.getJSONObject(i);
@@ -1096,7 +1108,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                 }
 
                                 Integer a1 = bl1.size();
-                                String a2 = String.valueOf(a1);
+                                String a2 = valueOf(a1);
                                 spinnerArray3 = new String[bl1.size()];
                                 spinnerMap2 = new HashMap<Integer, String>();
 
@@ -1198,7 +1210,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
                                 JSONArray json_data = new JSONArray(response);
                                 int len = json_data.length();
-                                String len1 = String.valueOf(len);
+                                String len1 = valueOf(len);
                                 // Toast.makeText(getContext(), json_data.toString(), Toast.LENGTH_SHORT).show();--
 
 
@@ -1288,7 +1300,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
                                             double etamount1 = etrate1-(etrate1*etdiscount1*0.01);
 
-                                            etamount2 = String.valueOf(etamount1);
+                                            etamount2 = valueOf(etamount1);
 
                                             Toast.makeText(getContext(), "sdfdbfdf"+etamount2.toString(), Toast.LENGTH_SHORT).show();
 
@@ -1336,7 +1348,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
         String user_id1 = adapter.getItem(position);
         int user_id2 = adapter.getItemCount();
-        String user_id21 = String.valueOf(user_id2);
+        String user_id21 = valueOf(user_id2);
 
         Toast.makeText(getContext(), "getitem is  " + user_id1.toString() + " on row number " + position, Toast.LENGTH_SHORT).show();
         Toast.makeText(getContext(), "count is  " + user_id21.toString() + " on row number " + position, Toast.LENGTH_SHORT).show();
@@ -1383,4 +1395,6 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
         dialog.show();
 
     }
+
+
 }
