@@ -56,42 +56,43 @@ import static java.lang.String.*;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.ItemClickListener{
+public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.ItemClickListener {
     public int i;
     public MyRecyclerViewAdapter adapter;
     RecyclerView recyclerView;
     AddNewInvoice context;
     View view;
 
-    Spinner spinner1,spinner2,spin_customername,spin_terms,spin_tax;
-    String etamount2,st_customervalue,st_termsvalue;
-    EditText et_invoicedate,et_duedate;
+    Spinner spinner1, spinner2, spin_customername, spin_terms, spin_tax;
+    String etamount2, st_customervalue, st_termsvalue;
+    EditText et_invoicedate, et_duedate;
     int nosofdays;
 
     FloatingActionButton fab_dialog;
     Button btn_getallids;
-    ArrayList<String> n,e1,e2,e3,e4,e5,e6,a;
-    String a1,a2,a3,a4,a5,a6,a7,a8,a9,a10;
-    private ArrayList al1,al2,al3,al4,al5,al6,al7,al8,ql1,ql2,ql3,ql4,ql5,ql6,ql7,ql8;
+    ArrayList<String> n, e1, e2, e3, e4, e5, e6, a;
+    String a1, a2, a3, a4, a5, a6, a7, a8, a9, a10;
+    private ArrayList al1, al2, al3, al4, al5, al6, al7, al8, ql1, ql2, ql3, ql4, ql5, ql6, ql7, ql8;
 
     private int mYear, mMonth, mDay;
     JSONObject item2;
     JSONObject jo;
-    public String[] spinnerArray,spinnerArray3,spinnerArray4;
-    HashMap spinnerMap,spinnerMap1,spinnerMap2,spinnerMap4;
-    StringRequest stringRequest1,stringRequest2,stringRequest3,stringRequest4,stringRequest5;
-    String st_spinner1,st_taxvalue,company_id,st_quantitybyid,st_subpackingqty,st_packingqty,st_unitid;
-    int st_totalqty;
-    int check=0;
+    public String[] spinnerArray, spinnerArray3, spinnerArray4;
+    HashMap spinnerMap, spinnerMap1, spinnerMap2, spinnerMap4;
+    StringRequest stringRequest1, stringRequest2, stringRequest3, stringRequest4, stringRequest5;
+    String st_spinner1, st_taxvalue, company_id, st_quantitybyid, st_subpackingqty, st_packingqty, st_unitid;
+    int st_totalqty, st_unitpostion;
+    int check = 0;
     StringRequest stringRequest;
     TextInputEditText ethsn;
     //TextInputEditText etqty;
-    EditText etqty;
-    TextInputEditText etbqty,etrate,etdiscount,etamount;
+    //EditText etqty,etbqty;
+    boolean flag = true;
+    TextInputEditText etqty, etbqty, etrate, etdiscount, etamount;
+    int current_edittext1;
 
 
-
-    public AddNewInvoice()  {
+    public AddNewInvoice() {
         // Required empty public constructor
     }
 
@@ -101,14 +102,13 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_add_new_invoice, container, false);
-        context=this;
+        context = this;
 
         SharedPreferences prf = getContext().getSharedPreferences("Options", getContext().MODE_PRIVATE);
-        final String person_id=prf.getString("person_id", "");
-        company_id=prf.getString("company_id","");
-        final String company_flag=prf.getString("company_flag","");
-        final String isAdmin=prf.getString("isAdmin","");
-
+        final String person_id = prf.getString("person_id", "");
+        company_id = prf.getString("company_id", "");
+        final String company_flag = prf.getString("company_flag", "");
+        final String isAdmin = prf.getString("isAdmin", "");
 
 
         //Loading all Product name in Spinner
@@ -134,14 +134,13 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
         getItemDataByUnitId();
 
 
-
-        n= new ArrayList<String>();
-        e1= new ArrayList<String>();
-        e2= new ArrayList<String>();
-        e3= new ArrayList<String>();
-        e4= new ArrayList<String>();
-        e5= new ArrayList<String>();
-        e6= new ArrayList<String>();
+        n = new ArrayList<String>();
+        e1 = new ArrayList<String>();
+        e2 = new ArrayList<String>();
+        e3 = new ArrayList<String>();
+        e4 = new ArrayList<String>();
+        e5 = new ArrayList<String>();
+        e6 = new ArrayList<String>();
 
         jo = new JSONObject();
         final ArrayList<JSONObject> items = new ArrayList<JSONObject>();
@@ -169,14 +168,14 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
         bl2 = new ArrayList<String>();*/
 
 
-        a= new ArrayList<String>();
+        a = new ArrayList<String>();
 
-        fab_dialog=view.findViewById(R.id.showalertdialog);
+        fab_dialog = view.findViewById(R.id.showalertdialog);
 
-        spin_customername=view.findViewById(R.id.customernames);
-        spin_terms=view.findViewById(R.id.termss);
-        et_invoicedate=view.findViewById(R.id.invoicedatee);
-        et_duedate=view.findViewById(R.id.duedatee);
+        spin_customername = view.findViewById(R.id.customernames);
+        spin_terms = view.findViewById(R.id.termss);
+        et_invoicedate = view.findViewById(R.id.invoicedatee);
+        et_duedate = view.findViewById(R.id.duedatee);
 
         btn_getallids = view.findViewById(R.id.btn_getdata);
         recyclerView = (RecyclerView) view.findViewById(R.id.rv_addinvoice);
@@ -207,16 +206,16 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
                                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
                                 Calendar c = Calendar.getInstance();
-                                try{
+                                try {
                                     //Setting the date to the given date
                                     c.setTime(sdf.parse(et_invoicedate.getText().toString()));
-                                }catch(ParseException e){
+                                } catch (ParseException e) {
                                     e.printStackTrace();
                                 }
 
                                 c.add(Calendar.DAY_OF_MONTH, nosofdays);
                                 String newDate = sdf.format(c.getTime());
-                                Toast.makeText(getContext(), "New Date"+newDate.toString(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getContext(), "New Date" + newDate.toString(), Toast.LENGTH_SHORT).show();
 
                                 et_duedate.setText(newDate);
 
@@ -242,19 +241,18 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                 final Dialog dialog = builder.create();
                 spinner1 = dialogView.findViewById(R.id.spinner1);
                 spinner2 = dialogView.findViewById(R.id.spinner2);
-                spin_tax=dialogView.findViewById(R.id.spin_tax);
+                spin_tax = dialogView.findViewById(R.id.spin_tax);
 
                 RequestQueue requestQueue = Volley.newRequestQueue(getContext());
                 requestQueue.add(stringRequest);
 
-                RequestQueue requestQueue1 = Volley.newRequestQueue(getContext());
-                requestQueue1.add(stringRequest2);
-
+               /* RequestQueue requestQueue1 = Volley.newRequestQueue(getContext());
+                requestQueue1.add(stringRequest2);*/
 
 
                 ethsn = dialogView.findViewById(R.id.ethsn);
                 etqty = dialogView.findViewById(R.id.etqty);
-               // etqty.setText("1");
+                // etqty.setText("1");
                 etbqty = dialogView.findViewById(R.id.etbqty);
                 //etbqty.setText("1");
                 etrate = dialogView.findViewById(R.id.etrate);
@@ -262,102 +260,95 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                 etdiscount.setText("0.00");
                 etamount = dialogView.findViewById(R.id.etamount);
 
-                spinner2.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                // Spinner Drop down elements
+                List<String> categories = new ArrayList<String>();
+                categories.add("Automobile");
+                categories.add("Business Services");
+                categories.add("Computers");
+                categories.add("Education");
+                categories.add("Personal");
+                categories.add("Travel");
+
+                // Creating adapter for spinner
+                ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, categories);
+
+                // Drop down layout style - list view with radio button
+                dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+                // attaching data adapter to spinner
+                spinner2.setAdapter(dataAdapter);
+
+                spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        st_unitpostion=spinner2.getSelectedItemPosition();
+                        Toast.makeText(getContext(), "st_unitpostion"+st_unitpostion, Toast.LENGTH_SHORT).show();
+               /* st_unitid= (String) spinnerMap2.get(spinner2.getSelectedItemPosition());
+                Toast.makeText(getContext(), "Unit Position"+st_unitpostion, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(),"the selected item is\n"+ st_unitid, Toast.LENGTH_SHORT).show();
+
+                RequestQueue requestQueue10 = Volley.newRequestQueue(getContext());
+                requestQueue10.add(stringRequest5);*/
+
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+
+                    }
+                });
+
+                etqty.setOnFocusChangeListener(new View.OnFocusChangeListener() {
                     @Override
                     public void onFocusChange(View v, boolean hasFocus) {
-                        int current_edittext1=Integer.parseInt(etbqty.getText().toString());
-
-                        if(st_unitid==String.valueOf(1)) {
-                            /*  if(current_edittext1 > st_totalqty){*/
-                            etqty.setText(st_totalqty);
-                            etbqty.setText(st_totalqty);
-                        /*}*/
+                        try {
+                            current_edittext1 = Integer.parseInt(etqty.getText().toString());
+                        } catch (NumberFormatException e) {
+                            e.printStackTrace();
                         }
-                    }
-                });
-                /*etqty.addTextChangedListener(new TextWatcher() {
-                    @Override
-                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-                        //Toast.makeText(getContext(), "et amount is "+s.toString(), Toast.LENGTH_SHORT).show();
-                        etbqty.setText("1");
-//
-                    }
-
-                    @Override
-                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+                        int no = 500;
+                        String no1 = Integer.toString(no);
+                        if (!hasFocus && st_unitpostion==3) {
+                            Toast.makeText(getContext(), "hasFocus current_edittext" + current_edittext1, Toast.LENGTH_LONG).show();
+                            Toast.makeText(getContext(), "hasFocus current_edittext" + st_totalqty, Toast.LENGTH_LONG).show();
 
 
-                        //Toast.makeText(getContext(), "et amount is "+s.toString(), Toast.LENGTH_SHORT).show();
-*//*
-                                        int current_edittext1=Integer.parseInt(etbqty.getText().toString());
+                                       if (current_edittext1 > no) {
 
-                                        if(st_unitid==String.valueOf(1)){
-                                            if(current_edittext1 > st_totalqty){
-                                                etqty.setText(st_totalqty);
-                                                etbqty.setText(st_totalqty);
-                                            }
-                                        }*//*
-             *//*   int current_edittext1=Integer.parseInt(etbqty.getText().toString());
+                                           etbqty.setText(no1);
+                                           etqty.setText(no1);
+                                       } else {
 
+                                           etbqty.setText(etqty.getText().toString());
+                                           etqty.setText(etqty.getText().toString());
 
-                if(current_edittext1 > st_totalqty){
-                    etqty.setText(st_totalqty);
-                    etbqty.setText(st_totalqty);
-                }
-                else {
+                                       }
 
 
-                    Toast.makeText(getContext(), "161" + s.toString(), Toast.LENGTH_SHORT).show();
-                    // etbqty.setText(s.toString());
-                }
-*//*
-
-                    }
-
-                    @Override
-                    public void afterTextChanged(Editable s) {
-
-                        Toast.makeText(AddNewInvoice.this.getContext(),a4.toString(),Toast.LENGTH_SHORT);
-                                      *//*  try {
-                                            int ia4 = Integer.parseInt(a4.toString());
-                                            String ietbqty = (etbqty.getText().toString());
-                                            int ietbqty1 = Integer.parseInt(ietbqty);
-
-                                            if (ia4 == 0 || ietbqty1 > ia4) {
-
-                                                etbqty.setText("0");
-
-                                            } else {
 
 
-                                                Toast.makeText(getContext(), "161" + s.toString(), Toast.LENGTH_SHORT).show();
-                                                // etbqty.setText(s.toString());
-                                            }
-                                        }catch (NumberFormatException e)
-                                        {
-                                            // handle the exception
-                                        }*//*
-                        Toast.makeText(getContext(), "s\n"+s, Toast.LENGTH_SHORT).show();
-                        int current_edittext1=Integer.parseInt(etqty.getText().toString());
-
-                        Toast.makeText(getContext(), "TextWatcher"+current_edittext1+"\n"+st_totalqty, Toast.LENGTH_SHORT).show();
-
-                        if(current_edittext1 >= st_totalqty){
-                            Toast.makeText(getContext(), "Inside If Loop", Toast.LENGTH_SHORT).show();
-                            etqty.setText(st_totalqty);
-                            etbqty.setText(st_totalqty);
                         }
-                        else {
+                        else if(!hasFocus && st_unitpostion==2) {
+                            int no3 = 200;
+                            String no2 = Integer.toString(no3);
 
+                            if (current_edittext1 > no3) {
 
-                            Toast.makeText(getContext(), "161" + s.toString(), Toast.LENGTH_SHORT).show();
-                            // etbqty.setText(s.toString());
+                                etbqty.setText(no2);
+                                etqty.setText(no2);
+                            } else {
+
+                                etbqty.setText(etqty.getText().toString());
+                                etqty.setText(etqty.getText().toString());
+
+                            }
                         }
+
                     }
 
                 });
-*/
+
+
                 Button btnLogin = dialogView.findViewById(R.id.btnLogin);
 
 //                Toast.makeText(AddNewInvoice.this.getContext(), a1.toString(), Toast.LENGTH_SHORT).show();
@@ -379,14 +370,14 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                         ql7.add(etamount.getText().toString());
                         ql8.add(ethsn.getText().toString());
 
-                        try{
+                        try {
 
                             final RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(AddNewInvoice.this.getContext());
 
                             recyclerView.setLayoutManager(mLayoutManager);
 
                             recyclerView.setItemAnimator(new DefaultItemAnimator());
-                            adapter = new MyRecyclerViewAdapter(getContext(), ql1,ql2,ql3,ql4,ql5,ql6,ql7,ql8,"1");
+                            adapter = new MyRecyclerViewAdapter(getContext(), ql1, ql2, ql3, ql4, ql5, ql6, ql7, ql8, "1");
                             adapter.setClickListener(AddNewInvoice.this);
                             recyclerView.setAdapter(adapter);
                             recyclerView.addItemDecoration(new DividerItemDecoration(getContext(),
@@ -403,8 +394,6 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
         });
 
 
-
-
         btn_getallids.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -419,26 +408,25 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
     }
 
     //Fetching all taxes
-    public void getTaxesInSpin(){
+    public void getTaxesInSpin() {
         final StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.FETCH_ITEM_TAX1_URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         //If we are getting success from server
-                        if(TextUtils.isEmpty(response)){
+                        if (TextUtils.isEmpty(response)) {
                             //Creating a shared preference
-                            Toast.makeText(getContext(), "Unable to fetch tax data"+response.toString(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(getContext(), "Unable to fetch tax data" + response.toString(), Toast.LENGTH_LONG).show();
 
-                        }else{
+                        } else {
 
                             try {
 
-                                Toast.makeText(getContext(), "getTaxValue Response \n\n\n"+response.toString(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getContext(), "getTaxValue Response \n\n\n" + response.toString(), Toast.LENGTH_SHORT).show();
 
 
                                 List<String> al1 = new ArrayList<String>();
                                 List<String> al2 = new ArrayList<String>();
-
 
 
                                 JSONArray json_data = new JSONArray(response);
@@ -460,16 +448,15 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                 // Toast.makeText(getContext(), "the size is" + a2.toString(), Toast.LENGTH_SHORT).show();
 
 
-                                for (int i = 0; i <al1.size(); i++)
-                                {
-                                    spinnerMap4.put(i,al1.get(i));
+                                for (int i = 0; i < al1.size(); i++) {
+                                    spinnerMap4.put(i, al1.get(i));
                                     spinnerArray4[i] = al1.get(i);
                                 }
 
                                     /*ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(AddNewSchemesInformationFragment.this.getActivity(),
                                             android.R.layout.simple_spinner_dropdown_item, al2);
 */
-                                ArrayAdapter<String> dataAdapter=new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item, al2);
+                                ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, al2);
                                 dataAdapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
                                 spin_tax.setAdapter(dataAdapter);
 
@@ -491,8 +478,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                         st_taxvalue = (String) spinnerMap4.get(spin_tax.getSelectedItemPosition());
 
 
-                                        Toast.makeText(getContext(), "Size Value"+st_taxvalue, Toast.LENGTH_SHORT).show();
-
+                                        Toast.makeText(getContext(), "Size Value" + st_taxvalue, Toast.LENGTH_SHORT).show();
 
 
                                     }
@@ -526,14 +512,14 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                     public void onErrorResponse(VolleyError error) {
                         //You can handle error here if you want
                     }
-                }){
+                }) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String,String> params = new HashMap<>();
+                Map<String, String> params = new HashMap<>();
                 //Adding parameters to request
                 //params.put("ItemId", "ItemId");
                 //params.put("ItemName", "ItemName");
-                params.put("company_id",company_id);
+                params.put("company_id", company_id);
 //                params.put("password", password);
 
                 //returning parameter
@@ -545,22 +531,22 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
         requestQueue1.add(stringRequest);
     }
 
-    public void LoadAllProductInSpin(){
+    public void LoadAllProductInSpin() {
         stringRequest = new StringRequest(Request.Method.POST, Config.FETCH_PRODUCT_URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         //If we are getting success from server
-                        if(TextUtils.isEmpty(response)){
+                        if (TextUtils.isEmpty(response)) {
                             //Creating a shared preference
-                            Toast.makeText(getContext(), "Invalid username or password"+response.toString(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(getContext(), "Invalid username or password" + response.toString(), Toast.LENGTH_LONG).show();
 
-                        }else{
+                        } else {
 
                             try {
 
                                 al2.clear();
-                                Toast.makeText(getContext(), "111"+response.toString(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getContext(), "111" + response.toString(), Toast.LENGTH_SHORT).show();
 
                                 //getting taxes in spinner..
                                 getTaxesInSpin();
@@ -581,16 +567,15 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                     al8.add(json.getString("Description"));
 
 
-
                                     // a= a + "Age : "+json.getString("c_phone")+"\n";
                                     //j= j + "Job : "+json.getString("Job")+"\n";
                                 }
 
                                 Integer a1 = al1.size();
                                 spinnerArray = new String[al1.size()];
-                                spinnerMap = new HashMap<Integer,String>();
+                                spinnerMap = new HashMap<Integer, String>();
 
-                                for(int p=0;p<al1.size();p++){
+                                for (int p = 0; p < al1.size(); p++) {
 
                                     spinnerMap.put(p, (String) al1.get(p));
                                     spinnerArray[p] = (String) al1.get(p);
@@ -620,7 +605,6 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                         requestQueue1.add(stringRequest1);
 
 
-
                                     }
 
                                     @Override
@@ -650,13 +634,13 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                     public void onErrorResponse(VolleyError error) {
                         //You can handle error here if you want
                     }
-                }){
+                }) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String,String> params = new HashMap<>();
+                Map<String, String> params = new HashMap<>();
                 //Adding parameters to request
                 params.put("company_id", company_id);
-                int type=1;
+                int type = 1;
                 params.put("Ttype", valueOf(type));
 //                params.put("password", password);
 
@@ -666,27 +650,26 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
         };
     }
 
-    public void getProductDetailsById(){
+    public void getProductDetailsById() {
         stringRequest1 = new StringRequest(Request.Method.POST, Config.FETCH_ITEMNAME_INFO_BY_ID_URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         //If we are getting success from server
-                        if(TextUtils.isEmpty(response)){
+                        if (TextUtils.isEmpty(response)) {
                             //Creating a shared preference
-                            Toast.makeText(getContext(), "Error in fetching data"+response.toString(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(getContext(), "Error in fetching data" + response.toString(), Toast.LENGTH_LONG).show();
 
-                        }else{
+                        } else {
 
 
                             try {
 
 
+                                Toast.makeText(getContext(), "161" + response.toString(), Toast.LENGTH_SHORT).show();
 
-                                Toast.makeText(getContext(), "161"+response.toString(), Toast.LENGTH_SHORT).show();
-
-                                JSONObject json=new JSONObject(response);
-                                Toast.makeText(getContext(), "162"+json, Toast.LENGTH_SHORT).show();
+                                JSONObject json = new JSONObject(response);
+                                Toast.makeText(getContext(), "162" + json, Toast.LENGTH_SHORT).show();
 
                                 a1 = (json.getString("itemDetailId"));
                                 a2 = (json.getString("TaxId"));
@@ -697,20 +680,20 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                 a7 = (json.getString("SubPacking"));
                                 a8 = (json.getString("Description"));
                                 a9 = (json.getString("price"));
-                                a10= (json.getString("totalqty"));
+                                a10 = (json.getString("totalqty"));
 
 
                                 String result1 = response.replace("\"", "");
                                 result1 = result1.replaceAll("[\\[\\]\\(\\)]", "");
                                 String str[] = result1.split(",");
 
-                                st_quantitybyid=a4;
-                                st_packingqty=a6;
-                                st_subpackingqty=a7;
-                                st_totalqty=Integer.parseInt(a10);
+                                st_quantitybyid = a4;
+                                st_packingqty = a6;
+                                st_subpackingqty = a7;
+                                st_totalqty = Integer.parseInt(a10);
 
-                                Toast.makeText(getContext(), "Quantity Id"+st_quantitybyid+"\nPacking_Qty"+st_packingqty
-                                        +"\nSub_PackingQty"+st_subpackingqty+"\nTotalQty"+st_totalqty, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getContext(), "Quantity Id" + st_quantitybyid + "\nPacking_Qty" + st_packingqty
+                                        + "\nSub_PackingQty" + st_subpackingqty + "\nTotalQty" + st_totalqty, Toast.LENGTH_SHORT).show();
 
                                 ethsn.setText(a3.toString());
 
@@ -718,12 +701,11 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                 etamount.setText(etrate.getText().toString());
 
 
-
                                 etdiscount.addTextChangedListener(new TextWatcher() {
                                     @Override
                                     public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-                                        Toast.makeText(getContext(), "161"+s.toString(), Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getContext(), "161" + s.toString(), Toast.LENGTH_SHORT).show();
 
                                     }
 
@@ -736,20 +718,20 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                     @Override
                                     public void afterTextChanged(Editable s) {
 
-                                        Toast.makeText(getContext(), "et amount is "+s.toString(), Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getContext(), "et amount is " + s.toString(), Toast.LENGTH_SHORT).show();
                                         String etdiscount3 = s.toString();
 
                                         try {
                                             double etrate1 = Double.valueOf(etrate.getText().toString());
                                             double etdiscount1 = Double.valueOf(etdiscount3.toString());
 
-                                            double etamount1 = etrate1-(etrate1*etdiscount1*0.01);
+                                            double etamount1 = etrate1 - (etrate1 * etdiscount1 * 0.01);
 
                                             etamount2 = valueOf(etamount1);
 
-                                            Toast.makeText(getContext(), "sdfdbfdf"+etamount2.toString(), Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(getContext(), "sdfdbfdf" + etamount2.toString(), Toast.LENGTH_SHORT).show();
 
-                                        }catch(NumberFormatException ex) {
+                                        } catch (NumberFormatException ex) {
 
                                         }
                                         etamount.setText(etamount2.toString());
@@ -758,8 +740,6 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                     }
 
                                 });
-
-
 
 
 //                                                hsncodee.setText(a3.toString());
@@ -776,11 +756,9 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
                                 //al = Arrays.asList(n);
 
-                            } catch (JSONException e){
+                            } catch (JSONException e) {
                                 e.printStackTrace();
                             }
-
-
 
 
                         }
@@ -791,13 +769,13 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                     public void onErrorResponse(VolleyError error) {
                         //You can handle error here if you want
                     }
-                }){
+                }) {
             @Override
-            protected Map<String, String> getParams() throws AuthFailureError{
-                Map<String,String> params = new HashMap<>();
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
                 //Adding parameters to request
                 params.put("itemname", st_spinner1);
-                params.put("company_id",company_id);
+                params.put("company_id", company_id);
 
 
                 //returning parameter
@@ -806,21 +784,21 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
         };
     }
 
-    public void getCustomerNameSpin(){
+    public void getCustomerNameSpin() {
         stringRequest3 = new StringRequest(Request.Method.POST, Config.DISPLAY_CUSTOMERS_URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         //If we are getting success from server
-                        if(TextUtils.isEmpty(response)){
+                        if (TextUtils.isEmpty(response)) {
                             //Creating a shared preference
-                            Toast.makeText(getContext(), "Unable to fetch customer data"+response.toString(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(getContext(), "Unable to fetch customer data" + response.toString(), Toast.LENGTH_LONG).show();
 
-                        }else{
+                        } else {
 
                             try {
 
-                                Toast.makeText(getContext(), "101"+response.toString(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getContext(), "101" + response.toString(), Toast.LENGTH_SHORT).show();
 
                                 List<String> cl1 = new ArrayList<String>();
                                 List<String> cl2 = new ArrayList<String>();
@@ -837,8 +815,6 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                     cl2.add((json.getString("name")));
 
 
-
-
                                     // a= a + "Age : "+json.getString("c_phone")+"\n";
                                     //j= j + "Job : "+json.getString("Job")+"\n";
                                 }
@@ -852,16 +828,15 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                 // Toast.makeText(getContext(), "the size is" + a2.toString(), Toast.LENGTH_SHORT).show();
 
 
-                                for (int i = 0; i <cl1.size(); i++)
-                                {
-                                    spinnerMap.put(i,cl1.get(i));
+                                for (int i = 0; i < cl1.size(); i++) {
+                                    spinnerMap.put(i, cl1.get(i));
                                     spinnerArray[i] = cl1.get(i);
                                 }
 
                                     /*ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(AddNewSchemesInformationFragment.this.getActivity(),
                                             android.R.layout.simple_spinner_dropdown_item, al2);
 */
-                                ArrayAdapter<String> dataAdapter=new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item, cl2);
+                                ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, cl2);
                                 dataAdapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
                                 spin_customername.setAdapter(dataAdapter);
 
@@ -883,7 +858,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                         st_customervalue = (String) spinnerMap.get(spin_customername.getSelectedItemPosition());
 
 
-                                        Toast.makeText(getContext(), "Size Value"+st_customervalue, Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getContext(), "Size Value" + st_customervalue, Toast.LENGTH_SHORT).show();
                                     }
 
                                     @Override
@@ -911,10 +886,10 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                     public void onErrorResponse(VolleyError error) {
                         //You can handle error here if you want
                     }
-                }){
+                }) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String,String> params = new HashMap<>();
+                Map<String, String> params = new HashMap<>();
                 //Adding parameters to request
                 params.put("company_id", company_id);
 //                params.put("password", password);
@@ -930,21 +905,21 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
     }
 
-    public void getPaytermsInSpin(){
+    public void getPaytermsInSpin() {
         stringRequest4 = new StringRequest(Request.Method.POST, Config.FETCH_PAY_TERMS_URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         //If we are getting success from server
-                        if(TextUtils.isEmpty(response)){
+                        if (TextUtils.isEmpty(response)) {
                             //Creating a shared preference
-                            Toast.makeText(getContext(), "Unable to fetch terms data"+response.toString(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(getContext(), "Unable to fetch terms data" + response.toString(), Toast.LENGTH_LONG).show();
 
-                        }else{
+                        } else {
 
                             try {
 
-                                Toast.makeText(getContext(), "111"+response.toString(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getContext(), "111" + response.toString(), Toast.LENGTH_SHORT).show();
 
                                 List<String> al1 = new ArrayList<String>();
 
@@ -957,9 +932,6 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                 for (int i = 0; i < json_data.length(); i++) {
                                     JSONObject json = json_data.getJSONObject(i);
                                     al1.add("NET-".concat(json.getString("Paytermval")));
-
-
-
 
 
                                     // a= a + "Age : "+json.getString("c_phone")+"\n";
@@ -975,16 +947,15 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                 // Toast.makeText(getContext(), "the size is" + a2.toString(), Toast.LENGTH_SHORT).show();
 
 
-                                for (int i = 0; i <al1.size(); i++)
-                                {
-                                    spinnerMap1.put(i,al1.get(i));
+                                for (int i = 0; i < al1.size(); i++) {
+                                    spinnerMap1.put(i, al1.get(i));
                                     spinnerArray[i] = al1.get(i);
                                 }
 
                                     /*ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(AddNewSchemesInformationFragment.this.getActivity(),
                                             android.R.layout.simple_spinner_dropdown_item, al2);
 */
-                                ArrayAdapter<String> dataAdapter=new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item, al1);
+                                ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, al1);
                                 dataAdapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
                                 spin_terms.setAdapter(dataAdapter);
 
@@ -1009,19 +980,19 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                         nosofdays = Integer.parseInt((items1[1]));
 
 
-                                        Toast.makeText(getContext(), "Term Value"+items1[1].toString(), Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getContext(), "Term Value" + items1[1].toString(), Toast.LENGTH_SHORT).show();
                                         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
                                         Calendar c = Calendar.getInstance();
-                                        try{
+                                        try {
                                             //Setting the date to the given date
                                             c.setTime(sdf.parse(et_invoicedate.getText().toString()));
-                                        }catch(ParseException e){
+                                        } catch (ParseException e) {
                                             e.printStackTrace();
                                         }
 
                                         c.add(Calendar.DAY_OF_MONTH, nosofdays);
                                         String newDate = sdf.format(c.getTime());
-                                        Toast.makeText(getContext(), "New Date"+newDate.toString(), Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getContext(), "New Date" + newDate.toString(), Toast.LENGTH_SHORT).show();
 
                                         et_duedate.setText(newDate);
 
@@ -1052,10 +1023,10 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                     public void onErrorResponse(VolleyError error) {
                         //You can handle error here if you want
                     }
-                }){
+                }) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String,String> params = new HashMap<>();
+                Map<String, String> params = new HashMap<>();
                 //Adding parameters to request
                 params.put("company_id", company_id);
 //                params.put("password", password);
@@ -1071,6 +1042,17 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
     }
 
     //Fetching Unit Data....
+    public void getUnitDataInSpin() {
+        // Spinner click listener
+//        spinner2.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
+
+
+    }
+
+
+
+
+/*
     public void getUnitDataInSpin(){
         stringRequest2 = new StringRequest(Request.Method.POST, Config.FETCH_UNIT_URL,
                 new Response.Listener<String>() {
@@ -1133,9 +1115,9 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                 spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
                                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                                        st_unitpostion=spinner2.getSelectedItemPosition();
                                         st_unitid= (String) spinnerMap2.get(spinner2.getSelectedItemPosition());
-
+                                        Toast.makeText(getContext(), "Unit Position"+st_unitpostion, Toast.LENGTH_SHORT).show();
                                         Toast.makeText(getContext(),"the selected item is\n"+ st_unitid, Toast.LENGTH_SHORT).show();
 
                                         RequestQueue requestQueue10 = Volley.newRequestQueue(getContext());
@@ -1189,6 +1171,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
             }
         };
     }
+*/
 
     //Fetching unit data like packingqty,subpackingqty,Quantity...
     public void getItemDataByUnitId(){

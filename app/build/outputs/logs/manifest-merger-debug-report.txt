@@ -1,137 +1,133 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:2:1-26:12
-MERGED from [com.android.support:design:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/4cc0cab74d77b8612416128f90903e65/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:appcompat-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/xxovek/.gradle/caches/transforms-2/files-2.1/c49e3425ad62daf7af64803996c814af/AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:support-v4:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/3f7220010102e5532ee473e22e56d669/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:cardview-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/4d5a26c70484d6d0e9d80588b612d795/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.volley:volley:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/d5f62ecbe6a65d3b47610e3740ba08dd/AndroidManifest.xml:2:1-11:12
-MERGED from [com.basgeekball:awesome-validation:1.3] /home/xxovek/.gradle/caches/transforms-2/files-2.1/897253019a7168ea7858002a4869e3f7/AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:support-fragment:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/3a015844cbe308277f36a0c0b16a7c14/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/aadff53bbaf3fdbf7951cd97f4301413/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/545189b8580dd99b68ddfe5e6fdc1f54/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/3f60f032f81126511a5729be5c9f2f1e/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/7a31208dae6e482a469d581e7c349326/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/07313adcf3f1a7a27de7119f8493cd70/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-media-compat:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/0e3b6fa6bf066591704a8769afecdb09/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:transition:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/ca8c4ef7fe39ae0825b081588d9fa357/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/99b1c8d2e859a8ae43658d030da533b4/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/59f79430a703fecf40bd9d642e6bf353/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/9005f54384d2b18b8ea3fe09b2aeb8f0/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/3cdf4ed156aa2bca969bdac791ccdfd6/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.core:runtime:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/e0cb3cefcb03f328ace0a74accb09470/AndroidManifest.xml:17:1-22:12
-INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:2:1-26:12
+ADDED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:2:1-26:12
+MERGED from [com.android.support:design:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/00fff806af636d133b3d49bf0b0048b2/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/fe7df601f385acea8c370a93849cb9e4/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/rockstar/.gradle/caches/transforms-2/files-2.1/dadc2c9adaa1f71dd8d3715ce3bee96b/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-v4:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/145ac08431abcf40556fa3383fd30d69/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/12ad993682a50eb94db90306f54fe869/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.volley:volley:1.1.0] /home/rockstar/.gradle/caches/transforms-2/files-2.1/c0ccb2031b07372a49ca4773dd99cb43/AndroidManifest.xml:2:1-11:12
+MERGED from [com.basgeekball:awesome-validation:1.3] /home/rockstar/.gradle/caches/transforms-2/files-2.1/aaa12ccfe9729842c4ecc82d656ddccd/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/c6b8cb50660dcfb9cbaf4509d5c9415d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/80fa1c6a8e5c92a4a73d129782468a5e/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/4841fe96530ef60ae0a5261c412188f6/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/ed8669e88e215372aae3fbb5930af59c/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/96bb9c4459a49d5ad7ada2b1aca688ba/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/4695c2a5149c0e60965f483712ed22fe/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/2c2d5dca7ed83b1fb11a10e95d3d0f53/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/88a4d5170a5555f79e669ccc4a4d739b/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/7aa318744b5eae3a8e4a45018a44d793/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/rockstar/.gradle/caches/transforms-2/files-2.1/b9c5d4ff4f799584b072d0da16c92cde/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/rockstar/.gradle/caches/transforms-2/files-2.1/990b20f3c865056a55d3fda8209be9bd/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/rockstar/.gradle/caches/transforms-2/files-2.1/e69403e96cfbc8b81c652fcef4b1b122/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] /home/rockstar/.gradle/caches/transforms-2/files-2.1/a02030dd7582aaaca4099c650ecf3813/AndroidManifest.xml:17:1-22:12
+INJECTED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:2:1-26:12
 	package
-		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:3:5-41
-		INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
-		INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
+		ADDED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:3:5-41
+		INJECTED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
+		INJECTED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
-		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:2:1-26:12
-		INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
+		INJECTED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
+		ADDED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:2:1-26:12
+		INJECTED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
 	android:versionCode
-		INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
-		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:2:1-26:12
-		INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
+		INJECTED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
+		ADDED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:2:1-26:12
+		INJECTED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:5:5-67
+ADDED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:5:5-67
 	android:name
-		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:5:22-64
+		ADDED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:5:22-64
 application
-ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:7:5-24:19
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/xxovek/.gradle/caches/transforms-2/files-2.1/c49e3425ad62daf7af64803996c814af/AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/xxovek/.gradle/caches/transforms-2/files-2.1/c49e3425ad62daf7af64803996c814af/AndroidManifest.xml:9:5-20
-MERGED from [com.android.volley:volley:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/d5f62ecbe6a65d3b47610e3740ba08dd/AndroidManifest.xml:9:5-20
-MERGED from [com.android.volley:volley:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/d5f62ecbe6a65d3b47610e3740ba08dd/AndroidManifest.xml:9:5-20
+ADDED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:7:5-24:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/rockstar/.gradle/caches/transforms-2/files-2.1/dadc2c9adaa1f71dd8d3715ce3bee96b/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/rockstar/.gradle/caches/transforms-2/files-2.1/dadc2c9adaa1f71dd8d3715ce3bee96b/AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.0] /home/rockstar/.gradle/caches/transforms-2/files-2.1/c0ccb2031b07372a49ca4773dd99cb43/AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.0] /home/rockstar/.gradle/caches/transforms-2/files-2.1/c0ccb2031b07372a49ca4773dd99cb43/AndroidManifest.xml:9:5-20
 	android:supportsRtl
-		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:12:9-35
+		ADDED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:12:9-35
 	android:label
-		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:10:9-41
+		ADDED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:10:9-41
 	android:roundIcon
-		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:11:9-56
+		ADDED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:11:9-56
 	android:icon
-		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:9:9-51
+		ADDED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:9:9-51
 	android:allowBackup
-		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:8:9-35
+		ADDED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:8:9-35
 	android:theme
-		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:13:9-40
-activity#com.example.xxovek.foodkor.LOGIN_AND_REGISTRATION.MainActivity
-ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:14:9-20:20
-	android:name
-		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:14:19-70
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:15:13-19:29
-action#android.intent.action.MAIN
-ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:16:17-69
-	android:name
-		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:16:25-66
-category#android.intent.category.LAUNCHER
-ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:18:17-77
-	android:name
-		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:18:27-74
+		ADDED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:13:9-40
 activity#com.example.xxovek.foodkor.HomeActivity
-ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:21:9-50
+ADDED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:14:9-20:20
 	android:name
-		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:21:19-47
+		ADDED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:14:19-47
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:15:13-19:29
+action#android.intent.action.MAIN
+ADDED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:16:17-69
+	android:name
+		ADDED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:16:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:18:17-77
+	android:name
+		ADDED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:18:27-74
 uses-sdk
-INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
-INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
-MERGED from [com.android.support:design:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/4cc0cab74d77b8612416128f90903e65/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:design:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/4cc0cab74d77b8612416128f90903e65/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/c652673acd0d6185be5581c81a55c301/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/xxovek/.gradle/caches/transforms-2/files-2.1/c49e3425ad62daf7af64803996c814af/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/xxovek/.gradle/caches/transforms-2/files-2.1/c49e3425ad62daf7af64803996c814af/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:support-v4:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/3f7220010102e5532ee473e22e56d669/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/3f7220010102e5532ee473e22e56d669/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/4d5a26c70484d6d0e9d80588b612d795/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/4d5a26c70484d6d0e9d80588b612d795/AndroidManifest.xml:20:5-44
-MERGED from [com.android.volley:volley:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/d5f62ecbe6a65d3b47610e3740ba08dd/AndroidManifest.xml:7:5-43
-MERGED from [com.android.volley:volley:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/d5f62ecbe6a65d3b47610e3740ba08dd/AndroidManifest.xml:7:5-43
-MERGED from [com.basgeekball:awesome-validation:1.3] /home/xxovek/.gradle/caches/transforms-2/files-2.1/897253019a7168ea7858002a4869e3f7/AndroidManifest.xml:7:5-9:41
-MERGED from [com.basgeekball:awesome-validation:1.3] /home/xxovek/.gradle/caches/transforms-2/files-2.1/897253019a7168ea7858002a4869e3f7/AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:support-fragment:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/3a015844cbe308277f36a0c0b16a7c14/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/3a015844cbe308277f36a0c0b16a7c14/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/aadff53bbaf3fdbf7951cd97f4301413/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/aadff53bbaf3fdbf7951cd97f4301413/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/545189b8580dd99b68ddfe5e6fdc1f54/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/545189b8580dd99b68ddfe5e6fdc1f54/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/3f60f032f81126511a5729be5c9f2f1e/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/3f60f032f81126511a5729be5c9f2f1e/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/7a31208dae6e482a469d581e7c349326/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/7a31208dae6e482a469d581e7c349326/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/07313adcf3f1a7a27de7119f8493cd70/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/07313adcf3f1a7a27de7119f8493cd70/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/0e3b6fa6bf066591704a8769afecdb09/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/0e3b6fa6bf066591704a8769afecdb09/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/ca8c4ef7fe39ae0825b081588d9fa357/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/ca8c4ef7fe39ae0825b081588d9fa357/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/99b1c8d2e859a8ae43658d030da533b4/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/99b1c8d2e859a8ae43658d030da533b4/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/59f79430a703fecf40bd9d642e6bf353/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/59f79430a703fecf40bd9d642e6bf353/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/9005f54384d2b18b8ea3fe09b2aeb8f0/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/9005f54384d2b18b8ea3fe09b2aeb8f0/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/3cdf4ed156aa2bca969bdac791ccdfd6/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/3cdf4ed156aa2bca969bdac791ccdfd6/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/e0cb3cefcb03f328ace0a74accb09470/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/e0cb3cefcb03f328ace0a74accb09470/AndroidManifest.xml:20:5-44
-INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
-INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
+INJECTED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
+INJECTED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:design:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/00fff806af636d133b3d49bf0b0048b2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/00fff806af636d133b3d49bf0b0048b2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/fe7df601f385acea8c370a93849cb9e4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/fe7df601f385acea8c370a93849cb9e4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/rockstar/.gradle/caches/transforms-2/files-2.1/dadc2c9adaa1f71dd8d3715ce3bee96b/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/rockstar/.gradle/caches/transforms-2/files-2.1/dadc2c9adaa1f71dd8d3715ce3bee96b/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/145ac08431abcf40556fa3383fd30d69/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/145ac08431abcf40556fa3383fd30d69/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/12ad993682a50eb94db90306f54fe869/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/12ad993682a50eb94db90306f54fe869/AndroidManifest.xml:20:5-44
+MERGED from [com.android.volley:volley:1.1.0] /home/rockstar/.gradle/caches/transforms-2/files-2.1/c0ccb2031b07372a49ca4773dd99cb43/AndroidManifest.xml:7:5-43
+MERGED from [com.android.volley:volley:1.1.0] /home/rockstar/.gradle/caches/transforms-2/files-2.1/c0ccb2031b07372a49ca4773dd99cb43/AndroidManifest.xml:7:5-43
+MERGED from [com.basgeekball:awesome-validation:1.3] /home/rockstar/.gradle/caches/transforms-2/files-2.1/aaa12ccfe9729842c4ecc82d656ddccd/AndroidManifest.xml:7:5-9:41
+MERGED from [com.basgeekball:awesome-validation:1.3] /home/rockstar/.gradle/caches/transforms-2/files-2.1/aaa12ccfe9729842c4ecc82d656ddccd/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:support-fragment:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/c6b8cb50660dcfb9cbaf4509d5c9415d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/c6b8cb50660dcfb9cbaf4509d5c9415d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/80fa1c6a8e5c92a4a73d129782468a5e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/80fa1c6a8e5c92a4a73d129782468a5e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/4841fe96530ef60ae0a5261c412188f6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/4841fe96530ef60ae0a5261c412188f6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/ed8669e88e215372aae3fbb5930af59c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/ed8669e88e215372aae3fbb5930af59c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/96bb9c4459a49d5ad7ada2b1aca688ba/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/96bb9c4459a49d5ad7ada2b1aca688ba/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/4695c2a5149c0e60965f483712ed22fe/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/4695c2a5149c0e60965f483712ed22fe/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/2c2d5dca7ed83b1fb11a10e95d3d0f53/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/2c2d5dca7ed83b1fb11a10e95d3d0f53/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/88a4d5170a5555f79e669ccc4a4d739b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/88a4d5170a5555f79e669ccc4a4d739b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/7aa318744b5eae3a8e4a45018a44d793/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /home/rockstar/.gradle/caches/transforms-2/files-2.1/7aa318744b5eae3a8e4a45018a44d793/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/rockstar/.gradle/caches/transforms-2/files-2.1/b9c5d4ff4f799584b072d0da16c92cde/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/rockstar/.gradle/caches/transforms-2/files-2.1/b9c5d4ff4f799584b072d0da16c92cde/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/rockstar/.gradle/caches/transforms-2/files-2.1/990b20f3c865056a55d3fda8209be9bd/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/rockstar/.gradle/caches/transforms-2/files-2.1/990b20f3c865056a55d3fda8209be9bd/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/rockstar/.gradle/caches/transforms-2/files-2.1/e69403e96cfbc8b81c652fcef4b1b122/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/rockstar/.gradle/caches/transforms-2/files-2.1/e69403e96cfbc8b81c652fcef4b1b122/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /home/rockstar/.gradle/caches/transforms-2/files-2.1/a02030dd7582aaaca4099c650ecf3813/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /home/rockstar/.gradle/caches/transforms-2/files-2.1/a02030dd7582aaaca4099c650ecf3813/AndroidManifest.xml:20:5-44
+INJECTED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
+INJECTED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
-		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
-		INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
+		INJECTED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
+		ADDED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
+		INJECTED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
-		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
-		INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
+		INJECTED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
+		ADDED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
+		INJECTED from /home/rockstar/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
