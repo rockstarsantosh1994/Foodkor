@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/rockstar/AndroidStudioProjects/Foodkor/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-it/values-it.xml",
+            "outputFile": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-it/values-it.xml",
             "map": [
                 {
-                    "source": "/home/rockstar/.gradle/caches/transforms-2/files-2.1/7aa318744b5eae3a8e4a45018a44d793/res/values-it/values-it.xml",
+                    "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/7b78dcd1c7bf03ce2ad53c50f4ccae3b/res/values-it/values-it.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/rockstar/.gradle/caches/transforms-2/files-2.1/fe7df601f385acea8c370a93849cb9e4/res/values-it/values-it.xml",
+                    "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/7431adddaf44cc1836e67f01e17a52aa/res/values-it/values-it.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

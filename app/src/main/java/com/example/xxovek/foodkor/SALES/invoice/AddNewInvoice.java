@@ -80,14 +80,15 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
     public String[] spinnerArray, spinnerArray3, spinnerArray4;
     HashMap spinnerMap, spinnerMap1, spinnerMap2, spinnerMap4;
     StringRequest stringRequest1, stringRequest2, stringRequest3, stringRequest4, stringRequest5;
-    String st_spinner1, st_taxvalue, company_id, st_quantitybyid, st_subpackingqty, st_packingqty, st_unitid;
-    int st_totalqty, st_unitpostion;
+    String st_spinner1, st_taxvalue, company_id, st_quantitybyid,  st_unitid,amount_nos;
+    int st_totalqty, st_unitpostion,st_subpackingqty,st_packingqty;
+    double st_price,rate_editext1;
     int check = 0;
     StringRequest stringRequest;
     TextInputEditText ethsn;
     //TextInputEditText etqty;
     //EditText etqty,etbqty;
-    boolean flag = true;
+    //boolean flag = true;
     TextInputEditText etqty, etbqty, etrate, etdiscount, etamount;
     int current_edittext1;
 
@@ -246,20 +247,20 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                 RequestQueue requestQueue = Volley.newRequestQueue(getContext());
                 requestQueue.add(stringRequest);
 
-               /* RequestQueue requestQueue1 = Volley.newRequestQueue(getContext());
-                requestQueue1.add(stringRequest2);*/
+                RequestQueue requestQueue1 = Volley.newRequestQueue(getContext());
+                requestQueue1.add(stringRequest2);
 
 
                 ethsn = dialogView.findViewById(R.id.ethsn);
                 etqty = dialogView.findViewById(R.id.etqty);
-                // etqty.setText("1");
+                 etqty.setText("1");
                 etbqty = dialogView.findViewById(R.id.etbqty);
-                //etbqty.setText("1");
+                etbqty.setText("1");
                 etrate = dialogView.findViewById(R.id.etrate);
                 etdiscount = dialogView.findViewById(R.id.etdiscount);
                 etdiscount.setText("0.00");
                 etamount = dialogView.findViewById(R.id.etamount);
-
+/*
                 // Spinner Drop down elements
                 List<String> categories = new ArrayList<String>();
                 categories.add("Automobile");
@@ -283,12 +284,12 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                         st_unitpostion=spinner2.getSelectedItemPosition();
                         Toast.makeText(getContext(), "st_unitpostion"+st_unitpostion, Toast.LENGTH_SHORT).show();
-               /* st_unitid= (String) spinnerMap2.get(spinner2.getSelectedItemPosition());
+               *//* st_unitid= (String) spinnerMap2.get(spinner2.getSelectedItemPosition());
                 Toast.makeText(getContext(), "Unit Position"+st_unitpostion, Toast.LENGTH_SHORT).show();
                 Toast.makeText(getContext(),"the selected item is\n"+ st_unitid, Toast.LENGTH_SHORT).show();
 
                 RequestQueue requestQueue10 = Volley.newRequestQueue(getContext());
-                requestQueue10.add(stringRequest5);*/
+                requestQueue10.add(stringRequest5);*//*
 
                     }
 
@@ -296,43 +297,49 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                     public void onNothingSelected(AdapterView<?> parent) {
 
                     }
-                });
+                });*/
 
                 etqty.setOnFocusChangeListener(new View.OnFocusChangeListener() {
                     @Override
                     public void onFocusChange(View v, boolean hasFocus) {
+
+
                         try {
                             current_edittext1 = Integer.parseInt(etqty.getText().toString());
+                            rate_editext1=Double.parseDouble(etrate.getText().toString());
                         } catch (NumberFormatException e) {
                             e.printStackTrace();
                         }
-                        int no = 500;
-                        String no1 = Integer.toString(no);
-                        if (!hasFocus && st_unitpostion==3) {
+
+                        if (!hasFocus && st_unitpostion==0) {
+
+
                             Toast.makeText(getContext(), "hasFocus current_edittext" + current_edittext1, Toast.LENGTH_LONG).show();
                             Toast.makeText(getContext(), "hasFocus current_edittext" + st_totalqty, Toast.LENGTH_LONG).show();
 
 
-                                       if (current_edittext1 > no) {
+                            String no1 = Integer.toString(st_totalqty);
 
+                                       if (hasFocus &&  current_edittext1 > st_totalqty) {
+                                           Toast.makeText(getContext(), "inside if loop current editext"+current_edittext1, Toast.LENGTH_SHORT).show();
                                            etbqty.setText(no1);
                                            etqty.setText(no1);
                                        } else {
-
+                                           Toast.makeText(getContext(),"inside else loop current editex"+current_edittext1,Toast.LENGTH_LONG).show();
                                            etbqty.setText(etqty.getText().toString());
                                            etqty.setText(etqty.getText().toString());
+                                           etamount.setText(amount_nos);
 
                                        }
 
-
-
-
                         }
-                        else if(!hasFocus && st_unitpostion==2) {
-                            int no3 = 200;
-                            String no2 = Integer.toString(no3);
 
-                            if (current_edittext1 > no3) {
+                        else if(!hasFocus && st_unitpostion==1) {
+
+                            int packet=st_totalqty/st_subpackingqty;
+                            String no2 = Integer.toString(packet);
+
+                            if (current_edittext1 > st_totalqty) {
 
                                 etbqty.setText(no2);
                                 etqty.setText(no2);
@@ -340,11 +347,45 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
                                 etbqty.setText(etqty.getText().toString());
                                 etqty.setText(etqty.getText().toString());
-
                             }
                         }
 
+                        else if(!hasFocus && st_unitpostion==2) {
+                            double bag=st_totalqty/st_packingqty;
+                            String no3 = Double.toString(bag);
+
+                            if (current_edittext1 > st_totalqty) {
+
+                                etbqty.setText(no3);
+                                etqty.setText(no3);
+                            } else {
+
+                                etbqty.setText(etqty.getText().toString());
+                                etqty.setText(etqty.getText().toString());
+                            }
+                        }
+
+
+                      /*  if(st_unitpostion==0){
+                            double amount=current_edittext1*rate_editext1;
+                            amount_nos=Double.toString(amount);
+                            etamount.setText(amount_nos);
+                        }
+                        else if(st_unitpostion==1){
+                            double amount_packet=current_edittext1*rate_editext1*st_subpackingqty;
+                            String amount1_packet=Double.toString(amount_packet);
+                            etamount.setText(amount1_packet);
+                        }
+                        else if(st_unitpostion==2){
+                            double amount_bag=current_edittext1*rate_editext1*st_packingqty;
+                            String amount1_bag=Double.toString(amount_bag);
+                            etamount.setText(amount1_bag);
+                        }*/
                     }
+
+
+
+
 
                 });
 
@@ -688,12 +729,13 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                 String str[] = result1.split(",");
 
                                 st_quantitybyid = a4;
-                                st_packingqty = a6;
-                                st_subpackingqty = a7;
+                                st_packingqty = Integer.parseInt(a6);
+                                st_subpackingqty = Integer.parseInt(a7);
                                 st_totalqty = Integer.parseInt(a10);
+                                st_price=Double.parseDouble(a9);
 
                                 Toast.makeText(getContext(), "Quantity Id" + st_quantitybyid + "\nPacking_Qty" + st_packingqty
-                                        + "\nSub_PackingQty" + st_subpackingqty + "\nTotalQty" + st_totalqty, Toast.LENGTH_SHORT).show();
+                                        + "\nSub_PackingQty" + st_subpackingqty + "\nTotalQty" + st_totalqty+"\nst_price"+st_price, Toast.LENGTH_SHORT).show();
 
                                 ethsn.setText(a3.toString());
 
@@ -1041,18 +1083,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
         requestQueue4.add(stringRequest4);
     }
 
-    //Fetching Unit Data....
-    public void getUnitDataInSpin() {
-        // Spinner click listener
-//        spinner2.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
 
-
-    }
-
-
-
-
-/*
     public void getUnitDataInSpin(){
         stringRequest2 = new StringRequest(Request.Method.POST, Config.FETCH_UNIT_URL,
                 new Response.Listener<String>() {
@@ -1171,7 +1202,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
             }
         };
     }
-*/
+
 
     //Fetching unit data like packingqty,subpackingqty,Quantity...
     public void getItemDataByUnitId(){
