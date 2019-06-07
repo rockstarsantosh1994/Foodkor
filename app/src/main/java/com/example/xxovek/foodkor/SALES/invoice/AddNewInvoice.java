@@ -82,7 +82,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
     StringRequest stringRequest1, stringRequest2, stringRequest3, stringRequest4, stringRequest5;
     String st_spinner1, st_taxvalue, company_id, st_quantitybyid,  st_unitid,amount_nos;
     int st_totalqty, st_unitpostion,st_subpackingqty,st_packingqty;
-    double st_price,rate_editext1,dou_bqty,dou_etdiscount;
+    double st_price,rate_editext1,dou_bqty,dou_etdiscount,st_packingqtydouble,st_totalqtydouble,do_inbqty;
     int check = 0;
     StringRequest stringRequest;
     TextInputEditText ethsn;
@@ -92,6 +92,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
     TextInputEditText etqty, etbqty, etrate, etdiscount, etamount;
     int current_edittext1;
     private int in_bqty;
+    public boolean hasFocus1=true;
 
 
     public AddNewInvoice() {
@@ -261,210 +262,15 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                 etdiscount = dialogView.findViewById(R.id.etdiscount);
                 etdiscount.setText("0.00");
                 etamount = dialogView.findViewById(R.id.etamount);
-/*
-                // Spinner Drop down elements
-                List<String> categories = new ArrayList<String>();
-                categories.add("Automobile");
-                categories.add("Business Services");
-                categories.add("Computers");
-                categories.add("Education");
-                categories.add("Personal");
-                categories.add("Travel");
-
-                // Creating adapter for spinner
-                ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, categories);
-
-                // Drop down layout style - list view with radio button
-                dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-                // attaching data adapter to spinner
-                spinner2.setAdapter(dataAdapter);
-
-                spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                        st_unitpostion=spinner2.getSelectedItemPosition();
-                        Toast.makeText(getContext(), "st_unitpostion"+st_unitpostion, Toast.LENGTH_SHORT).show();
-               *//* st_unitid= (String) spinnerMap2.get(spinner2.getSelectedItemPosition());
-                Toast.makeText(getContext(), "Unit Position"+st_unitpostion, Toast.LENGTH_SHORT).show();
-                Toast.makeText(getContext(),"the selected item is\n"+ st_unitid, Toast.LENGTH_SHORT).show();
-
-                RequestQueue requestQueue10 = Volley.newRequestQueue(getContext());
-                requestQueue10.add(stringRequest5);*//*
-
-                    }
-
-                    @Override
-                    public void onNothingSelected(AdapterView<?> parent) {
-
-                    }
-                });*/
 
                 etqty.setOnFocusChangeListener(new View.OnFocusChangeListener() {
                     @Override
                     public void onFocusChange(View v, boolean hasFocus) {
 
+                        hasFocus1=hasFocus;
 
-                        try {
-                            current_edittext1 = Integer.parseInt(etqty.getText().toString());
-                            rate_editext1=Double.parseDouble(etrate.getText().toString());
-                        } catch (NumberFormatException e) {
-                            e.printStackTrace();
-                        }
-
-                        if (!hasFocus && st_unitpostion==0) {
-
-                            String no1 = Integer.toString(st_totalqty);
-
-                                       if (current_edittext1 > st_totalqty) {
-
-                                           etbqty.setText(no1);
-                                           etqty.setText(etbqty.getText().toString());
-                                           /*int in_bqty=Integer.parseInt(etbqty.getText().toString());
-
-                                           //calculating amount and setting to amount
-                                           double amount=in_bqty*rate_editext1;
-                                           Toast.makeText(getContext(), "amount"+amount, Toast.LENGTH_SHORT).show();*/
-                                           //amount_nos=Double.toString(amount);
-                                          // etamount.setText(amount_nos);
-                                           Toast.makeText(getContext(), "Inside if loop etbqty"+etbqty.getText().toString()+"\netqty"+etqty.getText().toString(), Toast.LENGTH_SHORT).show();
-
-
-
-                                       } else {
-
-                                           etbqty.setText(etqty.getText().toString());
-                                           etqty.setText(etbqty.getText().toString());
-
-                                           //calculating amount and setting to amount
-                                           /*int in_bqty=Integer.parseInt(etbqty.getText().toString());
-                                           double amount=in_bqty*rate_editext1;
-                                           amount_nos=Double.toString(amount);*/
-
-                                       }
-
-                            try{in_bqty=Integer.parseInt(etbqty.getText().toString());}catch(NumberFormatException e){e.printStackTrace();}
-
-                            //calculating amount and setting to amount
-                            double amount=in_bqty*rate_editext1;
-                            //calculating discount and updating amount
-                            try { dou_etdiscount=Double.parseDouble(etdiscount.getText().toString());}catch (NumberFormatException e){e.printStackTrace();}
-                            Toast.makeText(getContext(), "amount"+amount+"\ndou_etdiscount"+dou_etdiscount, Toast.LENGTH_SHORT).show();
-                            double discout_amount=(amount*dou_etdiscount)/100;
-                            Toast.makeText(getContext(), "discount"+discout_amount, Toast.LENGTH_SHORT).show();
-                            double final_discount=amount-discout_amount;
-
-                            String dis_amount=String.valueOf(final_discount);
-
-                            if(etdiscount.getText().toString().equals("0"))
-                                etamount.setText(amount_nos);
-                            else{
-                                etamount.setText(dis_amount);
-                            }
-
-                        }
-
-                        else if(!hasFocus && st_unitpostion==1) {
-
-                            int packet=st_totalqty/st_subpackingqty;
-                            String no2 = Integer.toString(packet);
-
-                            if (current_edittext1 > st_totalqty) {
-
-                                etbqty.setText(no2);
-                                etqty.setText(etbqty.getText().toString());
-
-                              /*  //calculating amount and setting to amount
-                                int in_bqty=Integer.parseInt(etbqty.getText().toString());
-                                double amount_packet=in_bqty*rate_editext1*st_subpackingqty;
-                                String amount1_packet=Double.toString(amount_packet);
-                                etamount.setText(amount1_packet);
-                                Toast.makeText(getContext(), "Inside if loop etbqty"+etbqty.getText().toString()+"\netqty"+etqty.getText().toString(), Toast.LENGTH_SHORT).show();*/
-                            } else {
-
-                                etbqty.setText(etqty.getText().toString());
-                                etqty.setText(etbqty.getText().toString());
-
-                              /*  //calculating amount and setting to amount
-                                int in_bqty=Integer.parseInt(etbqty.getText().toString());
-                                double amount_packet=in_bqty*rate_editext1*st_subpackingqty;
-                                String amount1_packet=Double.toString(amount_packet);
-                                etamount.setText(amount1_packet);
-                                Toast.makeText(getContext(), "Inside else loop etbqty"+etbqty.getText().toString()+"\netqty"+etqty.getText().toString(), Toast.LENGTH_SHORT).show();*/
-                            }
-
-                            int in_bqty=Integer.parseInt(etbqty.getText().toString());
-
-                            //calculating amount and setting to amount
-                            double amount=in_bqty*rate_editext1;
-                            //calculating discount and updating amount
-                            try { dou_etdiscount=Double.parseDouble(etdiscount.getText().toString());}catch (NumberFormatException e){e.printStackTrace();}
-                            Toast.makeText(getContext(), "amount"+amount+"\ndou_etdiscount"+dou_etdiscount, Toast.LENGTH_SHORT).show();
-                            double discout_amount=(amount*dou_etdiscount)/100;
-                            Toast.makeText(getContext(), "discount"+discout_amount, Toast.LENGTH_SHORT).show();
-                            double final_discount=amount-discout_amount;
-
-                            String dis_amount=String.valueOf(final_discount);
-
-                            if(etdiscount.getText().toString().equals("0"))
-                                etamount.setText(amount_nos);
-                            else{
-                                etamount.setText(dis_amount);
-                            }
-
-                        }
-
-                        else if(!hasFocus && st_unitpostion==2) {
-                            double bag=st_totalqty/st_packingqty;
-                            String no3 = Double.toString(bag);
-
-                            if (current_edittext1 > st_totalqty) {
-                                etbqty.setText(no3);
-                                etqty.setText(etbqty.getText().toString());
-                                try{
-                                    dou_bqty=Integer.parseInt(etbqty.getText().toString());
-                                }catch(NumberFormatException e){e.printStackTrace();}
-
-//                                //calculating amount and setting to amount
-//                                double amount_bag=dou_bqty*rate_editext1*st_packingqty;
-//                                String amount1_bag=Double.toString(amount_bag);
-//                                etamount.setText(amount1_bag);
-//                                Toast.makeText(getContext(), "Inside if loop etbqty"+etbqty.getText().toString()+"\netqty"+etqty.getText().toString(), Toast.LENGTH_SHORT).show();
-                            } else {
-
-                                etbqty.setText(etqty.getText().toString());
-                                etqty.setText(etbqty.getText().toString());
-
-                                try{
-                                    dou_bqty=Integer.parseInt(etbqty.getText().toString());
-                                }catch(NumberFormatException e){e.printStackTrace();}
-
-//                                //calculating amount and setting to amount
-//                                double amount_bag=dou_bqty*rate_editext1*st_packingqty;
-//                                String amount1_bag=Double.toString(amount_bag);
-//                                etamount.setText(amount1_bag);
-//                                Toast.makeText(getContext(), "Inside else loop etbqty"+etbqty.getText().toString()+"\netqty"+etqty.getText().toString(), Toast.LENGTH_SHORT).show();
-                            }
-                            int in_bqty=Integer.parseInt(etbqty.getText().toString());
-
-                            //calculating amount and setting to amount
-                            double amount=in_bqty*rate_editext1;
-                            //calculating discount and updating amount
-                            try { dou_etdiscount=Double.parseDouble(etdiscount.getText().toString());}catch (NumberFormatException e){e.printStackTrace();}
-                            Toast.makeText(getContext(), "amount"+amount+"\ndou_etdiscount"+dou_etdiscount, Toast.LENGTH_SHORT).show();
-                            double discout_amount=(amount*dou_etdiscount)/100;
-                            Toast.makeText(getContext(), "discount"+discout_amount, Toast.LENGTH_SHORT).show();
-                            double final_discount=amount-discout_amount;
-
-                            String dis_amount=String.valueOf(final_discount);
-
-                            if(etdiscount.getText().toString().equals("0"))
-                                etamount.setText(amount_nos);
-                            else{
-                                etamount.setText(dis_amount);
-                            }
-
-                        }
+                        //Setting quantity to qty and billing quantity....
+                            setQuantityForFocus();
                     }
 
                 });
@@ -484,168 +290,8 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                     @Override
                     public void afterTextChanged(Editable s) {
 
-                        try {
-                            current_edittext1 = Integer.parseInt(etqty.getText().toString());
-                            rate_editext1=Double.parseDouble(etrate.getText().toString());
-                        } catch (NumberFormatException e) {
-                            e.printStackTrace();
-                        }
-
-                        if (st_unitpostion==0) {
-
-                            String no1 = Integer.toString(st_totalqty);
-
-                            if (current_edittext1 > st_totalqty) {
-
-                                etbqty.setText(no1);
-                                etqty.setText(etbqty.getText().toString());
-                                           /*int in_bqty=Integer.parseInt(etbqty.getText().toString());
-
-                                           //calculating amount and setting to amount
-                                           double amount=in_bqty*rate_editext1;
-                                           Toast.makeText(getContext(), "amount"+amount, Toast.LENGTH_SHORT).show();*/
-                                //amount_nos=Double.toString(amount);
-                                // etamount.setText(amount_nos);
-                                Toast.makeText(getContext(), "Inside if loop etbqty"+etbqty.getText().toString()+"\netqty"+etqty.getText().toString(), Toast.LENGTH_SHORT).show();
-
-
-
-                            } else {
-
-                                etbqty.setText(etqty.getText().toString());
-                                etqty.setText(etbqty.getText().toString());
-
-                                //calculating amount and setting to amount
-                                           /*int in_bqty=Integer.parseInt(etbqty.getText().toString());
-                                           double amount=in_bqty*rate_editext1;
-                                           amount_nos=Double.toString(amount);*/
-
-                            }
-
-                            int in_bqty=Integer.parseInt(etbqty.getText().toString());
-
-                            //calculating amount and setting to amount
-                            double amount=in_bqty*rate_editext1;
-                            //calculating discount and updating amount
-                            try { dou_etdiscount=Double.parseDouble(etdiscount.getText().toString());}catch (NumberFormatException e){e.printStackTrace();}
-                            Toast.makeText(getContext(), "amount"+amount+"\ndou_etdiscount"+dou_etdiscount, Toast.LENGTH_SHORT).show();
-                            double discout_amount=(amount*dou_etdiscount)/100;
-                            Toast.makeText(getContext(), "discount"+discout_amount, Toast.LENGTH_SHORT).show();
-                            double final_discount=amount-discout_amount;
-
-                            String dis_amount=String.valueOf(final_discount);
-
-                            if(etdiscount.getText().toString().equals("0"))
-                                etamount.setText(amount_nos);
-                            else{
-                                etamount.setText(dis_amount);
-                            }
-
-                        }
-
-
-
-                        else if(st_unitpostion==1) {
-
-                            int packet=st_totalqty/st_subpackingqty;
-                            String no2 = Integer.toString(packet);
-
-                            if (current_edittext1 > st_totalqty) {
-
-                                etbqty.setText(no2);
-                                etqty.setText(etbqty.getText().toString());
-
-                              /*  //calculating amount and setting to amount
-                                int in_bqty=Integer.parseInt(etbqty.getText().toString());
-                                double amount_packet=in_bqty*rate_editext1*st_subpackingqty;
-                                String amount1_packet=Double.toString(amount_packet);
-                                etamount.setText(amount1_packet);
-                                Toast.makeText(getContext(), "Inside if loop etbqty"+etbqty.getText().toString()+"\netqty"+etqty.getText().toString(), Toast.LENGTH_SHORT).show();*/
-                            } else {
-
-                                etbqty.setText(etqty.getText().toString());
-                                etqty.setText(etbqty.getText().toString());
-
-                              /*  //calculating amount and setting to amount
-                                int in_bqty=Integer.parseInt(etbqty.getText().toString());
-                                double amount_packet=in_bqty*rate_editext1*st_subpackingqty;
-                                String amount1_packet=Double.toString(amount_packet);
-                                etamount.setText(amount1_packet);
-                                Toast.makeText(getContext(), "Inside else loop etbqty"+etbqty.getText().toString()+"\netqty"+etqty.getText().toString(), Toast.LENGTH_SHORT).show();*/
-                            }
-
-                            int in_bqty=Integer.parseInt(etbqty.getText().toString());
-
-                            //calculating amount and setting to amount
-                            double amount=in_bqty*rate_editext1;
-                            //calculating discount and updating amount
-                            try { dou_etdiscount=Double.parseDouble(etdiscount.getText().toString());}catch (NumberFormatException e){e.printStackTrace();}
-                            Toast.makeText(getContext(), "amount"+amount+"\ndou_etdiscount"+dou_etdiscount, Toast.LENGTH_SHORT).show();
-                            double discout_amount=(amount*dou_etdiscount)/100;
-                            Toast.makeText(getContext(), "discount"+discout_amount, Toast.LENGTH_SHORT).show();
-                            double final_discount=amount-discout_amount;
-
-                            String dis_amount=String.valueOf(final_discount);
-
-                            if(etdiscount.getText().toString().equals("0"))
-                                etamount.setText(amount_nos);
-                            else{
-                                etamount.setText(dis_amount);
-                            }
-
-                        }
-
-                        else if(st_unitpostion==2) {
-                            double bag=st_totalqty/st_packingqty;
-                            String no3 = Double.toString(bag);
-
-                            if (current_edittext1 > st_totalqty) {
-                                etbqty.setText(no3);
-                                etqty.setText(etbqty.getText().toString());
-                                try{
-                                    dou_bqty=Integer.parseInt(etbqty.getText().toString());
-                                }catch(NumberFormatException e){e.printStackTrace();}
-
-//                                //calculating amount and setting to amount
-//                                double amount_bag=dou_bqty*rate_editext1*st_packingqty;
-//                                String amount1_bag=Double.toString(amount_bag);
-//                                etamount.setText(amount1_bag);
-//                                Toast.makeText(getContext(), "Inside if loop etbqty"+etbqty.getText().toString()+"\netqty"+etqty.getText().toString(), Toast.LENGTH_SHORT).show();
-                            } else {
-
-                                etbqty.setText(etqty.getText().toString());
-                                etqty.setText(etbqty.getText().toString());
-
-                                try{
-                                    dou_bqty=Integer.parseInt(etbqty.getText().toString());
-                                }catch(NumberFormatException e){e.printStackTrace();}
-
-//                                //calculating amount and setting to amount
-//                                double amount_bag=dou_bqty*rate_editext1*st_packingqty;
-//                                String amount1_bag=Double.toString(amount_bag);
-//                                etamount.setText(amount1_bag);
-//                                Toast.makeText(getContext(), "Inside else loop etbqty"+etbqty.getText().toString()+"\netqty"+etqty.getText().toString(), Toast.LENGTH_SHORT).show();
-                            }
-                            int in_bqty=Integer.parseInt(etbqty.getText().toString());
-
-                            //calculating amount and setting to amount
-                            double amount=in_bqty*rate_editext1;
-                            //calculating discount and updating amount
-                            try { dou_etdiscount=Double.parseDouble(etdiscount.getText().toString());}catch (NumberFormatException e){e.printStackTrace();}
-                            Toast.makeText(getContext(), "amount"+amount+"\ndou_etdiscount"+dou_etdiscount, Toast.LENGTH_SHORT).show();
-                            double discout_amount=(amount*dou_etdiscount)/100;
-                            Toast.makeText(getContext(), "discount"+discout_amount, Toast.LENGTH_SHORT).show();
-                            double final_discount=amount-discout_amount;
-
-                            String dis_amount=String.valueOf(final_discount);
-
-                            if(etdiscount.getText().toString().equals("0"))
-                                etamount.setText(amount_nos);
-                            else{
-                                etamount.setText(dis_amount);
-                            }
-
-                        }
+                        //Working on amount and Discount using below function .....as rate and discount change function will call....
+                            setAmountAndDiscount();
                     }
                 });
 
@@ -663,168 +309,8 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                     @Override
                     public void afterTextChanged(Editable s) {
 
-                        try {
-                            current_edittext1 = Integer.parseInt(etqty.getText().toString());
-                            rate_editext1=Double.parseDouble(etrate.getText().toString());
-                        } catch (NumberFormatException e) {
-                            e.printStackTrace();
-                        }
-
-                        if ( st_unitpostion==0) {
-
-                            String no1 = Integer.toString(st_totalqty);
-
-                            if (current_edittext1 > st_totalqty) {
-
-                                etbqty.setText(no1);
-                                etqty.setText(etbqty.getText().toString());
-                                           /*int in_bqty=Integer.parseInt(etbqty.getText().toString());
-
-                                           //calculating amount and setting to amount
-                                           double amount=in_bqty*rate_editext1;
-                                           Toast.makeText(getContext(), "amount"+amount, Toast.LENGTH_SHORT).show();*/
-                                //amount_nos=Double.toString(amount);
-                                // etamount.setText(amount_nos);
-                                Toast.makeText(getContext(), "Inside if loop etbqty"+etbqty.getText().toString()+"\netqty"+etqty.getText().toString(), Toast.LENGTH_SHORT).show();
-
-
-
-                            } else {
-
-                                etbqty.setText(etqty.getText().toString());
-                                etqty.setText(etbqty.getText().toString());
-
-                                //calculating amount and setting to amount
-                                           /*int in_bqty=Integer.parseInt(etbqty.getText().toString());
-                                           double amount=in_bqty*rate_editext1;
-                                           amount_nos=Double.toString(amount);*/
-
-                            }
-
-                            int in_bqty=Integer.parseInt(etbqty.getText().toString());
-
-                            //calculating amount and setting to amount
-                            double amount=in_bqty*rate_editext1;
-                            //calculating discount and updating amount
-                            try { dou_etdiscount=Double.parseDouble(etdiscount.getText().toString());}catch (NumberFormatException e){e.printStackTrace();}
-                            Toast.makeText(getContext(), "amount"+amount+"\ndou_etdiscount"+dou_etdiscount, Toast.LENGTH_SHORT).show();
-                            double discout_amount=(amount*dou_etdiscount)/100;
-                            Toast.makeText(getContext(), "discount"+discout_amount, Toast.LENGTH_SHORT).show();
-                            double final_discount=amount-discout_amount;
-
-                            String dis_amount=String.valueOf(final_discount);
-
-                            if(etdiscount.getText().toString().equals("0"))
-                                etamount.setText(amount_nos);
-                            else{
-                                etamount.setText(dis_amount);
-                            }
-
-                        }
-
-
-
-                        else if(st_unitpostion==1) {
-
-                            int packet=st_totalqty/st_subpackingqty;
-                            String no2 = Integer.toString(packet);
-
-                            if (current_edittext1 > st_totalqty) {
-
-                                etbqty.setText(no2);
-                                etqty.setText(etbqty.getText().toString());
-
-                              /*  //calculating amount and setting to amount
-                                int in_bqty=Integer.parseInt(etbqty.getText().toString());
-                                double amount_packet=in_bqty*rate_editext1*st_subpackingqty;
-                                String amount1_packet=Double.toString(amount_packet);
-                                etamount.setText(amount1_packet);
-                                Toast.makeText(getContext(), "Inside if loop etbqty"+etbqty.getText().toString()+"\netqty"+etqty.getText().toString(), Toast.LENGTH_SHORT).show();*/
-                            } else {
-
-                                etbqty.setText(etqty.getText().toString());
-                                etqty.setText(etbqty.getText().toString());
-
-                              /*  //calculating amount and setting to amount
-                                int in_bqty=Integer.parseInt(etbqty.getText().toString());
-                                double amount_packet=in_bqty*rate_editext1*st_subpackingqty;
-                                String amount1_packet=Double.toString(amount_packet);
-                                etamount.setText(amount1_packet);
-                                Toast.makeText(getContext(), "Inside else loop etbqty"+etbqty.getText().toString()+"\netqty"+etqty.getText().toString(), Toast.LENGTH_SHORT).show();*/
-                            }
-
-                            int in_bqty=Integer.parseInt(etbqty.getText().toString());
-
-                            //calculating amount and setting to amount
-                            double amount=in_bqty*rate_editext1;
-                            //calculating discount and updating amount
-                            try { dou_etdiscount=Double.parseDouble(etdiscount.getText().toString());}catch (NumberFormatException e){e.printStackTrace();}
-                            Toast.makeText(getContext(), "amount"+amount+"\ndou_etdiscount"+dou_etdiscount, Toast.LENGTH_SHORT).show();
-                            double discout_amount=(amount*dou_etdiscount)/100;
-                            Toast.makeText(getContext(), "discount"+discout_amount, Toast.LENGTH_SHORT).show();
-                            double final_discount=amount-discout_amount;
-
-                            String dis_amount=String.valueOf(final_discount);
-
-                            if(etdiscount.getText().toString().equals("0"))
-                                etamount.setText(amount_nos);
-                            else{
-                                etamount.setText(dis_amount);
-                            }
-
-                        }
-
-                        else if(st_unitpostion==2) {
-                            double bag=st_totalqty/st_packingqty;
-                            String no3 = Double.toString(bag);
-
-                            if (current_edittext1 > st_totalqty) {
-                                etbqty.setText(no3);
-                                etqty.setText(etbqty.getText().toString());
-                                try{
-                                    dou_bqty=Integer.parseInt(etbqty.getText().toString());
-                                }catch(NumberFormatException e){e.printStackTrace();}
-
-//                                //calculating amount and setting to amount
-//                                double amount_bag=dou_bqty*rate_editext1*st_packingqty;
-//                                String amount1_bag=Double.toString(amount_bag);
-//                                etamount.setText(amount1_bag);
-//                                Toast.makeText(getContext(), "Inside if loop etbqty"+etbqty.getText().toString()+"\netqty"+etqty.getText().toString(), Toast.LENGTH_SHORT).show();
-                            } else {
-
-                                etbqty.setText(etqty.getText().toString());
-                                etqty.setText(etbqty.getText().toString());
-
-                                try{
-                                    dou_bqty=Integer.parseInt(etbqty.getText().toString());
-                                }catch(NumberFormatException e){e.printStackTrace();}
-
-//                                //calculating amount and setting to amount
-//                                double amount_bag=dou_bqty*rate_editext1*st_packingqty;
-//                                String amount1_bag=Double.toString(amount_bag);
-//                                etamount.setText(amount1_bag);
-//                                Toast.makeText(getContext(), "Inside else loop etbqty"+etbqty.getText().toString()+"\netqty"+etqty.getText().toString(), Toast.LENGTH_SHORT).show();
-                            }
-                            int in_bqty=Integer.parseInt(etbqty.getText().toString());
-
-                            //calculating amount and setting to amount
-                            double amount=in_bqty*rate_editext1;
-                            //calculating discount and updating amount
-                            try { dou_etdiscount=Double.parseDouble(etdiscount.getText().toString());}catch (NumberFormatException e){e.printStackTrace();}
-                            Toast.makeText(getContext(), "amount"+amount+"\ndou_etdiscount"+dou_etdiscount, Toast.LENGTH_SHORT).show();
-                            double discout_amount=(amount*dou_etdiscount)/100;
-                            Toast.makeText(getContext(), "discount"+discout_amount, Toast.LENGTH_SHORT).show();
-                            double final_discount=amount-discout_amount;
-
-                            String dis_amount=String.valueOf(final_discount);
-
-                            if(etdiscount.getText().toString().equals("0"))
-                                etamount.setText(amount_nos);
-                            else{
-                                etamount.setText(dis_amount);
-                            }
-
-                        }
+                        //Working on amount and Discount using below function .....as rate and discount change function will call....
+                        setAmountAndDiscount();
                     }
                 });
 
@@ -1172,8 +658,10 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
                                 st_quantitybyid = a4;
                                 st_packingqty = Integer.parseInt(a6);
+                                st_packingqtydouble=Double.parseDouble(a6);
                                 st_subpackingqty = Integer.parseInt(a7);
                                 st_totalqty = Integer.parseInt(a10);
+                                st_totalqtydouble=Double.parseDouble(a10);
                                 st_price=Double.parseDouble(a9);
 
                                 Toast.makeText(getContext(), "Quantity Id" + st_quantitybyid + "\nPacking_Qty" + st_packingqty
@@ -1698,6 +1186,330 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
         };
     }
 
+    public void setQuantityForFocus(){
+        try {
+            current_edittext1 = Integer.parseInt(etqty.getText().toString());
+            rate_editext1=Double.parseDouble(etrate.getText().toString());
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+
+        if(!hasFocus1 && st_unitpostion==0) {
+
+            String no1 = Integer.toString(st_totalqty);
+
+            if (current_edittext1 > st_totalqty) {
+
+                etbqty.setText(no1);
+                etqty.setText(etbqty.getText().toString());
+                                           /*int in_bqty=Integer.parseInt(etbqty.getText().toString());
+
+                                           //calculating amount and setting to amount
+                                           double amount=in_bqty*rate_editext1;
+                                           Toast.makeText(getContext(), "amount"+amount, Toast.LENGTH_SHORT).show();*/
+                //amount_nos=Double.toString(amount);
+                // etamount.setText(amount_nos);
+                Toast.makeText(getContext(), "Inside if loop etbqty"+etbqty.getText().toString()+"\netqty"+etqty.getText().toString(), Toast.LENGTH_SHORT).show();
+
+
+
+            } else {
+
+                etbqty.setText(etqty.getText().toString());
+                etqty.setText(etbqty.getText().toString());
+
+            }
+
+            try{in_bqty=Integer.parseInt(etbqty.getText().toString());}catch(NumberFormatException e){e.printStackTrace();}
+
+            //calculating amount and setting to amount
+            double amount=in_bqty*rate_editext1;
+            //calculating discount and updating amount
+            try { dou_etdiscount=Double.parseDouble(etdiscount.getText().toString());}catch (NumberFormatException e){e.printStackTrace();}
+            Toast.makeText(getContext(), "amount"+amount+"\ndou_etdiscount"+dou_etdiscount, Toast.LENGTH_SHORT).show();
+            double discout_amount=(amount*dou_etdiscount)/100;
+            Toast.makeText(getContext(), "discount"+discout_amount, Toast.LENGTH_SHORT).show();
+            double final_discount=amount-discout_amount;
+
+            String dis_amount=String.valueOf(final_discount);
+
+            if(etdiscount.getText().toString().equals("0"))
+                etamount.setText(amount_nos);
+            else{
+                etamount.setText(dis_amount);
+            }
+
+        }
+
+        else if(!hasFocus1 && st_unitpostion==1) {
+
+            int packet=st_totalqty/st_subpackingqty;
+            String no2 = Integer.toString(packet);
+
+            if (current_edittext1 > st_totalqty) {
+
+                etbqty.setText(no2);
+                etqty.setText(etbqty.getText().toString());
+
+                              /*  //calculating amount and setting to amount
+                                int in_bqty=Integer.parseInt(etbqty.getText().toString());
+                                double amount_packet=in_bqty*rate_editext1*st_subpackingqty;
+                                String amount1_packet=Double.toString(amount_packet);
+                                etamount.setText(amount1_packet);
+                                Toast.makeText(getContext(), "Inside if loop etbqty"+etbqty.getText().toString()+"\netqty"+etqty.getText().toString(), Toast.LENGTH_SHORT).show();*/
+            } else {
+
+                etbqty.setText(etqty.getText().toString());
+                etqty.setText(etbqty.getText().toString());
+
+                              /*  //calculating amount and setting to amount
+                                int in_bqty=Integer.parseInt(etbqty.getText().toString());
+                                double amount_packet=in_bqty*rate_editext1*st_subpackingqty;
+                                String amount1_packet=Double.toString(amount_packet);
+                                etamount.setText(amount1_packet);
+                                Toast.makeText(getContext(), "Inside else loop etbqty"+etbqty.getText().toString()+"\netqty"+etqty.getText().toString(), Toast.LENGTH_SHORT).show();*/
+            }
+
+            int in_bqty=Integer.parseInt(etbqty.getText().toString());
+
+            //calculating amount and setting to amount
+            double amount=in_bqty*rate_editext1*st_subpackingqty;
+            //calculating discount and updating amount
+            try { dou_etdiscount=Double.parseDouble(etdiscount.getText().toString());}catch (NumberFormatException e){e.printStackTrace();}
+            Toast.makeText(getContext(), "amount"+amount+"\ndou_etdiscount"+dou_etdiscount, Toast.LENGTH_SHORT).show();
+            double discout_amount=(amount*dou_etdiscount)/100;
+            Toast.makeText(getContext(), "discount"+discout_amount, Toast.LENGTH_SHORT).show();
+            double final_discount=amount-discout_amount;
+
+            String dis_amount=String.valueOf(final_discount);
+
+            if(etdiscount.getText().toString().equals("0"))
+                etamount.setText(amount_nos);
+            else{
+                etamount.setText(dis_amount);
+            }
+
+        }
+
+        else if(!hasFocus1 && st_unitpostion==2){
+            double bag=st_totalqtydouble/st_packingqtydouble;
+            String no3 = Double.toString(bag);
+
+            if (current_edittext1 > st_totalqty) {
+                etbqty.setText(no3);
+                etqty.setText(etbqty.getText().toString());
+                try{
+                    dou_bqty=Integer.parseInt(etbqty.getText().toString());
+                }catch(NumberFormatException e){e.printStackTrace();}
+
+                               /* //calculating amount and setting to amount
+                                double amount_bag=dou_bqty*rate_editext1*st_packingqty;
+                                String amount1_bag=Double.toString(amount_bag);
+                                etamount.setText(amount1_bag);
+                                Toast.makeText(getContext(), "Inside if loop etbqty"+etbqty.getText().toString()+"\netqty"+etqty.getText().toString(), Toast.LENGTH_SHORT).show();*/
+            } else {
+
+                etbqty.setText(etqty.getText().toString());
+                etqty.setText(etbqty.getText().toString());
+
+                try{
+                    dou_bqty=Integer.parseInt(etbqty.getText().toString());
+                }catch(NumberFormatException e){e.printStackTrace();}
+
+//                                //calculating amount and setting to amount
+                            /*    double amount_bag=dou_bqty*rate_editext1*st_packingqty;
+                                String amount1_bag=Double.toString(amount_bag);
+                                etamount.setText(amount1_bag);
+                                Toast.makeText(getContext(), "Inside else loop etbqty"+etbqty.getText().toString()+"\netqty"+etqty.getText().toString(), Toast.LENGTH_SHORT).show();*/
+            }
+            try{do_inbqty=Double.parseDouble(etbqty.getText().toString());}catch(NumberFormatException e){e.printStackTrace();}
+
+            //calculating amount and setting to amount
+            double amount=do_inbqty*rate_editext1*st_packingqtydouble;
+            //calculating discount and updating amount
+            try { dou_etdiscount=Double.parseDouble(etdiscount.getText().toString());}catch (NumberFormatException e){e.printStackTrace();}
+            Toast.makeText(getContext(), "amount"+amount+"\ndou_etdiscount"+dou_etdiscount, Toast.LENGTH_SHORT).show();
+            double discout_amount=(amount*dou_etdiscount)/100;
+            Toast.makeText(getContext(), "discount"+discout_amount, Toast.LENGTH_SHORT).show();
+            double final_discount=amount-discout_amount;
+
+            String dis_amount=String.valueOf(final_discount);
+
+            if(etdiscount.getText().toString().equals("0"))
+                etamount.setText(amount_nos);
+            else{
+                etamount.setText(dis_amount);
+            }
+
+        }
+    }
+
+
+    public void setAmountAndDiscount(){
+        try {
+            current_edittext1 = Integer.parseInt(etqty.getText().toString());
+            rate_editext1=Double.parseDouble(etrate.getText().toString());
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+
+        if (st_unitpostion==0) {
+
+            String no1 = Integer.toString(st_totalqty);
+
+            if (current_edittext1 > st_totalqty) {
+
+                etbqty.setText(no1);
+                etqty.setText(etbqty.getText().toString());
+                                           /*int in_bqty=Integer.parseInt(etbqty.getText().toString());
+
+                                           //calculating amount and setting to amount
+                                           double amount=in_bqty*rate_editext1;
+                                           Toast.makeText(getContext(), "amount"+amount, Toast.LENGTH_SHORT).show();*/
+                //amount_nos=Double.toString(amount);
+                // etamount.setText(amount_nos);
+                Toast.makeText(getContext(), "Inside if loop etbqty"+etbqty.getText().toString()+"\netqty"+etqty.getText().toString(), Toast.LENGTH_SHORT).show();
+
+
+
+            } else {
+
+                etbqty.setText(etqty.getText().toString());
+                etqty.setText(etbqty.getText().toString());
+
+                //calculating amount and setting to amount
+                                           /*int in_bqty=Integer.parseInt(etbqty.getText().toString());
+                                           double amount=in_bqty*rate_editext1;
+                                           amount_nos=Double.toString(amount);*/
+
+            }
+
+            int in_bqty=Integer.parseInt(etbqty.getText().toString());
+
+            //calculating amount and setting to amount
+            double amount=in_bqty*rate_editext1;
+            //calculating discount and updating amount
+            try { dou_etdiscount=Double.parseDouble(etdiscount.getText().toString());}catch (NumberFormatException e){e.printStackTrace();}
+            Toast.makeText(getContext(), "amount"+amount+"\ndou_etdiscount"+dou_etdiscount, Toast.LENGTH_SHORT).show();
+            double discout_amount=(amount*dou_etdiscount)/100;
+            Toast.makeText(getContext(), "discount"+discout_amount, Toast.LENGTH_SHORT).show();
+            double final_discount=amount-discout_amount;
+
+            String dis_amount=String.valueOf(final_discount);
+
+            if(etdiscount.getText().toString().equals("0"))
+                etamount.setText(amount_nos);
+            else{
+                etamount.setText(dis_amount);
+            }
+
+        }
+
+
+
+        else if(st_unitpostion==1) {
+
+            int packet=st_totalqty/st_subpackingqty;
+            String no2 = Integer.toString(packet);
+
+            if (current_edittext1 > st_totalqty) {
+
+                etbqty.setText(no2);
+                etqty.setText(etbqty.getText().toString());
+
+                              /*  //calculating amount and setting to amount
+                                int in_bqty=Integer.parseInt(etbqty.getText().toString());
+                                double amount_packet=in_bqty*rate_editext1*st_subpackingqty;
+                                String amount1_packet=Double.toString(amount_packet);
+                                etamount.setText(amount1_packet);
+                                Toast.makeText(getContext(), "Inside if loop etbqty"+etbqty.getText().toString()+"\netqty"+etqty.getText().toString(), Toast.LENGTH_SHORT).show();*/
+            } else {
+
+                etbqty.setText(etqty.getText().toString());
+                etqty.setText(etbqty.getText().toString());
+
+                              /*  //calculating amount and setting to amount
+                                int in_bqty=Integer.parseInt(etbqty.getText().toString());
+                                double amount_packet=in_bqty*rate_editext1*st_subpackingqty;
+                                String amount1_packet=Double.toString(amount_packet);
+                                etamount.setText(amount1_packet);
+                                Toast.makeText(getContext(), "Inside else loop etbqty"+etbqty.getText().toString()+"\netqty"+etqty.getText().toString(), Toast.LENGTH_SHORT).show();*/
+            }
+
+            int in_bqty=Integer.parseInt(etbqty.getText().toString());
+
+            //calculating amount and setting to amount
+            double amount=in_bqty*rate_editext1;
+            //calculating discount and updating amount
+            try { dou_etdiscount=Double.parseDouble(etdiscount.getText().toString());}catch (NumberFormatException e){e.printStackTrace();}
+            Toast.makeText(getContext(), "amount"+amount+"\ndou_etdiscount"+dou_etdiscount, Toast.LENGTH_SHORT).show();
+            double discout_amount=(amount*dou_etdiscount)/100;
+            Toast.makeText(getContext(), "discount"+discout_amount, Toast.LENGTH_SHORT).show();
+            double final_discount=amount-discout_amount;
+
+            String dis_amount=String.valueOf(final_discount);
+
+            if(etdiscount.getText().toString().equals("0"))
+                etamount.setText(amount_nos);
+            else{
+                etamount.setText(dis_amount);
+            }
+
+        }
+
+        else if(st_unitpostion==2){
+            double bag=st_totalqtydouble/st_packingqtydouble;
+            String no3 = Double.toString(bag);
+
+            if (current_edittext1 > st_totalqty) {
+                etbqty.setText(no3);
+                etqty.setText(etbqty.getText().toString());
+                try{
+                    dou_bqty=Integer.parseInt(etbqty.getText().toString());
+                }catch(NumberFormatException e){e.printStackTrace();}
+
+                               /* //calculating amount and setting to amount
+                                double amount_bag=dou_bqty*rate_editext1*st_packingqty;
+                                String amount1_bag=Double.toString(amount_bag);
+                                etamount.setText(amount1_bag);
+                                Toast.makeText(getContext(), "Inside if loop etbqty"+etbqty.getText().toString()+"\netqty"+etqty.getText().toString(), Toast.LENGTH_SHORT).show();*/
+            } else {
+
+                etbqty.setText(etqty.getText().toString());
+                etqty.setText(etbqty.getText().toString());
+
+                try{
+                    dou_bqty=Integer.parseInt(etbqty.getText().toString());
+                }catch(NumberFormatException e){e.printStackTrace();}
+
+//                                //calculating amount and setting to amount
+                            /*    double amount_bag=dou_bqty*rate_editext1*st_packingqty;
+                                String amount1_bag=Double.toString(amount_bag);
+                                etamount.setText(amount1_bag);
+                                Toast.makeText(getContext(), "Inside else loop etbqty"+etbqty.getText().toString()+"\netqty"+etqty.getText().toString(), Toast.LENGTH_SHORT).show();*/
+            }
+            try{do_inbqty=Double.parseDouble(etbqty.getText().toString());}catch(NumberFormatException e){e.printStackTrace();}
+
+            //calculating amount and setting to amount
+            double amount=do_inbqty*rate_editext1*st_packingqtydouble;
+            //calculating discount and updating amount
+            try { dou_etdiscount=Double.parseDouble(etdiscount.getText().toString());}catch (NumberFormatException e){e.printStackTrace();}
+            Toast.makeText(getContext(), "amount"+amount+"\ndou_etdiscount"+dou_etdiscount, Toast.LENGTH_SHORT).show();
+            double discout_amount=(amount*dou_etdiscount)/100;
+            Toast.makeText(getContext(), "discount"+discout_amount, Toast.LENGTH_SHORT).show();
+            double final_discount=amount-discout_amount;
+
+            String dis_amount=String.valueOf(final_discount);
+
+            if(etdiscount.getText().toString().equals("0"))
+                etamount.setText(amount_nos);
+            else{
+                etamount.setText(dis_amount);
+            }
+
+        }
+
+    }
     @Override
     public void onItemClick(View view, int position) {
 
