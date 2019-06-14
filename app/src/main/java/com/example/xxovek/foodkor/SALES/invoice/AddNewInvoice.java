@@ -2530,12 +2530,26 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
             public void onClick(View arg0) {
 
                 String a1 = spinner1.getSelectedItem().toString();
-                int updateIndex = 0;
+                String a2 = etqty.getText().toString();
+                String a3 = etbqty.getText().toString();
+                String a4 = etrate.getText().toString();
+                String a5 = etdiscount.getText().toString();
+                String a6 = etamount.getText().toString();
+                String a7 = ethsn.getText().toString();
+
+                int updateIndex = position;
                 ql2.set(updateIndex, a1);
+                ql3.set(updateIndex, a2);
+                ql4.set(updateIndex, a3);
+                ql5.set(updateIndex, a4);
+                ql6.set(updateIndex, a5);
+                ql7.set(updateIndex, a6);
+                ql8.set(updateIndex, a7);
+
                 Toast.makeText(AddNewInvoice.this.getContext(), al3.toString(), Toast.LENGTH_SHORT).show();
                 adapter.notifyItemChanged(updateIndex);
                 adapter.notifyDataSetChanged();
-
+                dialog.dismiss();
             }
         });
 

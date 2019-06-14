@@ -1125,12 +1125,16 @@ id et_companyname
 id et_contactnumber
 id et_duedate
 id et_emailaddress
+id et_finaldiscount
 id et_firstname
 id et_freeqty
 id et_fromdate
 id et_fromdateopeningclosing
 id et_invoicedate
+id et_lastbalancedue
+id et_lastfinaltotal
 id et_lastname
+id et_lasttotal
 id et_message
 id et_middlename
 id et_onpurchase
@@ -1252,6 +1256,7 @@ id remove
 id right
 id right_icon
 id right_side
+id rv_addgst
 id rv_addinvoice
 id rv_fragmentpurchase
 id rv_purchaseorderreceived
