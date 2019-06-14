@@ -53,6 +53,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+import static java.lang.String.valueOf;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -99,12 +101,12 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_view_invoice_page, container, false);
         rv_viewitem=view.findViewById(R.id.rv_viewitem);
-        spin_customername=view.findViewById(R.id.spin_customernames);
+        spin_customername=view.findViewById(R.id.customernames);
         spin_terms=view.findViewById(R.id.spin_terms);
-        et_invoicedate=view.findViewById(R.id.et_invoicedate);
-        et_duedate=view.findViewById(R.id.et_duedate);
-        et_billaddress=view.findViewById(R.id.et_billingaddress);
-        fab_addinvoice=view.findViewById(R.id.fab_addinvoice);
+        et_invoicedate=view.findViewById(R.id.invoicedatee);
+        et_duedate=view.findViewById(R.id.duedatee);
+        et_billaddress=view.findViewById(R.id.billingaddresse);
+        fab_addinvoice=view.findViewById(R.id.showalertdialog);
 
 
 
@@ -193,7 +195,7 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
                 spinner1 = dialogView.findViewById(R.id.spinner1);
                 spinner2 = dialogView.findViewById(R.id.spinner2);
 
-                //Loading Complete Product Name in Spinner
+                //Loading Complete Product Name in Spinnere
                 getProductDataSpin();
                 /*RequestQueue requestQueue = Volley.newRequestQueue(getContext());
                 requestQueue.add(stringRequest);*/
@@ -311,18 +313,18 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
 
                                 for (int i = 0; i < json_data.length(); i++) {
                                     JSONObject json = json_data.getJSONObject(i);
-                                    al1.add(json.getString("itemDetailId"));
-                                    al2.add(json.getString("qty"));
+                                    ql1.add(json.getString("itemDetailId"));//al1
+                                    ql3.add(json.getString("qty"));//al2
                                     //al3.add(json.getString("BillQty"));
-                                    al4.add(json.getString("rate"));
+                                    ql5.add(json.getString("rate"));//al4
                                     al5.add(json.getString("itemunitval"));
                                     al6.add(json.getString("TaxType"));
-                                    al7.add(json.getString("TaxPercent"));
-                                    al8.add(json.getString("itemdiscount"));
+                                    ql7.add(json.getString("TaxPercent"));//al7
+                                    ql8.add(json.getString("itemdiscount"));//al8
                                     al9.add(json.getString("description"));
                                     al10.add(json.getString("TransactionId"));
-                                    al11.add(json.getString("discount"));
-                                    al12.add(json.getString("FinancialYear"));
+                                    ql6.add(json.getString("discount"));//al11
+                                    ql4.add(json.getString("FinancialYear"));//al12
                                     al13.add(json.getString("TransactionNumber"));
                                     al14.add(json.getString("DateCreated"));
                                     al15.add(json.getString("DueDate"));
@@ -331,7 +333,7 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
                                     al18.add(json.getString("remarks"));
                                     al19.add(json.getString("contactId"));
                                     al20.add(json.getString("PaytermsId"));
-                                    al21.add(json.getString("itemName"));
+                                    ql2.add(json.getString("itemName"));//al21
                                   //  al21.add(json.getString("PackingQty"));
                                     //al22.add(json.getString("SubPacking"));
                                    // al23.add(json.getString("TotalQty"));
@@ -353,7 +355,7 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
                                 rv_viewitem.setLayoutManager(mLayoutManager);
 
                                 rv_viewitem.setItemAnimator(new DefaultItemAnimator());
-                                adapter = new MyRecyclerViewAdapter(getContext(), al1, al2, al21, al4,al5,al6,al7,al8,"5");
+                                adapter = new MyRecyclerViewAdapter(getContext(), ql1,ql2,ql3,ql4,ql5,ql6,ql7,ql8,"5");
                                 adapter.setClickListener(ViewInvoicePage.this);
                                 rv_viewitem.setAdapter(adapter);
                                 rv_viewitem.addItemDecoration(new DividerItemDecoration(getContext(),
@@ -544,7 +546,7 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
                                     al1.add(json.getString("ItemId").trim());
                                     al2.add(json.getString("ItemName").trim());
                                     al3.add("Rs ".concat(json.getString("price")));
-                                    al4.add("Quantity #".concat(json.getString("Quantity")));
+                                    al4.add("Quantity #".concat(json.getString( "Quantity")));
                                     al5.add("Recorded LAbel : ".concat(json.getString("ReorderLabel")));
                                     al6.add(json.getString("SKU"));
                                     al7.add(json.getString("HSN"));
@@ -704,7 +706,7 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
 
                                         Toast.makeText(ViewInvoicePage.this.getContext(),a4.toString(),Toast.LENGTH_SHORT);
                                         try {
-                                            int ia4 = Integer.parseInt(a4.toString());
+                                            int ia4 = Integer.parseInt(a4);
                                             String ietbqty = (etbqty.getText().toString());
                                             int ietbqty1 = Integer.parseInt(ietbqty);
 
@@ -716,11 +718,11 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
 
 
                                                 Toast.makeText(getContext(), "161" + s.toString(), Toast.LENGTH_SHORT).show();
-                                                // etbqty.setText(s.toString());
+                                                //etbqty.setText(s.toString());
                                             }
                                         }catch (NumberFormatException e)
                                         {
-                                            // handle the exception
+                                            //handle the exception
                                         }
 
                                     }
@@ -1291,8 +1293,63 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
         RequestQueue requestQueue4 = Volley.newRequestQueue(getContext());
         requestQueue4.add(stringRequest5);
     }
+
+
+
+
     @Override
     public void onItemClick(View view, int position) {
+
+        Toast.makeText(getContext(), "Hello World", Toast.LENGTH_LONG).show();
+
+        String user_id1 = adapter.getItem(position);
+        int user_id2 = adapter.getItemCount();
+        String user_id21 = valueOf(user_id2);
+
+        Toast.makeText(getContext(), "getitem is  " + user_id1.toString() + " on row number " + position, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), "count is  " + user_id21.toString() + " on row number " + position, Toast.LENGTH_SHORT).show();
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_login, null);
+        builder.setView(dialogView);
+        final Dialog dialog = builder.create();
+        spinner1 = dialogView.findViewById(R.id.spinner1);
+        spinner2 = dialogView.findViewById(R.id.spinner2);
+
+
+//        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+//        requestQueue.add(stringRequest);
+//
+//        RequestQueue requestQueue1 = Volley.newRequestQueue(getContext());
+//        requestQueue1.add(stringRequest2);
+
+
+        final EditText ethsn = dialogView.findViewById(R.id.ethsn);
+        final EditText etqty = dialogView.findViewById(R.id.etqty);
+
+        ethsn.setText(user_id1.toString());
+        Button btnLogin = dialogView.findViewById(R.id.btnLogin);
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+
+                String a1 = ethsn.getText().toString();
+                String newValue = "I like sheep.";
+                int updateIndex = 0;
+                al2.set(updateIndex, a1);
+                Toast.makeText(ViewInvoicePage.this.getContext(), al2.toString(), Toast.LENGTH_SHORT).show();
+                adapter.notifyItemChanged(updateIndex);
+                adapter.notifyDataSetChanged();
+
+            }
+        });
+
+        Toast.makeText(ViewInvoicePage.this.getContext(), al1.toString(), Toast.LENGTH_SHORT).show();
+
+        dialog.show();
+
 
     }
 }

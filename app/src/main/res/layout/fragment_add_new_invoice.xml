@@ -124,6 +124,28 @@
                         android:orientation="vertical">
                     </LinearLayout>
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/billingaddresse"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Message Displayed on Invoice:"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <EditText
+                        android:id="@+id/et_message"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/termss"
+                        android:layout_marginTop="10dp"
+                        android:inputType="textCapSentences|textMultiLine"
+                        android:maxLength="2000"
+                        android:maxLines="4"
+                        />
+
+
                     <Button
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

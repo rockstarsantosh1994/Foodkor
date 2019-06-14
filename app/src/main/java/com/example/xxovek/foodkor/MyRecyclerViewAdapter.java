@@ -124,7 +124,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             myTextView6 = itemView.findViewById(R.id.t6);
             myTextView7 = itemView.findViewById(R.id.t7);
             myTextView8 = itemView.findViewById(R.id.t8);
-               ib_delete=itemView.findViewById(R.id.ib_delete);
+            ib_delete=itemView.findViewById(R.id.ib_delete);
 
 
             myTextView1.setOnClickListener(this);

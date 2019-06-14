@@ -1131,6 +1131,7 @@ id et_fromdate
 id et_fromdateopeningclosing
 id et_invoicedate
 id et_lastname
+id et_message
 id et_middlename
 id et_onpurchase
 id et_password
