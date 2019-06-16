@@ -29,6 +29,7 @@ import com.example.xxovek.foodkor.MyRecyclerViewAdapter;
 import com.example.xxovek.foodkor.R;
 import com.example.xxovek.foodkor.SALES.customer.AddNewCustomer;
 import com.example.xxovek.foodkor.SALES.customer.ViewCustomerPage;
+import com.example.xxovek.foodkor.SALES.invoice.AddNewInvoice;
 import com.example.xxovek.foodkor.URLs.Config;
 
 import org.json.JSONArray;
@@ -78,9 +79,13 @@ public class PurchaseOrder extends Fragment implements MyRecyclerViewAdapter.Ite
                 Snackbar.make(view, "Add New Customer", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
 
-                Fragment fragment = new AddNewCustomer();
+                Fragment fragment = new AddNewInvoice();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                Bundle data = new Bundle();//Use bundle to pass data
+                String form_id= "5";
+                data.putString("data", form_id);//put string, int, etc in bundle with a key value
+                fragment.setArguments(data);
                 fragmentTransaction.replace(R.id.main_container, fragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();

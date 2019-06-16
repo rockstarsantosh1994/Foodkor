@@ -85,6 +85,10 @@ public class Invoices extends Fragment implements MyRecyclerViewAdapter.ItemClic
                 Fragment fragment = new AddNewInvoice();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                Bundle data = new Bundle();//Use bundle to pass data
+                String form_id= "1";
+                data.putString("data", form_id);//put string, int, etc in bundle with a key value
+                fragment.setArguments(data);
                 fragmentTransaction.replace(R.id.main_container, fragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
@@ -94,7 +98,7 @@ public class Invoices extends Fragment implements MyRecyclerViewAdapter.ItemClic
 
         setHasOptionsMenu(true);
 
-       // final String LOGIN_URL = "http://192.168.0.112/FoodkorAndroid/displayInvoice.php";
+        //final String LOGIN_URL = "http://192.168.0.112/FoodkorAndroid/displayInvoice.php";
 
         //Creating a string request
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.DISPLAY_INVOICE_URL,
@@ -214,6 +218,10 @@ public class Invoices extends Fragment implements MyRecyclerViewAdapter.ItemClic
             Fragment fragment = new AddNewInvoice();
             FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            Bundle data = new Bundle();//Use bundle to pass data
+            String form_id= "1";
+            data.putString("data", form_id);//put string, int, etc in bundle with a key value
+            fragment.setArguments(data);
             fragmentTransaction.replace(R.id.main_container, fragment);
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();

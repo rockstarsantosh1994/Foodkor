@@ -65,7 +65,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
     Spinner spinner1, spinner2, spin_customername, spin_terms, spin_tax;
     String etamount2, st_customervalue, st_termsvalue;
-    EditText et_invoicedate, et_duedate;
+    EditText et_invoicedate, et_duedate,et_subtotal;
     int nosofdays;
 
     FloatingActionButton fab_dialog;
@@ -94,7 +94,8 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
     private int in_bqty;
     public boolean hasFocus1=true;
     public StringRequest stringRequest11,stringRequest12;
-
+    String newStr[];
+    public String form_id;
 
     public AddNewInvoice() {
         // Required empty public constructor
@@ -114,6 +115,9 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
         final String company_flag = prf.getString("company_flag", "");
         final String isAdmin = prf.getString("isAdmin", "");
 
+
+        form_id =getArguments().getString("data");
+        Toast.makeText(getActivity(),"Form_id"+form_id,Toast.LENGTH_LONG).show();
 
         //Loading all Product name in Spinner
         LoadAllProductInSpin();
@@ -180,6 +184,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
         spin_terms = view.findViewById(R.id.termss);
         et_invoicedate = view.findViewById(R.id.invoicedatee);
         et_duedate = view.findViewById(R.id.duedatee);
+        et_subtotal = view.findViewById(R.id.et_subtotal);
 
         btn_getallids = view.findViewById(R.id.btn_getdata);
         recyclerView = (RecyclerView) view.findViewById(R.id.rv_addinvoice);
@@ -494,7 +499,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                         ql5.add(etrate.getText().toString());
                         ql6.add(etdiscount.getText().toString());
                         ql7.add(etamount.getText().toString());
-                        ql8.add(ethsn.getText().toString());
+                        ql8.add(spin_tax .getSelectedItem().toString());
 
                         try {
 
@@ -512,6 +517,24 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
+
+                        //Calculating Sub Total
+                        try {
+
+                            int user_id2 = adapter.getItemCount();
+                            double sum = 0;
+
+                            for (int i = 0; i < user_id2; i++) {
+                                sum = Double.parseDouble(String.valueOf(sum +Double.parseDouble(ql7.get(i).toString())));
+                                //newStr[i]= ql8.get(i).toString().substring(0,ql8.get(i).toString().indexOf("%"));
+                                //Toast.makeText(getContext(), "newStr"+newStr[i], Toast.LENGTH_SHORT).show();
+                            }
+
+                            String st_sum = String.valueOf(sum);
+                            Toast.makeText(getContext(), "et_subtotal"+st_sum, Toast.LENGTH_SHORT).show();
+                            et_subtotal.setText(st_sum);
+                        }catch(NumberFormatException e){e.printStackTrace();}
+
                         dialog.dismiss();
                     }
                 });
@@ -536,7 +559,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
     //Fetching all taxes
     public void getTaxesInSpin() {
         final StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.FETCH_ITEM_TAX1_URL,
-                new Response.Listener<String>() {
+                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         //If we are getting success from server
@@ -593,6 +616,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                 //String value = GetClassCode.getCode(Text);//here u have to pass the value that is selected on the spinner
 
                                 // Toast.makeText(getContext(), "Value"+value, Toast.LENGTH_SHORT).show()
+
                                 //
 
 
@@ -640,7 +664,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                     }
                 }) {
             @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
+                protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
                 //Adding parameters to request
                 //params.put("ItemId", "ItemId");
@@ -903,7 +927,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                     // a= a + "Age : "+json.getString("c_phone")+"\n";
                                     //j= j + "Job : "+json.getString("Job")+"\n";
                                 }
-//                    Toast.makeText(getContext(), n.toString(), Toast.LENGTH_SHORT).show();
+//                              Toast.makeText(getContext(), n.toString(), Toast.LENGTH_SHORT).show();
 
                                 Integer a1 = cl1.size();
                                 String a2 = valueOf(a1);
@@ -932,7 +956,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                 //String value = GetClassCode.getCode(Text);//here u have to pass the value that is selected on the spinner
 
                                 // Toast.makeText(getContext(), "Value"+value, Toast.LENGTH_SHORT).show()
-                                //
+
 
 
                                 spin_customername.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -959,7 +983,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
                                 //al = Arrays.asList(n);
 
-                            } catch (JSONException e) {
+                            }   catch (JSONException e) {
                                 e.printStackTrace();
                             }
 
@@ -2558,6 +2582,4 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
         dialog.show();
 
     }
-
-
 }

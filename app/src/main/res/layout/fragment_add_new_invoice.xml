@@ -145,6 +145,33 @@
                         android:maxLines="4"
                         />
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="2"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginTop="10dp"
+                            android:text="Sub Total"
+                            android:textColor="@color/black"
+                            android:textSize="17sp" />
+
+                        <EditText
+                            android:layout_weight="1"
+                            android:id="@+id/et_subtotal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal"
+                            />
+                    </LinearLayout>
+
                     <android.support.v7.widget.RecyclerView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

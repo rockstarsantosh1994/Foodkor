@@ -1141,6 +1141,7 @@ id et_onpurchase
 id et_password
 id et_schemename
 id et_shipzip
+id et_subtotal
 id et_szip
 id et_todate
 id et_uptodate

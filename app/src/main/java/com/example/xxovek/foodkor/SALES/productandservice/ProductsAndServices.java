@@ -29,6 +29,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.xxovek.foodkor.MyRecyclerViewAdapter;
 import com.example.xxovek.foodkor.R;
+import com.example.xxovek.foodkor.SALES.invoice.AddNewInvoice;
 import com.example.xxovek.foodkor.URLs.Config;
 
 import org.json.JSONArray;
@@ -80,6 +81,7 @@ public class ProductsAndServices extends Fragment implements MyRecyclerViewAdapt
                 Fragment fragment = new AddNewProductsServices();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
                 fragmentTransaction.replace(R.id.main_container, fragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
