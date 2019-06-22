@@ -12,7 +12,6 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,9 +26,8 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.xxovek.foodkor.MyRecyclerViewAdapter;
 import com.example.xxovek.foodkor.R;
-import com.example.xxovek.foodkor.SALES.customer.AddNewCustomer;
-import com.example.xxovek.foodkor.SALES.customer.ViewCustomerPage;
 import com.example.xxovek.foodkor.SALES.invoice.AddNewInvoice;
+import com.example.xxovek.foodkor.SALES.invoice.ViewInvoicePage;
 import com.example.xxovek.foodkor.URLs.Config;
 
 import org.json.JSONArray;
@@ -213,15 +211,23 @@ public class AcceptedPurchase extends Fragment implements MyRecyclerViewAdapter.
 
         // Intent intent = new Intent(getContext(), Clientsinfo.class);
         // startActivity(intent);
-        Fragment fragment = new ViewCustomerPage();
+
+        // Toast.makeText(getContext(), "getitem is  " + user_id1.toString() + " on row number " + position, Toast.LENGTH_SHORT).show();
+
+
+        // Intent intent = new Intent(getContext(), Clientsinfo.class);
+        // startActivity(intent);
+        Fragment fragment = new ViewInvoicePage();
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         Bundle data = new Bundle();//Use bundle to pass data
         data.putString("data", user_id1);//put string, int, etc in bundle with a key value
+        data.putString("data1",String.valueOf(2));
         fragment.setArguments(data);
         fragmentTransaction.replace(R.id.main_container, fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
+
 
     }
 }

@@ -29,8 +29,6 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.xxovek.foodkor.MyRecyclerViewAdapter;
 import com.example.xxovek.foodkor.R;
-import com.example.xxovek.foodkor.SALES.customer.ViewCustomerPage;
-import com.example.xxovek.foodkor.SALES.invoice.Invoices;
 import com.example.xxovek.foodkor.URLs.Config;
 
 

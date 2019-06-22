@@ -1118,19 +1118,16 @@ id end
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
-id et_billingaddress
 id et_billzip
 id et_bzip
 id et_companyname
 id et_contactnumber
-id et_duedate
 id et_emailaddress
 id et_finaldiscount
 id et_firstname
 id et_freeqty
 id et_fromdate
 id et_fromdateopeningclosing
-id et_invoicedate
 id et_lastbalancedue
 id et_lastfinaltotal
 id et_lastname
@@ -1155,7 +1152,6 @@ id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
 id fab
-id fab_addinvoice
 id fab_schemes
 id fab_taxes
 id fill
@@ -1261,7 +1257,6 @@ id rv_addgst
 id rv_addinvoice
 id rv_fragmentpurchase
 id rv_purchaseorderreceived
-id rv_viewitem
 id saddresse
 id salespricerate
 id save_image_matrix
@@ -1302,9 +1297,7 @@ id snackbar_text
 id snap
 id sp_productname
 id spacer
-id spin_customernames
 id spin_tax
-id spin_terms
 id spinner1
 id spinner2
 id split_action_bar
