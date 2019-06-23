@@ -84,7 +84,7 @@ public class AcceptedPurchase extends Fragment implements MyRecyclerViewAdapter.
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 Bundle data = new Bundle();//Use bundle to pass data
                 String form_id= "2";
-                data.putString("data", form_id);//put string, int, etc in bundle with a key value
+                data.putString("formid", form_id);//put string, int, etc in bundle with a key value
                 fragment.setArguments(data);
                 fragmentTransaction.replace(R.id.main_container, fragment);
                 fragmentTransaction.addToBackStack(null);
@@ -222,7 +222,8 @@ public class AcceptedPurchase extends Fragment implements MyRecyclerViewAdapter.
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         Bundle data = new Bundle();//Use bundle to pass data
         data.putString("data", user_id1);//put string, int, etc in bundle with a key value
-        data.putString("data1",String.valueOf(2));
+        int formid=2;
+        data.putString("formid", String.valueOf(formid));
         fragment.setArguments(data);
         fragmentTransaction.replace(R.id.main_container, fragment);
         fragmentTransaction.addToBackStack(null);

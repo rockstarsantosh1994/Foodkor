@@ -99,8 +99,10 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
                              Bundle savedInstanceState) {
 
         st_transactionid = getArguments().getString("data");
-        form_id = getArguments().getString("data1");
-        Toast.makeText(getActivity(),st_transactionid.toString(),Toast.LENGTH_LONG).show();
+        form_id = getArguments().getString("formid");
+
+        Toast.makeText(getActivity(),"st_Transactionid"+st_transactionid,Toast.LENGTH_LONG).show();
+        Toast.makeText(getActivity(),"form_id"+form_id,Toast.LENGTH_LONG).show();
 
         SharedPreferences prf = getContext().getSharedPreferences("Options", getContext().MODE_PRIVATE);
         final String person_id=prf.getString("person_id", "");

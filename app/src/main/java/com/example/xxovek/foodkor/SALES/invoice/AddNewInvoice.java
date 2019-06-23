@@ -66,7 +66,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
     Spinner spinner1, spinner2, spin_customername, spin_terms, spin_tax;
     String etamount2, st_customervalue, st_termsvalue;
-    EditText et_invoicedate, et_duedate,et_lasttotal,et_subtotal,et_lastfinaltotal,et_lastbalancedue,et_finaldiscount;
+    EditText et_invoicedate, et_duedate,et_lasttotal,et_subtotal,et_lastfinaltotal,et_lastbalancedue,et_finaldiscount,et_message;
     int nosofdays;
 
     FloatingActionButton fab_dialog;
@@ -96,7 +96,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
     public boolean hasFocus1=true;
     public StringRequest stringRequest11,stringRequest12;
     public ArrayList newStr,newStr_copy;
-    public String amount_temp;
+    public String amount_temp,st_transactionid,form_id;
     private String[] actual_amount_str;
     private double sum1=0.0;
     private double total1;
@@ -120,6 +120,10 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
         final String company_flag = prf.getString("company_flag", "");
         final String isAdmin = prf.getString("isAdmin", "");
         actual_amount_str = new String[100];
+        form_id = getArguments().getString("formid");
+        //Toast.makeText(getActivity(),"st_Transactionid"+st_transactionid,Toast.LENGTH_LONG).show();
+        Toast.makeText(getActivity(),"form_id"+form_id,Toast.LENGTH_LONG).show();
+
 
 
         //Loading all Product name in Spinner
@@ -198,6 +202,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
         et_lastfinaltotal = view.findViewById(R.id.et_lastfinaltotal);
         et_lastbalancedue = view.findViewById(R.id.et_lastbalancedue);
         et_finaldiscount = view.findViewById(R.id.et_finaldiscount);
+        et_message = view.findViewById(R.id.et_message);
 
         btn_getallids = view.findViewById(R.id.btn_getdata);
         recyclerView = (RecyclerView) view.findViewById(R.id.rv_addinvoice);
@@ -784,9 +789,55 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
         btn_getallids.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                a.clear();
 
-                //.makeText(AddNewInvoice.this.getContext(), "List abc is\n\n" + ql2.toString() + ql3.toString(), //.LENGTH_SHORT).show();
+                final StringRequest saveTransactionMaster = new StringRequest(Request.Method.POST, Config.SAVE_TRANSACTION_MASTER_URL,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                //If we are getting success from server
+                                if (TextUtils.isEmpty(response)) {
+                                    //Creating a shared preference
+                                    //.makeText(getContext(), "Unable to fetch tax data" + response.toString(), //.LENGTH_LONG).show();
+
+                                } else {
+
+                                    Toast.makeText(getContext(), "Response \n"+response, Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                //You can handle error here if you want
+                            }
+                        }) {
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map<String, String> params = new HashMap<>();
+                        //Adding parameters to request
+                        //params.put("ItemId", "ItemId");
+                        //params.put("ItemName", "ItemName");
+                        params.put("formid", form_id);
+                        params.put("formtype", "N");
+                        params.put("htransactionid", String.valueOf(0));
+                        params.put("personId", person_id);
+                        params.put("contactId", st_customervalue);
+                        params.put("discount", et_finaldiscount.getText().toString());
+                        params.put("datecreated", et_invoicedate.getText().toString());
+                        params.put("duedate", et_duedate.getText().toString());
+                        params.put("paytermval",st_termsvalue);
+                        params.put("remainamount",String.valueOf(0));
+                        params.put("finaltotal",et_lastfinaltotal.getText().toString());
+                        params.put("remark",et_message.getText().toString());
+//                params.put("password", password);
+
+                        //returning parameter
+                        return params;
+                    }
+                };
+
+                RequestQueue requestQueue1 = Volley.newRequestQueue(getContext());
+                requestQueue1.add(stringRequest);
 
             }
         });
@@ -2582,11 +2633,9 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
                     String dis_amount=String.valueOf(final_discount);
 
-                    if(etdiscount.getText().toString().equals("0"))
-                        etamount.setText(amount_nos);
-                    else{
+
                         etamount.setText(dis_amount);
-                    }
+
 
                 }
 
@@ -2634,11 +2683,8 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
                     String dis_amount=String.valueOf(final_discount);
 
-                    if(etdiscount.getText().toString().equals("0"))
-                        etamount.setText(amount_nos);
-                    else{
                         etamount.setText(dis_amount);
-                    }
+
 
                 }
 
@@ -2686,11 +2732,9 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
                     String dis_amount=String.valueOf(final_discount);
 
-                    if(etdiscount.getText().toString().equals("0"))
-                        etamount.setText(amount_nos);
-                    else{
-                        etamount.setText(dis_amount);
-                    }
+
+                     etamount.setText(dis_amount);
+
 
                 }
             }

@@ -82,7 +82,7 @@ public class PurchaseOrder extends Fragment implements MyRecyclerViewAdapter.Ite
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 Bundle data = new Bundle();//Use bundle to pass data
                 String form_id= "5";
-                data.putString("data", form_id);//put string, int, etc in bundle with a key value
+                data.putString("formid", form_id);//put string, int, etc in bundle with a key value
                 fragment.setArguments(data);
                 fragmentTransaction.replace(R.id.main_container, fragment);
                 fragmentTransaction.addToBackStack(null);
@@ -202,7 +202,8 @@ public class PurchaseOrder extends Fragment implements MyRecyclerViewAdapter.Ite
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         Bundle data = new Bundle();//Use bundle to pass data
         data.putString("data", user_id1);//put string, int, etc in bundle with a key value
-        data.putString("data1", String.valueOf(2));//put string, int, etc in bundle with a key value
+        int formid=5;
+        data.putString("formid", String.valueOf(formid));
         fragment.setArguments(data);
         fragmentTransaction.replace(R.id.main_container, fragment);
         fragmentTransaction.addToBackStack(null);

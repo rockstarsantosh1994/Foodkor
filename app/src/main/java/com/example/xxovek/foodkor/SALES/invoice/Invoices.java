@@ -15,6 +15,7 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -213,11 +214,16 @@ public class Invoices extends Fragment implements MyRecyclerViewAdapter.ItemClic
 
         int id = item.getItemId();
         if(id == R.id.add_new_invoice){
+            Bundle data = new Bundle();//Use bundle to pass data
+            int formid = 1;
+            data.putString("formid", String.valueOf(formid));
+            Log.d("mytag", "onItemClick:Invoices.java form_id"+formid);
 
             Fragment fragment = new AddNewInvoice();
             FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.main_container, fragment);
+            fragment.setArguments(data);
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
 
@@ -278,7 +284,7 @@ public class Invoices extends Fragment implements MyRecyclerViewAdapter.ItemClic
                                 params.put("transactionId", st_delid);
                                 params.put("formid", String.valueOf(1));
                                 params.put("company_id", company_id);
-//                params.put("password", password);
+//                               params.put("password", password);
 
                                 //returning parameter
                                 return params;
@@ -315,7 +321,9 @@ public class Invoices extends Fragment implements MyRecyclerViewAdapter.ItemClic
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 Bundle data = new Bundle();//Use bundle to pass data
                 data.putString("data", user_id1);//put string, int, etc in bundle with a key value
-                data.putString("data1",String.valueOf(1));
+                int formid = 1;
+                data.putString("formid", String.valueOf(formid));
+                Log.d("mytag", "onItemClick:Invoices.java form_id"+formid);
                 fragment.setArguments(data);
                 fragmentTransaction.replace(R.id.main_container, fragment);
                 fragmentTransaction.addToBackStack(null);
