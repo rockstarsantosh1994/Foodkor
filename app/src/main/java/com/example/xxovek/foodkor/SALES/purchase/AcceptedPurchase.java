@@ -137,10 +137,6 @@ public class AcceptedPurchase extends Fragment implements MyRecyclerViewAdapter.
                                     al7.add(json.getString("status"));
                                     al8.add((json.getString("status")));
 
-
-
-                                    // a= a + "Age : "+json.getString("c_phone")+"\n";
-                                    //j= j + "Job : "+json.getString("Job")+"\n";
                                 }
 //                    Toast.makeText(getContext(), n.toString(), Toast.LENGTH_SHORT).show();
 

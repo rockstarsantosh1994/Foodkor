@@ -87,7 +87,7 @@ public class Invoices extends Fragment implements MyRecyclerViewAdapter.ItemClic
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 Bundle data = new Bundle();//Use bundle to pass data
                 String form_id= "1";
-                data.putString("data", form_id);//put string, int, etc in bundle with a key value
+                data.putString("data1", form_id);//put string, int, etc in bundle with a key value
                 fragment.setArguments(data);
                 fragmentTransaction.replace(R.id.main_container, fragment);
                 fragmentTransaction.addToBackStack(null);
@@ -214,16 +214,16 @@ public class Invoices extends Fragment implements MyRecyclerViewAdapter.ItemClic
 
         int id = item.getItemId();
         if(id == R.id.add_new_invoice){
-            Bundle data = new Bundle();//Use bundle to pass data
-            int formid = 1;
-            data.putString("formid", String.valueOf(formid));
-            Log.d("mytag", "onItemClick:Invoices.java form_id"+formid);
-
             Fragment fragment = new AddNewInvoice();
             FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.main_container, fragment);
+            Bundle data = new Bundle();//Use bundle to pass data
+            int formid =1;
+            data.putString("data1", String.valueOf(formid));
             fragment.setArguments(data);
+            Log.d("mytag", "onItemClick:Invoices.java form_id"+formid);
+            fragmentTransaction.replace(R.id.main_container, fragment);
+
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
 

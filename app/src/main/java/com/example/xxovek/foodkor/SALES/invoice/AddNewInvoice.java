@@ -120,7 +120,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
         final String company_flag = prf.getString("company_flag", "");
         final String isAdmin = prf.getString("isAdmin", "");
         actual_amount_str = new String[100];
-        form_id = getArguments().getString("formid");
+        form_id = getArguments().getString("data1");
         //Toast.makeText(getActivity(),"st_Transactionid"+st_transactionid,Toast.LENGTH_LONG).show();
         Toast.makeText(getActivity(),"form_id"+form_id,Toast.LENGTH_LONG).show();
 
@@ -837,11 +837,9 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                 };
 
                 RequestQueue requestQueue1 = Volley.newRequestQueue(getContext());
-                requestQueue1.add(stringRequest);
-
+                requestQueue1.add(saveTransactionMaster);
             }
         });
-
         return view;
     }
 
