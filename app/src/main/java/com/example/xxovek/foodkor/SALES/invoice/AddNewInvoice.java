@@ -65,7 +65,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
     View view;
 
     Spinner spinner1, spinner2, spin_customername, spin_terms, spin_tax;
-    String etamount2, st_customervalue, st_termsvalue;
+    String  st_customervalue, st_termsvalue;
     EditText et_invoicedate, et_duedate,et_lasttotal,et_subtotal,et_lastfinaltotal,et_lastbalancedue,et_finaldiscount,et_message;
     int nosofdays;
 
@@ -86,10 +86,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
     double st_price,rate_editext1,dou_bqty,dou_etdiscount,st_packingqtydouble,st_totalqtydouble,do_inbqty,bag,amount;
     int check = 0;
     StringRequest stringRequest;
-    TextInputEditText ethsn,ethsn1;
-    //TextInputEditText etqty;
-    //EditText etqty,etbqty;
-    //boolean flag = true;
+    TextInputEditText ethsn;
     TextInputEditText etqty, etbqty, etrate, etdiscount, etamount,etqty1, etbqty1, etrate1, etdiscount1, etamount1;
     int current_edittext1;
     private int in_bqty;
@@ -100,6 +97,8 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
     private String[] actual_amount_str;
     private double sum1=0.0;
     private double total1;
+    List<String> itemdetailid,st_spinner1arr,unitid_arr,subpackingqty_arr,
+                packingqty_arr,totalqty_arr,quantitybyid_arr,taxvalue_arr;
 
 
     public AddNewInvoice() {
@@ -156,6 +155,16 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
         e4 = new ArrayList<String>();
         e5 = new ArrayList<String>();
         e6 = new ArrayList<String>();
+
+        itemdetailid = new ArrayList<String>();
+        st_spinner1arr = new ArrayList<String>();
+        unitid_arr = new ArrayList<String>();
+        subpackingqty_arr = new ArrayList<String>();
+        packingqty_arr = new ArrayList<String>();
+        totalqty_arr = new ArrayList<String>();
+        quantitybyid_arr = new ArrayList<String>();
+        taxvalue_arr = new ArrayList<String>();
+
         newStr = new ArrayList<String>();
         newStr_copy = new ArrayList<String>();
 
@@ -374,7 +383,6 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                             else{
                                 etamount.setText(dis_amount);
                             }
-
                         }
 
 
@@ -395,7 +403,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                 String amount1_packet=Double.toString(amount_packet);
                                 etamount.setText(amount1_packet);
                                 //.makeText(getContext(), "Inside if loop etbqty"+etbqty.getText().toString()+"\netqty"+etqty.getText().toString(), //.LENGTH_SHORT).show();*/
-                            } else {
+                            }else {
 
                                 etbqty.setText(etqty.getText().toString());
                                 etqty.setText(etbqty.getText().toString());
@@ -800,8 +808,15 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                     //.makeText(getContext(), "Unable to fetch tax data" + response.toString(), //.LENGTH_LONG).show();
 
                                 } else {
+                                    try {
 
-                                    Toast.makeText(getContext(), "Response \n"+response, Toast.LENGTH_SHORT).show();
+                                        itemdetailid = new ArrayList<String>();
+                                        Toast.makeText(getContext(), "Response \n" + response, Toast.LENGTH_SHORT).show();
+                                        JSONObject json = new JSONObject(response);
+                                        itemdetailid.add(json.getString("ItemDetailId"));
+                                        Toast.makeText(getContext(), "itemDetailId"+itemdetailid.toString(), Toast.LENGTH_LONG).show();
+                                        Log.d("mytag", "array list itemdetailId: "+itemdetailid.toString());
+                                    }catch(JSONException e){e.printStackTrace();}
                                 }
                             }
                         },
@@ -829,6 +844,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                         params.put("remainamount",String.valueOf(0));
                         params.put("finaltotal",et_lastfinaltotal.getText().toString());
                         params.put("remark",et_message.getText().toString());
+                        params.put("company_id",company_id);
 //                params.put("password", password);
 
                         //returning parameter
@@ -838,6 +854,66 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
                 RequestQueue requestQueue1 = Volley.newRequestQueue(getContext());
                 requestQueue1.add(saveTransactionMaster);
+
+
+                final StringRequest saveTransactionDetails = new StringRequest(Request.Method.POST, Config.SAVE_TRANSACTION_DETAILS_URL,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                //If we are getting success from server
+                                if (TextUtils.isEmpty(response)) {
+                                    //Creating a shared preference
+                                    //.makeText(getContext(), "Unable to fetch tax data" + response.toString(), //.LENGTH_LONG).show();
+
+                                } else {
+
+                                        Toast.makeText(getContext(), "Response \n" + response, Toast.LENGTH_SHORT).show();
+
+
+                                }
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                //You can handle error here if you want
+                            }
+                        }) {
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map<String, String> params = new HashMap<>();
+                        //Adding parameters to request
+                        //params.put("ItemId", "ItemId");
+                        //params.put("ItemName", "ItemName");
+                        params.put("formid", form_id);
+                        params.put("formtype", "N");
+                        params.put("hidetransactionid", String.valueOf(0));
+                        params.put("transactionId",itemdetailid.toString());
+                        params.put("itemdetailid",String.valueOf(st_spinner1arr));
+                        params.put("qty",String.valueOf(ql3 ));
+                        params.put("billingqty", String.valueOf(ql4));
+                        params.put("rate",ql5.toString() );
+                        params.put("itemdiscount",ql6.toString() );
+                        params.put("itemunits",unitid_arr.toString() );
+                        params.put("unitsubpackingqty",subpackingqty_arr.toString());
+                        params.put("unitpackingqty",packingqty_arr.toString() );
+                        params.put("unitsubpackingqty",subpackingqty_arr.toString() );
+                        params.put("unitremainqty", totalqty_arr.toString());
+                        params.put("hiddenqtyonhand",quantitybyid_arr.toString());
+                        params.put("tax", taxvalue_arr.toString());
+                        params.put("company_id",company_id);
+
+//                params.put("password", password);
+
+                        //returning parameter
+                        return params;
+                    }
+                };
+
+                RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+                requestQueue.add(saveTransactionDetails);
+
+
             }
         });
         return view;
@@ -869,12 +945,10 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                 int len = json_data.length();
                                 String len1 = valueOf(len);
                                 // //.makeText(getContext(), json_data.toString(), //.LENGTH_SHORT).show();
-
                                 for (int i = 0; i < json_data.length(); i++) {
                                     JSONObject json = json_data.getJSONObject(i);
                                     al1.add(json.getString("TaxPercent"));
                                     al2.add(json.getString("TaxName"));
-
                                 }
                                 Integer a1 = al1.size();
                                 String a2 = valueOf(a1);
@@ -912,6 +986,8 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
 
                                         st_taxvalue = (String) spinnerMap4.get(spin_tax.getSelectedItemPosition());
+
+                                        taxvalue_arr.add((String) spinnerMap4.get(spin_tax.getSelectedItemPosition()));
 
 
                                         //.makeText(getContext(), "Size Value" + st_taxvalue, //.LENGTH_SHORT).show();
@@ -1024,6 +1100,9 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                 dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                                 spinner1.setAdapter(dataAdapter);
 
+                                st_spinner1arr=new ArrayList<>();
+                                st_spinner1arr.add((String) spinnerMap.get(spinner1.getSelectedItem()));
+                                Log.d("mytag", "st_spinner1arr "+st_spinner1arr.toString());
                                 st_spinner1 = (String) spinnerMap.get(spinner1.getSelectedItem());
 
                                 RequestQueue requestQueue1 = Volley.newRequestQueue(getContext());
@@ -1124,13 +1203,24 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                 result1 = result1.replaceAll("[\\[\\]\\(\\)]", "");
                                 String str[] = result1.split(",");
 
-                                st_quantitybyid = a4;
+                                 st_quantitybyid = a4;
                                 st_packingqty = Integer.parseInt(a6);
                                 st_packingqtydouble=Double.parseDouble(a6);
                                 st_subpackingqty = Integer.parseInt(a7);
+
                                 st_totalqty = Integer.parseInt(a10);
                                 st_totalqtydouble=Double.parseDouble(a10);
                                 st_price=Double.parseDouble(a9);
+
+
+                                //Storing values in array
+                                try {
+                                    subpackingqty_arr.add(String.valueOf(st_subpackingqty));
+                                    packingqty_arr.add(String.valueOf(st_packingqty));
+                                    totalqty_arr.add(String.valueOf(st_totalqtydouble));
+                                    quantitybyid_arr.add(String.valueOf(st_quantitybyid));
+                                }catch(ArithmeticException e){e.printStackTrace();}
+                                catch (NumberFormatException e){e.printStackTrace();}
 
                                 //.makeText(getContext(), "Quantity Id" + st_quantitybyid + "\nPacking_Qty" + st_packingqty
                                         //+ "\nSub_PackingQty" + st_subpackingqty + "\nTotalQty" + st_totalqty+"\nst_price"+st_price, //.LENGTH_SHORT).show();
@@ -1504,6 +1594,9 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                                         st_unitpostion=spinner2.getSelectedItemPosition();
                                         st_unitid= (String) spinnerMap2.get(spinner2.getSelectedItemPosition());
+                                       try{
+                                        unitid_arr.add((String) spinnerMap2.get(spinner2.getSelectedItemPosition()));}
+                                       catch (NullPointerException e){e.printStackTrace();}
                                         //.makeText(getContext(), "Unit Position"+st_unitpostion, //.LENGTH_SHORT).show();
                                         //.makeText(getContext(),"the selected item is\n"+ st_unitid, //.LENGTH_SHORT).show();
 

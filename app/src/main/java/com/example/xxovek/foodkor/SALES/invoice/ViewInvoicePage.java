@@ -114,13 +114,7 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
         View view = inflater.inflate(R.layout.fragment_view_invoice_page, container, false);
         rv_viewitem=view.findViewById(R.id.rv_addinvoice);
         recyclerView1=view.findViewById(R.id.rv_addgst);
-        /*spin_customername=view.findViewById(R.id.spin_customernames);
-        spin_terms=view.findViewById(R.id.spin_terms);
-        et_invoicedate=view.findViewById(R.id.et_invoicedate);
-        et_duedate=view.findViewById(R.id.et_duedate);
-        et_billaddress=view.findViewById(R.id.et_billingaddress);
-        fab_addinvoice=view.findViewById(R.id.fab_addinvoice);
-*/
+
         fab_addinvoice = view.findViewById(R.id.showalertdialog);
 
         spin_customername = view.findViewById(R.id.customernames);
@@ -217,10 +211,7 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
                                 c.add(Calendar.DAY_OF_MONTH, nosofdays);
                                 String newDate = sdf.format(c.getTime());
                                 Toast.makeText(getContext(), "New Date"+newDate.toString(), Toast.LENGTH_SHORT).show();
-
                                 et_duedate.setText(newDate);
-
-
                             }
                         }, mYear, mMonth, mDay);
                 datePickerDialog.show();

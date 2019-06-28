@@ -61,5 +61,6 @@ public class Config {
                         public static final String FETCH_ITEM_TAX1_URL = ROOT_URL +"fetch_itemtax1.php";
                         public static final String FETCH_ITEMNAME_INFO_BY_ID_URL = ROOT_URL +"fetchitemnameinfobyid.php";
                         public static final String SAVE_TRANSACTION_MASTER_URL = ROOT_URL +"savetransactionmaster.php";
+                        public static final String SAVE_TRANSACTION_DETAILS_URL = ROOT_URL +"savetransactiondetails.php";
 
 }
