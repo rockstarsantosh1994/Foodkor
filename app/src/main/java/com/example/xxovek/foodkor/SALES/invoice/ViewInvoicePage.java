@@ -87,6 +87,7 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
     String  st_taxvalue, st_quantitybyid,  st_unitid,amount_nos,no3,dis_amount,amount_temp;
     public Button btn_getallids;
     private String[] actual_amount_str;
+    private double sum3=0.0;
 
 
     public ViewInvoicePage() {
@@ -870,13 +871,6 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
 
                                     }
 
-                                    for(int e=0;e<zl2.size();e++) {
-
-                                        double total = Double.parseDouble(zl2.get(e).toString().trim());
-                                        total1 = sum1+(total*2);
-
-                                    }
-
 
 
                                     // a= a + "Age : "+json.getString("c_phone")+"\n";
@@ -921,6 +915,20 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
 
                                 //.makeText(getContext(), "id is  " + user_id21.toString() , //.LENGTH_SHORT).show();
 
+                                Log.d("MYTAG", "onResponse:ZL2 SIZE " + zl2.size());
+                                Log.d("MYTAG", "onResponse:ZL2 " + zl2);
+
+
+                                for(int e=0;e<zl2.size();e++) {
+
+                                    double total = Double.parseDouble(zl2.get(e).toString().trim());
+                                    sum3 = sum3 + (total*2);
+                                        Log.d("MYTAG", "onResponse:sum 3 " + sum3);
+                                        Log.d("MYTAG", "onResponse:total " + total);
+
+                                }
+                                total1 = sum3+sum1;
+                                Log.d("MYTAG", "onResponse:total 1 " + total1);
 
 
                                 String total2 = String.valueOf(total1);
