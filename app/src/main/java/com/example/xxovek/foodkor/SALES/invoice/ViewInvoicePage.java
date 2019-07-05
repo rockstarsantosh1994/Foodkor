@@ -109,6 +109,7 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
         company_id=prf.getString("company_id","");
         final String company_flag=prf.getString("company_flag","");
         final String isAdmin=prf.getString("isAdmin","");
+        actual_amount_str = new String[100];
 
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_view_invoice_page, container, false);
@@ -702,6 +703,7 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
 
                             try {
 
+
                                 Toast.makeText(getContext(), "111"+response.toString(), Toast.LENGTH_SHORT).show();
 
                                 List<String> al1 = new ArrayList<String>();
@@ -737,6 +739,8 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
                                 //Toast.makeText(getContext(), json_data.toString(), Toast.LENGTH_SHORT).show();--
 
                                 for(int i = 0; i < json_data.length(); i++) {
+                                    zl2.clear();
+
                                     JSONObject json = json_data.getJSONObject(i);
                                     ql1.add(json.getString("itemDetailId"));//al1
                                     ql3.add(json.getString("qty"));//al2
@@ -782,6 +786,99 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
                                     Toast.makeText(getContext(), "tax is  " +  newStr.toString(), Toast.LENGTH_SHORT).show();
 
 
+                                    int newstr_size = newStr.size();
+                                    for(int j=0;j<newstr_size-1;j++){
+
+
+
+                                        if(newStr.get(j).toString().equals(newStr.get(newstr_size-1).toString()) && (!ql7_copy.get(j).toString().equals("0"))){
+
+
+                                            Toast.makeText(getContext(), "newstr is  " +  newStr.get(j).toString(), Toast.LENGTH_SHORT).show();
+
+                                            Toast.makeText(getContext(), "same tax  " + newStr.get(newstr_size-1).toString() , Toast.LENGTH_SHORT).show();
+
+                                            Toast.makeText(getContext(), "ql7 is  " + ql7_copy.get(j).toString().trim(), Toast.LENGTH_SHORT).show();
+
+                                            Toast.makeText(getContext(), "amount is  " + amount_temp.trim(), Toast.LENGTH_SHORT).show();
+
+
+                                            double amount_temp_int = Double.parseDouble((amount_temp.trim()));
+                                            double al7_int = Double.parseDouble(ql7_copy.get(j).toString().trim());
+                                            double sum = al7_int+amount_temp_int;
+
+
+                                            String sum_str= String.valueOf(sum);
+
+
+
+                                            ql7_copy.set(j,sum_str);
+                                            ql7_copy.set(ql7_copy.size()-1,"0");
+                                            Toast.makeText(getContext(), "sum is  " + sum_str.toString(), Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(getContext(), "ql7 is  " + ql7_copy.toString(), Toast.LENGTH_SHORT).show();
+
+
+
+                                        }else {
+
+                                        }
+
+                                        Toast.makeText(getContext(), "ql7 is  " + ql7_copy.toString(), Toast.LENGTH_SHORT).show();
+
+                                        Toast.makeText(getContext(), "tax is  " +  newStr.get(j).toString(), Toast.LENGTH_SHORT).show();
+                                    }
+
+                                    for(int l=0;l<newStr.size();l++) {
+
+
+                                        if (!(ql7_copy.get(l).toString().equals("0"))) {
+
+                                            double amount_int_set = Double.parseDouble(ql7_copy.get(l).toString());
+                                            double tax_int_set = Double.parseDouble(newStr.get(l).toString());
+                                            double tax_int_set_half = tax_int_set / 2;
+
+                                            double actual_amount = amount_int_set * 0.01 * tax_int_set_half;
+                                            actual_amount_str[l] = String.valueOf(actual_amount);
+
+                                        } else {
+
+                                            actual_amount_str[l] = "0";
+
+                                        }
+
+                                        Toast.makeText(getContext(), "actual value to be set is loop 1 " + actual_amount_str[l].toString(), Toast.LENGTH_SHORT).show();
+
+
+                                    }
+
+                                    for(int l=0;l<newStr.size();l++) {
+
+                                /*double al77_int = Double.parseDouble(amount_temp.trim());
+                                sum1 = sum1+al77_int;
+
+                                String sum2 = String.valueOf(sum1);
+                                et_lasttotal.setText(sum2);*/
+
+                                        if (!(ql7_copy.get(l).toString().equals("0"))) {
+
+                                            zl2.add(actual_amount_str[l]);
+                                            Toast.makeText(getContext(), "zl2 is " + zl2.toString(), Toast.LENGTH_SHORT).show();
+
+
+                                        }
+
+
+                                    }
+
+                                    for(int e=0;e<zl2.size();e++) {
+
+                                        double total = Double.parseDouble(zl2.get(e).toString().trim());
+                                        total1 = sum1+(total*2);
+
+                                    }
+
+
+
                                     // a= a + "Age : "+json.getString("c_phone")+"\n";
                                     //j= j + "Job : "+json.getString("Job")+"\n";
                                 }
@@ -812,6 +909,128 @@ public class ViewInvoicePage extends Fragment implements MyRecyclerViewAdapter.I
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
+
+                            try {
+
+                                final RecyclerView.LayoutManager mLayoutManager1 = new LinearLayoutManager(ViewInvoicePage.this.getContext());
+
+                                recyclerView1.setLayoutManager(mLayoutManager1);
+
+                                int user_id2 = adapter.getItemCount();
+                                String user_id21 = valueOf(user_id2);
+
+                                //.makeText(getContext(), "id is  " + user_id21.toString() , //.LENGTH_SHORT).show();
+
+
+
+                                String total2 = String.valueOf(total1);
+                                et_lasttotal.setText(total2);
+                                et_lastfinaltotal.setText(total2);
+                                et_lastbalancedue.setText(total2);
+
+                                et_finaldiscount.addTextChangedListener(new TextWatcher() {
+                                    @Override
+                                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+
+                                    }
+
+                                    @Override
+                                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                                    }
+
+                                    @Override
+                                    public void afterTextChanged(Editable s) {
+
+                                        if(!s.toString().equals(null)){
+
+                                            double final_discount= Double.parseDouble(s.toString().trim());
+                                            double final_total= Double.parseDouble(et_lasttotal.getText().toString().trim());
+
+                                            double last_final_total = final_total-(final_total*0.01*final_discount);
+
+                                            String last_final_total1 = String.valueOf(last_final_total);
+
+                                            et_lastfinaltotal.setText(last_final_total1);
+
+                                        }
+
+                                    }
+                                });
+
+
+                            /*for(int l=0;l<ql7_copy.size();l++){
+
+                                if(!(ql7_copy.get(l).toString().equals("0"))) {
+
+                                    int aa = Integer.valueOf(newStr.get(l).toString());
+
+                                    double amount_int_set = Double.parseDouble(ql7_copy.get(l).toString());
+                                    double tax_int_set = Double.parseDouble(newStr.get(l).toString());
+                                    double tax_int_set_half = tax_int_set / 2;
+
+                                    double actual_amount = amount_int_set * 0.01 * tax_int_set_half;
+                                    actual_amount_str[aa] = String.valueOf(actual_amount);
+
+                                    if(newStr.get(l).toString().equals(newStr.get(newStr.size()-1).toString())){
+
+                                        zl2.add((newStr.size()-1),"1");
+                                        zl2.add(l,actual_amount_str[aa]);
+
+
+                                    }
+                                    else{
+                                        zl2.add(l,"0");
+
+                                    }
+
+
+
+                                    Toast.makeText(getContext(), "actual value to be set is loop 1 " + actual_amount_str[aa].toString(), Toast.LENGTH_SHORT).show();
+
+
+
+                                    Toast.makeText(getContext(), "new ql7 is  " + ql7_copy.get(l).toString(), Toast.LENGTH_SHORT).show();
+                                }
+
+                            }*/
+
+                            /*for(int p=0;p<100;p++){
+                                //if(actual_amount_str[l]!=null) {
+                                Toast.makeText(getContext(), "actual value to be set is loop 2  " + actual_amount_str[p].toString(), Toast.LENGTH_SHORT).show();
+
+                                zl2.add(actual_amount_str[p]);
+                                //}
+                            }*/
+
+
+                            /*for(int q=0;q<newStr.size();q++){
+                                for(int e=1;e<newStr.size()-1;e++){
+                                    if(newStr.get(q).equals(newStr.get(e))){
+
+                                        zl2.add(zl1.get(q));
+
+                                    }
+                                    else{
+
+                                        zl2.add("0");
+
+                                    }
+                                }
+                            }*/
+
+                                recyclerView1.setItemAnimator(new DefaultItemAnimator());
+                                adapter1 = new MyRecyclerViewAdapter(getContext(), zl2, zl2, zl2, zl2, zl2, zl2, zl2, zl2, "12");
+                                adapter1.setClickListener(ViewInvoicePage.this);
+                                recyclerView1.setAdapter(adapter1);
+                                recyclerView1.addItemDecoration(new DividerItemDecoration(getContext(),
+                                        DividerItemDecoration.VERTICAL));
+                                adapter1.notifyDataSetChanged();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+
                         }
                     }
                 },

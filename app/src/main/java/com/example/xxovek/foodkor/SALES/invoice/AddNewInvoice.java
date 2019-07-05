@@ -98,6 +98,8 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
     private String[] actual_amount_str;
     private double sum1=0.0;
     private double total1;
+    public ArrayList itemdetailid_arr,st_spinner1_arr,etqty_arr,etbqty_arr,etrate_arr,et_discountarr,stunitid_arr,st_subpackingqty_arr,st_packingqty_arr,
+                            st_totalqty_arr,st_quantitybyid_arr,st_taxvalue_arr;
 
 
     public AddNewInvoice() {
@@ -185,6 +187,20 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
         zl2 = new ArrayList<String>();
 
         a = new ArrayList<String>();
+
+
+        itemdetailid_arr = new ArrayList<String>();
+        st_spinner1_arr = new ArrayList<String>();
+        etqty_arr = new ArrayList<String>();
+        etbqty_arr = new ArrayList<String>();
+        etrate_arr = new ArrayList<String>();
+        et_discountarr = new ArrayList<String>();
+        stunitid_arr = new ArrayList<String>();
+        st_subpackingqty_arr = new ArrayList<String>();
+        st_packingqty_arr = new ArrayList<String>();
+        st_totalqty_arr = new ArrayList<String>();
+        st_quantitybyid_arr = new ArrayList<String>();
+        st_taxvalue_arr = new ArrayList<String>();
 
         fab_dialog = view.findViewById(R.id.showalertdialog);
 
@@ -534,6 +550,13 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
                         Toast.makeText(getContext(), "tax is  " +  newStr.toString(), Toast.LENGTH_SHORT).show();
 
+                        etqty_arr.add(etqty.getText().toString());
+                        etbqty_arr.add(etbqty.getText().toString());
+                        etrate_arr.add(etrate.getText().toString());
+                        et_discountarr.add(etdiscount.getText().toString());
+
+
+
                         //.makeText(AddNewInvoice.this.getContext(), "QL7 IS\n\n" + ql7.toString() , //.LENGTH_SHORT).show();
 
 
@@ -798,9 +821,12 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                         JSONObject json = new JSONObject(response);
                                         itemdetailid=(json.getString("ItemDetailId"));
 
-                                        Log.d("mytag", "onResponse: SAVE_TRANSACTION_MASTER_URL itemDetailId"+itemdetailid);
+                                        itemdetailid_arr.add(json.getString("ItemDetailId"));
+                                        Log.d("mytag", "onResponse: ItemDetailId in array"+itemdetailid_arr);
+
+                                        /*Log.d("mytag", "onResponse: SAVE_TRANSACTION_MASTER_URL itemDetailId"+itemdetailid);
                                         Toast.makeText(getContext(), "itemDetailId"+itemdetailid.toString(), Toast.LENGTH_LONG).show();
-                                        Log.d("mytag", "array list itemdetailId: "+itemdetailid.toString());
+                                        Log.d("mytag", "array list itemdetailId: "+itemdetailid.toString());*/
 
 
                                         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
@@ -873,7 +899,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                         Map<String, String> params = new HashMap<>();
                         //Adding parameters to request
 
-                        params.put("formid", form_id);
+                        /*params.put("formid", form_id);
                         params.put("formtype","N");
                         params.put("hidetransactionid", String.valueOf(0));
                         params.put("transactionId",itemdetailid);
@@ -888,10 +914,27 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                         params.put("unitremainqty", String.valueOf(st_totalqty));
                         params.put("hiddenqtyonhand",st_quantitybyid);
                         params.put("tax", st_taxvalue);
+                        params.put("company_id",company_id);*/
+
+                        params.put("formid", form_id);
+                        params.put("formtype","N");
+                        params.put("hidetransactionid", String.valueOf(0));
+                        params.put("transactionId", String.valueOf(itemdetailid_arr));
+                        params.put("itemdetailid", st_spinner1_arr.toString());
+                        params.put("qty", String.valueOf(etqty_arr));
+                        params.put("billingqty", String.valueOf(etbqty_arr));
+                        params.put("rate", String.valueOf(etrate_arr));
+                        params.put("itemdiscount", String.valueOf(et_discountarr));
+                        params.put("itemunits",st_unitid );
+                        params.put("unitsubpackingqty", String.valueOf(st_subpackingqty));
+                        params.put("unitpackingqty", String.valueOf(st_packingqty));
+                        params.put("unitremainqty", String.valueOf(st_totalqty));
+                        params.put("hiddenqtyonhand",st_quantitybyid);
+                        params.put("tax", st_taxvalue);
                         params.put("company_id",company_id);
 
-                        Log.d("mytag", "getParams: SAVE_TRANSACTION_DETAILS_URL\n formid"+form_id+"\ntransactionId"+itemdetailid+
-                                "\nitemdetailid"+st_spinner1+"\nqty"+etqty.getText().toString()+"\nbilling qty"+etbqty.getText().toString()+"\nrate"+etrate.getText().toString()+"\nitemdiscount"+etdiscount.getText().toString()+
+                        Log.d("mytag", "getParams: SAVE_TRANSACTION_DETAILS_URL\n formid"+form_id+"\ntransactionId"+itemdetailid_arr+
+                                "\nitemdetailid"+st_spinner1_arr+"\nqty"+etqty_arr+"\nbilling qty"+etbqty_arr+"\nrate"+etrate_arr+"\nitemdiscount"+et_discountarr+
                                 "\nitemunits"+st_unitid+"\nunitsubpackingqty"+st_subpackingqty+"\nunitremainqty"+st_totalqty+"\nunitpackingqty"+st_packingqty+
                                 "\nhiddenqtyonhand"+st_quantitybyid+"\ntax"+st_taxvalue+"\ncompany_id"+company_id);
 
@@ -899,6 +942,13 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                         return params;
                     }
                 };
+
+                itemdetailid_arr.clear();
+                st_spinner1_arr.clear();
+                etqty_arr.clear();
+                etbqty_arr.clear();
+                etrate_arr.clear();
+                et_discountarr.clear();
 
             }
         });
@@ -1098,13 +1148,15 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                     @Override
                                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
+                                        st_spinner1_arr.clear();
+
                                         st_spinner1 = (String) spinnerMap.get(spinner1.getSelectedItemPosition());
+
+                                        st_spinner1_arr.add(st_spinner1);
                                         //.makeText(AddNewInvoice.this.getContext(), st_spinner1.toString(), //.LENGTH_SHORT).show();
-                                        Log.d("mytag", "onItemSelected: st_spinner1"+st_spinner1);
+                                        Log.d("mytag", "onItemSelected: st_spinner1 array"+st_spinner1_arr);
                                         RequestQueue requestQueue1 = Volley.newRequestQueue(getContext());
                                         requestQueue1.add(stringRequest1);
-
-
                                     }
 
                                     @Override
