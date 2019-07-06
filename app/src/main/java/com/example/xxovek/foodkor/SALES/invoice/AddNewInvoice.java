@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -104,7 +106,22 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
     public AddNewInvoice() {
         // Required empty public constructor
+        try {
+            itemdetailid_arr.clear();
+            st_spinner1_arr.clear();
+            etqty_arr.clear();
+            etbqty_arr.clear();
+            etrate_arr.clear();
+            et_discountarr.clear();
+            stunitid_arr.clear();
+            st_subpackingqty_arr.clear();
+            st_packingqty_arr.clear();
+            st_totalqty_arr.clear();
+            st_quantitybyid_arr.clear();
+            st_taxvalue_arr.clear();
+        }catch(NullPointerException e){e.printStackTrace();}
     }
+
 
 
     @Override
@@ -113,6 +130,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_add_new_invoice, container, false);
         context = this;
+
 
         SharedPreferences prf = getContext().getSharedPreferences("Options", getContext().MODE_PRIVATE);
         final String person_id = prf.getString("person_id", "");
@@ -189,18 +207,18 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
         a = new ArrayList<String>();
 
 
-        itemdetailid_arr = new ArrayList<String>();
-        st_spinner1_arr = new ArrayList<String>();
-        etqty_arr = new ArrayList<String>();
-        etbqty_arr = new ArrayList<String>();
-        etrate_arr = new ArrayList<String>();
-        et_discountarr = new ArrayList<String>();
-        stunitid_arr = new ArrayList<String>();
-        st_subpackingqty_arr = new ArrayList<String>();
-        st_packingqty_arr = new ArrayList<String>();
-        st_totalqty_arr = new ArrayList<String>();
-        st_quantitybyid_arr = new ArrayList<String>();
-        st_taxvalue_arr = new ArrayList<String>();
+        itemdetailid_arr = new ArrayList();
+        st_spinner1_arr = new ArrayList();
+        etqty_arr = new ArrayList();
+        etbqty_arr = new ArrayList();
+        etrate_arr = new ArrayList();
+        et_discountarr = new ArrayList();
+        stunitid_arr = new ArrayList();
+        st_subpackingqty_arr = new ArrayList();
+        st_packingqty_arr = new ArrayList();
+        st_totalqty_arr = new ArrayList();
+        st_quantitybyid_arr = new ArrayList();
+        st_taxvalue_arr = new ArrayList();
 
         fab_dialog = view.findViewById(R.id.showalertdialog);
 
@@ -269,6 +287,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
         fab_dialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
 
 
                 //Adding the string request to the queue
@@ -550,10 +569,16 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
                         Toast.makeText(getContext(), "tax is  " +  newStr.toString(), Toast.LENGTH_SHORT).show();
 
-                        etqty_arr.add(etqty.getText().toString());
-                        etbqty_arr.add(etbqty.getText().toString());
-                        etrate_arr.add(etrate.getText().toString());
-                        et_discountarr.add(etdiscount.getText().toString());
+                        try {
+
+                            etqty_arr.add(etqty.getText().toString());
+                            etbqty_arr.add(etbqty.getText().toString());
+                            etrate_arr.add(etrate.getText().toString());
+                            et_discountarr.add(etdiscount.getText().toString());
+                        }catch (ArithmeticException e){
+                            e.printStackTrace();
+                        }
+                        catch(NumberFormatException e){e.printStackTrace();}
 
 
 
@@ -800,10 +825,6 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
             @Override
             public void onClick(View v) {
 
-
-
-
-
                 final StringRequest saveTransactionMaster = new StringRequest(Request.Method.POST, Config.SAVE_TRANSACTION_MASTER_URL,
                         new Response.Listener<String>() {
                             @Override
@@ -882,8 +903,16 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                     //Creating a shared preference
                                     //.makeText(getContext(), "Unable to fetch tax data" + response.toString(), //.LENGTH_LONG).show();
 
+
                                 } else {
+                                    Fragment fragment = new Invoices();
+                                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                                    fragmentTransaction.replace(R.id.main_container, fragment);
+                                    fragmentTransaction.addToBackStack(null);
+                                    fragmentTransaction.commit();
                                     Toast.makeText(getContext(), "Response \n" + response, Toast.LENGTH_SHORT).show();
+
                                 }
                             }
                         },
@@ -898,8 +927,9 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                     protected Map<String, String> getParams() throws AuthFailureError{
                         Map<String, String> params = new HashMap<>();
                         //Adding parameters to request
+/*
 
-                        /*params.put("formid", form_id);
+                        params.put("formid", form_id);
                         params.put("formtype","N");
                         params.put("hidetransactionid", String.valueOf(0));
                         params.put("transactionId",itemdetailid);
@@ -914,42 +944,37 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                         params.put("unitremainqty", String.valueOf(st_totalqty));
                         params.put("hiddenqtyonhand",st_quantitybyid);
                         params.put("tax", st_taxvalue);
-                        params.put("company_id",company_id);*/
+                        params.put("company_id",company_id);
+*/
 
                         params.put("formid", form_id);
                         params.put("formtype","N");
                         params.put("hidetransactionid", String.valueOf(0));
                         params.put("transactionId", String.valueOf(itemdetailid_arr));
-                        params.put("itemdetailid", st_spinner1_arr.toString());
+                        params.put("itemdetailid", String.valueOf(st_spinner1_arr));
                         params.put("qty", String.valueOf(etqty_arr));
                         params.put("billingqty", String.valueOf(etbqty_arr));
                         params.put("rate", String.valueOf(etrate_arr));
                         params.put("itemdiscount", String.valueOf(et_discountarr));
-                        params.put("itemunits",st_unitid );
-                        params.put("unitsubpackingqty", String.valueOf(st_subpackingqty));
-                        params.put("unitpackingqty", String.valueOf(st_packingqty));
-                        params.put("unitremainqty", String.valueOf(st_totalqty));
-                        params.put("hiddenqtyonhand",st_quantitybyid);
-                        params.put("tax", st_taxvalue);
+                        params.put("itemunits", String.valueOf(stunitid_arr));
+                        params.put("unitsubpackingqty", String.valueOf(st_subpackingqty_arr));
+                        params.put("unitpackingqty", String.valueOf(st_packingqty_arr));
+                        params.put("unitremainqty", String.valueOf(st_totalqty_arr));
+                        params.put("hiddenqtyonhand",String.valueOf(st_quantitybyid_arr));
+                        params.put("tax", String.valueOf(st_taxvalue_arr));
                         params.put("company_id",company_id);
+
+
 
                         Log.d("mytag", "getParams: SAVE_TRANSACTION_DETAILS_URL\n formid"+form_id+"\ntransactionId"+itemdetailid_arr+
                                 "\nitemdetailid"+st_spinner1_arr+"\nqty"+etqty_arr+"\nbilling qty"+etbqty_arr+"\nrate"+etrate_arr+"\nitemdiscount"+et_discountarr+
-                                "\nitemunits"+st_unitid+"\nunitsubpackingqty"+st_subpackingqty+"\nunitremainqty"+st_totalqty+"\nunitpackingqty"+st_packingqty+
-                                "\nhiddenqtyonhand"+st_quantitybyid+"\ntax"+st_taxvalue+"\ncompany_id"+company_id);
+                                "\nitemunits"+stunitid_arr+"\nunitsubpackingqty"+st_subpackingqty_arr+"\nunitremainqty"+st_totalqty_arr+"\nunitpackingqty"+st_packingqty_arr+
+                                "\nhiddenqtyonhand"+st_quantitybyid_arr+"\ntax"+st_taxvalue_arr+"\ncompany_id"+company_id);
 
                         //returning parameter
                         return params;
                     }
                 };
-
-                itemdetailid_arr.clear();
-                st_spinner1_arr.clear();
-                etqty_arr.clear();
-                etbqty_arr.clear();
-                etrate_arr.clear();
-                et_discountarr.clear();
-
             }
         });
         return view;
@@ -1021,6 +1046,8 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
 
                                         st_taxvalue = (String) spinnerMap4.get(spin_tax.getSelectedItemPosition());
+
+                                        st_taxvalue_arr.add(st_taxvalue);
 
                                         //taxvalue_arr.add((String) spinnerMap4.get(spin_tax.getSelectedItemPosition()));
 
@@ -1419,14 +1446,30 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                 result1 = result1.replaceAll("[\\[\\]\\(\\)]", "");
                                 String str[] = result1.split(",");
 
-                                 st_quantitybyid = a4;
-                                st_packingqty = Integer.parseInt(a6);
-                                st_packingqtydouble=Double.parseDouble(a6);
-                                st_subpackingqty = Integer.parseInt(a7);
+                                try {
+                                    st_quantitybyid = String.valueOf(Integer.parseInt(a4));
+                                    st_packingqty = Integer.parseInt(a6);
+                                    st_packingqtydouble = Double.parseDouble(a6);
+                                    st_subpackingqty = Integer.parseInt(a7);
 
-                                st_totalqty = Integer.parseInt(a10);
-                                st_totalqtydouble=Double.parseDouble(a10);
-                                st_price=Double.parseDouble(a9);
+                                    st_totalqty = Integer.parseInt(a10);
+                                    st_totalqtydouble = Double.parseDouble(a10);
+                                    st_price = Double.parseDouble(a9);
+                                }catch (ArithmeticException e){
+                                    e.printStackTrace();
+                                }catch (NumberFormatException e){
+                                    e.printStackTrace();
+                                }
+
+                                try {
+                                    st_packingqty_arr.add(st_packingqty);
+                                    st_subpackingqty_arr.add(st_subpackingqty);
+                                    st_totalqty_arr.add(st_totalqty);
+                                    st_quantitybyid_arr.add(st_quantitybyid);
+                                }catch(ArithmeticException e){e.printStackTrace();
+                                    }
+                                catch(NumberFormatException e){e.printStackTrace();}
+
 
 
                                 //Storing values in array
@@ -1811,6 +1854,8 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                                         st_unitpostion=spinner2.getSelectedItemPosition();
                                         st_unitid= (String) spinnerMap2.get(spinner2.getSelectedItemPosition());
+
+                                        stunitid_arr.add(st_unitid);
 
                                        //    unitid_arr.clear();
                                        /// unitid_arr.add(st_unitid);
@@ -3217,5 +3262,24 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
     }
 
+
+    @Override
+    public void onDestroy() {
+                super.onDestroy();
+        try {
+            itemdetailid_arr.clear();
+            st_spinner1_arr.clear();
+            etqty_arr.clear();
+            etbqty_arr.clear();
+            etrate_arr.clear();
+            et_discountarr.clear();
+            stunitid_arr.clear();
+            st_subpackingqty_arr.clear();
+            st_packingqty_arr.clear();
+            st_totalqty_arr.clear();
+            st_quantitybyid_arr.clear();
+            st_taxvalue_arr.clear();
+        }catch(NullPointerException e){e.printStackTrace();}
+    }
 
 }
