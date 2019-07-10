@@ -4,26 +4,26 @@ ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManife
 INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:2:1-26:12
 INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:2:1-26:12
 INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:2:1-26:12
-MERGED from [com.android.support:design:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/23d308c2e01af0fdbd5708ac68a6febe/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:appcompat-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/7431adddaf44cc1836e67f01e17a52aa/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/xxovek/.gradle/caches/transforms-2/files-2.1/f538ce8d84577a5a6bb0d199bc2c2449/AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:support-v4:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/7fce272c3edcca0009906655ddf11626/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:cardview-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/98283f96c3c0f0ee57c9b43062115449/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.volley:volley:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/8697aefc4582424858f7f5d9e69684c8/AndroidManifest.xml:2:1-11:12
-MERGED from [com.basgeekball:awesome-validation:1.3] /home/xxovek/.gradle/caches/transforms-2/files-2.1/b863eedc684990b8d114a69ad4601bce/AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:support-fragment:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/bb5727cd64d25b21f3ed2034b4302ab5/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/1fdc4496da069cc2b74540a6513bb97a/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/582050de60e7b8a3aa33afc234ce439a/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/41517fcb73378d1ba7115be23ff5c8af/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/36c2f57b8ccb90f91cb5812354a84a08/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/f95007ae13aae787d0ed27870ee720c3/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-media-compat:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/c35f4b98700b63aa49102150b1deed84/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:transition:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/b9f670d8812d0f176fe909e934c16b2a/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/7b78dcd1c7bf03ce2ad53c50f4ccae3b/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/9d132c96f942207029f4ef20c974ca5c/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/d8919a5de5e90e65f7ce56f25dfa9f5d/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/457acd2933b224fc72f3a231b0639730/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.core:runtime:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/a970eb3f9209215f569458f6b73d5546/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:design:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/deb30e8e794e193e055cf66847e82501/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/xxovek/.gradle/caches/transforms-2/files-2.1/61ec1c8e75b9c4d795c2b964a6fb5ad4/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-v4:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/616beb62b09127c825cda8f74154c0da/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/6c181c4e9a12e477bd0d58c11c465dea/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.volley:volley:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/9f504fc195ebb86b6e2626ccf7dcc6e9/AndroidManifest.xml:2:1-11:12
+MERGED from [com.basgeekball:awesome-validation:1.3] /home/xxovek/.gradle/caches/transforms-2/files-2.1/b3917401e468a04275d877789c653b14/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/325a17bf3cab7f56e26de3174ef383f6/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/8d192087ec0cd59edd8c0ef9f784c028/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/e34673e7a967634895ca60f8c460fa98/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/c531f620d4b9b4c67bfe2feb8c0de45a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/55ea1f41e40b17daa19f368a457b6a57/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/d03cbd53756929be8d19c9b86e170725/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/346e4ab1d321ec4e424a5855df269e63/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/77b2bd54e29bfa8639f8e3b420ca74f1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/012af558818cc5373ae9aa7d68e2d2f3/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/b79c19d418c9be130b90253de10833c1/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/75c3e7ab13916c80d3e8dbb8ef2b42df/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/6e3c20f1a72ef80d40716faf37225891/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/cdfd473108e2249b5e3fdf04adc3672a/AndroidManifest.xml:17:1-22:12
 INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:2:1-26:12
 INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:2:1-26:12
 INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:2:1-26:12
@@ -47,10 +47,10 @@ ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManife
 		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:5:22-64
 application
 ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:7:5-24:19
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/xxovek/.gradle/caches/transforms-2/files-2.1/f538ce8d84577a5a6bb0d199bc2c2449/AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/xxovek/.gradle/caches/transforms-2/files-2.1/f538ce8d84577a5a6bb0d199bc2c2449/AndroidManifest.xml:9:5-20
-MERGED from [com.android.volley:volley:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/8697aefc4582424858f7f5d9e69684c8/AndroidManifest.xml:9:5-20
-MERGED from [com.android.volley:volley:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/8697aefc4582424858f7f5d9e69684c8/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/xxovek/.gradle/caches/transforms-2/files-2.1/61ec1c8e75b9c4d795c2b964a6fb5ad4/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/xxovek/.gradle/caches/transforms-2/files-2.1/61ec1c8e75b9c4d795c2b964a6fb5ad4/AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/9f504fc195ebb86b6e2626ccf7dcc6e9/AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/9f504fc195ebb86b6e2626ccf7dcc6e9/AndroidManifest.xml:9:5-20
 	android:supportsRtl
 		ADDED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml:12:9-35
 	android:label
@@ -85,46 +85,46 @@ uses-sdk
 INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
 INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
-MERGED from [com.android.support:design:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/23d308c2e01af0fdbd5708ac68a6febe/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:design:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/23d308c2e01af0fdbd5708ac68a6febe/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/7431adddaf44cc1836e67f01e17a52aa/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/7431adddaf44cc1836e67f01e17a52aa/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/xxovek/.gradle/caches/transforms-2/files-2.1/f538ce8d84577a5a6bb0d199bc2c2449/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/xxovek/.gradle/caches/transforms-2/files-2.1/f538ce8d84577a5a6bb0d199bc2c2449/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:support-v4:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/7fce272c3edcca0009906655ddf11626/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/7fce272c3edcca0009906655ddf11626/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/98283f96c3c0f0ee57c9b43062115449/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/98283f96c3c0f0ee57c9b43062115449/AndroidManifest.xml:20:5-44
-MERGED from [com.android.volley:volley:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/8697aefc4582424858f7f5d9e69684c8/AndroidManifest.xml:7:5-43
-MERGED from [com.android.volley:volley:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/8697aefc4582424858f7f5d9e69684c8/AndroidManifest.xml:7:5-43
-MERGED from [com.basgeekball:awesome-validation:1.3] /home/xxovek/.gradle/caches/transforms-2/files-2.1/b863eedc684990b8d114a69ad4601bce/AndroidManifest.xml:7:5-9:41
-MERGED from [com.basgeekball:awesome-validation:1.3] /home/xxovek/.gradle/caches/transforms-2/files-2.1/b863eedc684990b8d114a69ad4601bce/AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:support-fragment:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/bb5727cd64d25b21f3ed2034b4302ab5/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/bb5727cd64d25b21f3ed2034b4302ab5/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/1fdc4496da069cc2b74540a6513bb97a/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/1fdc4496da069cc2b74540a6513bb97a/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/582050de60e7b8a3aa33afc234ce439a/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/582050de60e7b8a3aa33afc234ce439a/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/41517fcb73378d1ba7115be23ff5c8af/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/41517fcb73378d1ba7115be23ff5c8af/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/36c2f57b8ccb90f91cb5812354a84a08/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/36c2f57b8ccb90f91cb5812354a84a08/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/f95007ae13aae787d0ed27870ee720c3/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/f95007ae13aae787d0ed27870ee720c3/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/c35f4b98700b63aa49102150b1deed84/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/c35f4b98700b63aa49102150b1deed84/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/b9f670d8812d0f176fe909e934c16b2a/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/b9f670d8812d0f176fe909e934c16b2a/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/7b78dcd1c7bf03ce2ad53c50f4ccae3b/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/7b78dcd1c7bf03ce2ad53c50f4ccae3b/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/9d132c96f942207029f4ef20c974ca5c/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/9d132c96f942207029f4ef20c974ca5c/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/d8919a5de5e90e65f7ce56f25dfa9f5d/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/d8919a5de5e90e65f7ce56f25dfa9f5d/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/457acd2933b224fc72f3a231b0639730/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/457acd2933b224fc72f3a231b0639730/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/a970eb3f9209215f569458f6b73d5546/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/a970eb3f9209215f569458f6b73d5546/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/deb30e8e794e193e055cf66847e82501/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/deb30e8e794e193e055cf66847e82501/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/xxovek/.gradle/caches/transforms-2/files-2.1/61ec1c8e75b9c4d795c2b964a6fb5ad4/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/xxovek/.gradle/caches/transforms-2/files-2.1/61ec1c8e75b9c4d795c2b964a6fb5ad4/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/616beb62b09127c825cda8f74154c0da/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/616beb62b09127c825cda8f74154c0da/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/6c181c4e9a12e477bd0d58c11c465dea/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/6c181c4e9a12e477bd0d58c11c465dea/AndroidManifest.xml:20:5-44
+MERGED from [com.android.volley:volley:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/9f504fc195ebb86b6e2626ccf7dcc6e9/AndroidManifest.xml:7:5-43
+MERGED from [com.android.volley:volley:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/9f504fc195ebb86b6e2626ccf7dcc6e9/AndroidManifest.xml:7:5-43
+MERGED from [com.basgeekball:awesome-validation:1.3] /home/xxovek/.gradle/caches/transforms-2/files-2.1/b3917401e468a04275d877789c653b14/AndroidManifest.xml:7:5-9:41
+MERGED from [com.basgeekball:awesome-validation:1.3] /home/xxovek/.gradle/caches/transforms-2/files-2.1/b3917401e468a04275d877789c653b14/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:support-fragment:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/325a17bf3cab7f56e26de3174ef383f6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/325a17bf3cab7f56e26de3174ef383f6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/8d192087ec0cd59edd8c0ef9f784c028/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/8d192087ec0cd59edd8c0ef9f784c028/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/e34673e7a967634895ca60f8c460fa98/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/e34673e7a967634895ca60f8c460fa98/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/c531f620d4b9b4c67bfe2feb8c0de45a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/c531f620d4b9b4c67bfe2feb8c0de45a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/55ea1f41e40b17daa19f368a457b6a57/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/55ea1f41e40b17daa19f368a457b6a57/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/d03cbd53756929be8d19c9b86e170725/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/d03cbd53756929be8d19c9b86e170725/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/346e4ab1d321ec4e424a5855df269e63/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/346e4ab1d321ec4e424a5855df269e63/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/77b2bd54e29bfa8639f8e3b420ca74f1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/77b2bd54e29bfa8639f8e3b420ca74f1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/012af558818cc5373ae9aa7d68e2d2f3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /home/xxovek/.gradle/caches/transforms-2/files-2.1/012af558818cc5373ae9aa7d68e2d2f3/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/b79c19d418c9be130b90253de10833c1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/b79c19d418c9be130b90253de10833c1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/75c3e7ab13916c80d3e8dbb8ef2b42df/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/75c3e7ab13916c80d3e8dbb8ef2b42df/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/6e3c20f1a72ef80d40716faf37225891/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/6e3c20f1a72ef80d40716faf37225891/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/cdfd473108e2249b5e3fdf04adc3672a/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /home/xxovek/.gradle/caches/transforms-2/files-2.1/cdfd473108e2249b5e3fdf04adc3672a/AndroidManifest.xml:20:5-44
 INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
 INJECTED from /home/xxovek/AndroidStudioProjects/Foodkor/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion

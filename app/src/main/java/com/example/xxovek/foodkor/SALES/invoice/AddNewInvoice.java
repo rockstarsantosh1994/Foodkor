@@ -37,6 +37,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.xxovek.foodkor.AddNewInvoiceRecyclerViewAdapter;
 import com.example.xxovek.foodkor.MyRecyclerViewAdapter;
 import com.example.xxovek.foodkor.R;
 import com.example.xxovek.foodkor.URLs.Config;
@@ -59,10 +60,11 @@ import static java.lang.String.*;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.ItemClickListener{
+public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.ItemClickListener, AddNewInvoiceRecyclerViewAdapter.ItemClickListener {
 
     public int i;
     public MyRecyclerViewAdapter adapter,adapter1;
+    public AddNewInvoiceRecyclerViewAdapter addinvoice_adapter;
     RecyclerView recyclerView, recyclerView1;
     AddNewInvoice context;
     View view;
@@ -75,7 +77,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
     FloatingActionButton fab_dialog;
     Button btn_getallids;
     ArrayList<String> n, e1, e2, e3, e4, e5, e6, a;
-    String a1, a2, a3, a4, a5, a6, a7, a8, a9, a10;
+    String a1, a2, a3, a4, a5, a6, a7, a8, a9, a10,form_type="N";
     private ArrayList al1, al2, al3, al4, al5, al6, al7, al8, ql1, ql2, ql3, ql4, ql5, ql6, ql7, ql8,ql7_copy,zl1,zl2;
 
     private int mYear, mMonth, mDay;
@@ -92,7 +94,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
     TextInputEditText ethsn;
     TextInputEditText etqty, etbqty, etrate, etdiscount, etamount,etqty1, etbqty1, etrate1, etdiscount1, etamount1;
     int current_edittext1,user_id2;
-    private int in_bqty;
+    private int in_bqty,hidetransactionid=0;
     public boolean hasFocus1=true;
     public StringRequest stringRequest11,stringRequest12;
     public ArrayList newStr,newStr_copy;
@@ -126,7 +128,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+                             final Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_add_new_invoice, container, false);
         context = this;
@@ -592,12 +594,12 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                             recyclerView.setLayoutManager(mLayoutManager);
 
                             recyclerView.setItemAnimator(new DefaultItemAnimator());
-                            adapter = new MyRecyclerViewAdapter(getContext(), ql1, ql2, ql3, ql7, ql5, ql6, ql7, ql8, "11");
-                            adapter.setClickListener(AddNewInvoice.this);
-                            recyclerView.setAdapter(adapter);
+                            addinvoice_adapter = new AddNewInvoiceRecyclerViewAdapter(getContext(), ql1, ql2, ql3, ql7, ql5, ql6, ql7, ql8,st_spinner1_arr,stunitid_arr,st_subpackingqty_arr,st_packingqty_arr,st_totalqty_arr,st_quantitybyid_arr,st_taxvalue_arr, "1");
+                            addinvoice_adapter.setClickListener(AddNewInvoice.this);
+                            recyclerView.setAdapter(addinvoice_adapter);
                             recyclerView.addItemDecoration(new DividerItemDecoration(getContext(),
                                     DividerItemDecoration.VERTICAL));
-                            adapter.notifyDataSetChanged();
+                            addinvoice_adapter.notifyDataSetChanged();
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -608,7 +610,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
                             recyclerView1.setLayoutManager(mLayoutManager1);
 
-                            int user_id2 = adapter.getItemCount();
+                            int user_id2 = addinvoice_adapter.getItemCount();
                             String user_id21 = valueOf(user_id2);
 
                             //.makeText(getContext(), "id is  " + user_id21.toString() , //.LENGTH_SHORT).show();
@@ -844,14 +846,14 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
                                         itemdetailid_arr.add(json.getString("ItemDetailId"));
                                         Log.d("mytag", "onResponse: ItemDetailId in array"+itemdetailid_arr);
+                                        Log.d("mytag", "onResponse: SAVE_TRANSACTION_MASTER_URL"+response);
 
                                         /*Log.d("mytag", "onResponse: SAVE_TRANSACTION_MASTER_URL itemDetailId"+itemdetailid);
                                         Toast.makeText(getContext(), "itemDetailId"+itemdetailid.toString(), Toast.LENGTH_LONG).show();
                                         Log.d("mytag", "array list itemdetailId: "+itemdetailid.toString());*/
 
+                                        saveTransacactionDetails();
 
-                                        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
-                                        requestQueue.add(saveTransactionDetails);
 
 
                                     }catch(JSONException e) {e.printStackTrace();}
@@ -894,91 +896,107 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                 requestQueue1.add(saveTransactionMaster);
 
 
-                saveTransactionDetails = new StringRequest(Request.Method.POST, Config.SAVE_TRANSACTION_DETAILS_URL,
-                        new Response.Listener<String>() {
-                            @Override
-                            public void onResponse(String response) {
-                                //If we are getting success from server
-                                if (TextUtils.isEmpty(response)) {
-                                    //Creating a shared preference
-                                    //.makeText(getContext(), "Unable to fetch tax data" + response.toString(), //.LENGTH_LONG).show();
 
 
-                                } else {
-                                    Fragment fragment = new Invoices();
-                                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                                    fragmentTransaction.replace(R.id.main_container, fragment);
-                                    fragmentTransaction.addToBackStack(null);
-                                    fragmentTransaction.commit();
-                                    Toast.makeText(getContext(), "Response \n" + response, Toast.LENGTH_SHORT).show();
-
-                                }
-                            }
-                        },
-                        new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                //You can handle error here if you want
-                            }
-                        }) {
-
-                    @Override
-                    protected Map<String, String> getParams() throws AuthFailureError{
-                        Map<String, String> params = new HashMap<>();
-                        //Adding parameters to request
-/*
-
-                        params.put("formid", form_id);
-                        params.put("formtype","N");
-                        params.put("hidetransactionid", String.valueOf(0));
-                        params.put("transactionId",itemdetailid);
-                        params.put("itemdetailid",st_spinner1);
-                        params.put("qty",etqty.getText().toString());
-                        params.put("billingqty", etbqty.getText().toString());
-                        params.put("rate",etrate.getText().toString());
-                        params.put("itemdiscount",etdiscount.getText().toString() );
-                        params.put("itemunits",st_unitid );
-                        params.put("unitsubpackingqty", String.valueOf(st_subpackingqty));
-                        params.put("unitpackingqty", String.valueOf(st_packingqty));
-                        params.put("unitremainqty", String.valueOf(st_totalqty));
-                        params.put("hiddenqtyonhand",st_quantitybyid);
-                        params.put("tax", st_taxvalue);
-                        params.put("company_id",company_id);
-*/
-
-                        params.put("formid", form_id);
-                        params.put("formtype","N");
-                        params.put("hidetransactionid", String.valueOf(0));
-                        params.put("transactionId", String.valueOf(itemdetailid_arr));
-                        params.put("itemdetailid", String.valueOf(st_spinner1_arr));
-                        params.put("qty", String.valueOf(etqty_arr));
-                        params.put("billingqty", String.valueOf(etbqty_arr));
-                        params.put("rate", String.valueOf(etrate_arr));
-                        params.put("itemdiscount", String.valueOf(et_discountarr));
-                        params.put("itemunits", String.valueOf(stunitid_arr));
-                        params.put("unitsubpackingqty", String.valueOf(st_subpackingqty_arr));
-                        params.put("unitpackingqty", String.valueOf(st_packingqty_arr));
-                        params.put("unitremainqty", String.valueOf(st_totalqty_arr));
-                        params.put("hiddenqtyonhand",String.valueOf(st_quantitybyid_arr));
-                        params.put("tax", String.valueOf(st_taxvalue_arr));
-                        params.put("company_id",company_id);
-
-
-
-                        Log.d("mytag", "getParams: SAVE_TRANSACTION_DETAILS_URL\n formid"+form_id+"\ntransactionId"+itemdetailid_arr+
-                                "\nitemdetailid"+st_spinner1_arr+"\nqty"+etqty_arr+"\nbilling qty"+etbqty_arr+"\nrate"+etrate_arr+"\nitemdiscount"+et_discountarr+
-                                "\nitemunits"+stunitid_arr+"\nunitsubpackingqty"+st_subpackingqty_arr+"\nunitremainqty"+st_totalqty_arr+"\nunitpackingqty"+st_packingqty_arr+
-                                "\nhiddenqtyonhand"+st_quantitybyid_arr+"\ntax"+st_taxvalue_arr+"\ncompany_id"+company_id);
-
-                        //returning parameter
-                        return params;
-                    }
-                };
             }
         });
         return view;
     }
+
+    public void saveTransacactionDetails(){
+
+        int count=addinvoice_adapter.getItemCount();
+        Log.d("mytag", "saveTransacactionDetails: COunt"+count);
+
+        for(i=0;i<count;i++) {
+
+
+            saveTransactionDetails = new StringRequest(Request.Method.POST, Config.SAVE_TRANSACTION_DETAILS_URL,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            //If we are getting success from server
+                            if (TextUtils.isEmpty(response)) {
+                                //Creating a shared preference
+                                //.makeText(getContext(), "Unable to fetch tax data" + response.toString(), //.LENGTH_LONG).show();
+
+
+                            } else {
+                                Fragment fragment = new Invoices();
+                                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                                fragmentTransaction.replace(R.id.main_container, fragment);
+                                fragmentTransaction.addToBackStack(null);
+                                fragmentTransaction.commit();
+                                Toast.makeText(getContext(), "Response \n" + response, Toast.LENGTH_SHORT).show();
+                                Log.d("mytag", "onResponse: SAVE_TRANSACTION_DETAILS_URL" + response);
+
+
+                            }
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            //You can handle error here if you want
+                        }
+                    }) {
+
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String, String> params = new HashMap<>();
+                    //Adding parameters to request
+
+/*
+                    params.put("formid", form_id);
+                    params.put("formtype", form_type);
+                    params.put("hidetransactionid", String.valueOf(hidetransactionid));
+                    params.put("transactionId", itemdetailid);
+                    params.put("itemdetailid", st_spinner1);
+                    params.put("qty", etqty.getText().toString());
+                    params.put("billingqty", etbqty.getText().toString());
+                    params.put("rate", etrate.getText().toString());
+                    params.put("itemdiscount", etdiscount.getText().toString());
+                    params.put("itemunits", st_unitid);
+                    params.put("unitsubpackingqty", String.valueOf(st_subpackingqty));
+                    params.put("unitpackingqty", String.valueOf(st_packingqty));
+                    params.put("unitremainqty", String.valueOf(st_totalqty));
+                    params.put("hiddenqtyonhand", st_quantitybyid);
+                    params.put("tax", st_taxvalue);
+                    params.put("company_id", company_id);*/
+
+                    params.put("formid", form_id);
+                    params.put("formtype", form_type);
+                    params.put("hidetransactionid", String.valueOf(hidetransactionid));
+                    params.put("transactionId", itemdetailid);
+                    params.put("itemdetailid", String.valueOf (addinvoice_adapter.getItemDetailId(i)));
+                    params.put("qty", String.valueOf (addinvoice_adapter.getQty(i)));
+                    params.put("billingqty", String.valueOf (addinvoice_adapter.getBillingQty(i)));
+                    params.put("rate", String.valueOf (addinvoice_adapter.getRate(i)));
+                    params.put("itemdiscount", String.valueOf (addinvoice_adapter.getDiscount(i)));
+                    params.put("itemunits",String.valueOf (addinvoice_adapter.getUnitId(i)));
+                    params.put("unitsubpackingqty", String.valueOf(addinvoice_adapter.getSubPackingQty(i)));
+                    params.put("unitpackingqty", String.valueOf(addinvoice_adapter.getPackingQty(i)));
+                    params.put("unitremainqty", String.valueOf(addinvoice_adapter.getTotalQty(i)));
+                    params.put("hiddenqtyonhand", String.valueOf(addinvoice_adapter.getQuantityById(i)));
+                    params.put("tax", String.valueOf(addinvoice_adapter.getTax(i)));
+                    params.put("company_id", company_id);
+
+
+                    Log.d("mytag", "getParams: SAVE_TRANSACTION_DETAILS_URL\n formid" + form_id + "\ntransactionId" + itemdetailid +
+                            "\nitemdetailid" + st_spinner1 + "\nqty" + etqty + "\nbilling qty" + etbqty + "\nrate" + etrate_arr + "\nitemdiscount" + etdiscount +
+                            "\nitemunits" + st_unitid + "\nunitsubpackingqty" + st_subpackingqty + "\nunitremainqty" + st_totalqty + "\nunitpackingqty" + st_packingqty +
+                            "\nhiddenqtyonhand" + st_quantitybyid + "\ntax" + st_taxvalue + "\ncompany_id" + company_id);
+
+                    //returning parameter
+                    return params;
+                }
+            };
+            RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+            requestQueue.add(saveTransactionDetails);
+        }
+    }
+
 
     //Fetching all taxes
     public void getTaxesInSpin() {
@@ -1448,9 +1466,9 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
                                 try {
                                     st_quantitybyid = String.valueOf(Integer.parseInt(a4));
-                                    st_packingqty = Integer.parseInt(a6);
-                                    st_packingqtydouble = Double.parseDouble(a6);
-                                    st_subpackingqty = Integer.parseInt(a7);
+                                    st_packingqty = Integer.parseInt(String.valueOf(Integer.parseInt(a6)));
+                                    st_packingqtydouble = Double.parseDouble(String.valueOf(Double.parseDouble(a6)));
+                                    st_subpackingqty = Integer.parseInt(String.valueOf(Integer.parseInt(a7)));
 
                                     st_totalqty = Integer.parseInt(a10);
                                     st_totalqtydouble = Double.parseDouble(a10);
@@ -1469,6 +1487,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                 }catch(ArithmeticException e){e.printStackTrace();
                                     }
                                 catch(NumberFormatException e){e.printStackTrace();}
+                                catch (ClassCastException e){e.printStackTrace();}
 
 
 
@@ -2318,6 +2337,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
         String user_id1 = adapter.getItem(position);
          user_id2 = adapter.getItemCount();
         String user_id21 = valueOf(user_id2);
+
 
         //.makeText(getContext(), "getitem is  " + user_id1.toString() + " on row number " + position, //.LENGTH_SHORT).show();
         //.makeText(getContext(), "count is  " + user_id21.toString() + " on row number " + position, //.LENGTH_SHORT).show();
