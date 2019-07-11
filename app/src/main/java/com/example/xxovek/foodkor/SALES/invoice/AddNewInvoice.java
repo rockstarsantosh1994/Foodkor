@@ -577,15 +577,15 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                             etbqty_arr.add(etbqty.getText().toString());
                             etrate_arr.add(etrate.getText().toString());
                             et_discountarr.add(etdiscount.getText().toString());
+
                         }catch (ArithmeticException e){
                             e.printStackTrace();
                         }
                         catch(NumberFormatException e){e.printStackTrace();}
-
+                        catch(NullPointerException e){e.printStackTrace();}
 
 
                         //.makeText(AddNewInvoice.this.getContext(), "QL7 IS\n\n" + ql7.toString() , //.LENGTH_SHORT).show();
-
 
                         try {
 
@@ -1197,7 +1197,9 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
                                         st_spinner1 = (String) spinnerMap.get(spinner1.getSelectedItemPosition());
 
-                                        st_spinner1_arr.add(st_spinner1);
+                                        try{
+                                        st_spinner1_arr.add(st_spinner1);}
+                                        catch(IndexOutOfBoundsException e){e.printStackTrace();}
                                         //.makeText(AddNewInvoice.this.getContext(), st_spinner1.toString(), //.LENGTH_SHORT).show();
                                         Log.d("mytag", "onItemSelected: st_spinner1 array"+st_spinner1_arr);
                                         RequestQueue requestQueue1 = Volley.newRequestQueue(getContext());
@@ -1480,10 +1482,10 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                 }
 
                                 try {
-                                    st_packingqty_arr.add(st_packingqty);
-                                    st_subpackingqty_arr.add(st_subpackingqty);
-                                    st_totalqty_arr.add(st_totalqty);
-                                    st_quantitybyid_arr.add(st_quantitybyid);
+                                    st_packingqty_arr.add(a6);
+                                    st_subpackingqty_arr.add(a7);
+                                    st_totalqty_arr.add(a10);
+                                    st_quantitybyid_arr.add(a4);
                                 }catch(ArithmeticException e){e.printStackTrace();
                                     }
                                 catch(NumberFormatException e){e.printStackTrace();}

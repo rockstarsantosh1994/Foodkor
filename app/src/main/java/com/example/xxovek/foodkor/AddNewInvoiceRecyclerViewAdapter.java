@@ -200,9 +200,7 @@ public class AddNewInvoiceRecyclerViewAdapter extends RecyclerView.Adapter<AddNe
     }
 
     // convenience method for getting data at click positionn
-    public String getItemDetailId(int id) {
-        return mData9.get(id);
-    }
+    public String getItemDetailId(int id) { return mData9.get(id); }
 
     public String getQty(int id) {
         return mData3.get(id);
@@ -236,9 +234,7 @@ public class AddNewInvoiceRecyclerViewAdapter extends RecyclerView.Adapter<AddNe
         return mData13.get(id);
     }
 
-    public String getQuantityById(int id) {
-        return mData14.get(id);
-    }
+    public String getQuantityById(int id) { return mData14.get(id); }
 
     public String getTax(int id) {
         return mData15.get(id);
