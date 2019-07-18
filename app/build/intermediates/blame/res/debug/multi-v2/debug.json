@@ -33,38 +33,6 @@
             ]
         },
         {
-            "outputFile": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/values-az_values-az.arsc.flat",
-            "map": [
-                {
-                    "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/012af558818cc5373ae9aa7d68e2d2f3/res/values-az/values-az.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "1958",
-                        "endColumns": "100",
-                        "endOffsets": "2054"
-                    }
-                },
-                {
-                    "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/values-az/values-az.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,213,312,424,512,619,733,814,893,978,1085,1192,1292,1401,1505,1615,1773,1875",
-                        "endColumns": "107,98,111,87,106,113,80,78,84,106,106,99,108,103,109,157,101,82",
-                        "endOffsets": "208,307,419,507,614,728,809,888,973,1080,1187,1287,1396,1500,1610,1768,1870,1953"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/values-is_values-is.arsc.flat",
             "map": [
                 {
@@ -92,6 +60,38 @@
                         "startOffsets": "1916",
                         "endColumns": "100",
                         "endOffsets": "2012"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/values-az_values-az.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/012af558818cc5373ae9aa7d68e2d2f3/res/values-az/values-az.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "1958",
+                        "endColumns": "100",
+                        "endOffsets": "2054"
+                    }
+                },
+                {
+                    "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/values-az/values-az.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,213,312,424,512,619,733,814,893,978,1085,1192,1292,1401,1505,1615,1773,1875",
+                        "endColumns": "107,98,111,87,106,113,80,78,84,106,106,99,108,103,109,157,101,82",
+                        "endOffsets": "208,307,419,507,614,728,809,888,973,1080,1187,1287,1396,1500,1610,1768,1870,1953"
                     }
                 }
             ]
@@ -129,38 +129,6 @@
             ]
         },
         {
-            "outputFile": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/values-v24_values-v24.arsc.flat",
-            "map": [
-                {
-                    "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/346e4ab1d321ec4e424a5855df269e63/res/values-v24/values-v24.xml",
-                    "from": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,121,182,248",
-                        "endColumns": "65,60,65,66",
-                        "endOffsets": "116,177,243,310"
-                    },
-                    "to": {
-                        "startLines": "4,5,6,7",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "347,413,474,540",
-                        "endColumns": "65,60,65,66",
-                        "endOffsets": "408,469,535,602"
-                    }
-                },
-                {
-                    "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/values-v24/values-v24.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,212",
-                        "endColumns": "156,134",
-                        "endOffsets": "207,342"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/values-ru_values-ru.arsc.flat",
             "map": [
                 {
@@ -188,6 +156,38 @@
                         "startOffsets": "1973",
                         "endColumns": "100",
                         "endOffsets": "2069"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/values-v24_values-v24.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/346e4ab1d321ec4e424a5855df269e63/res/values-v24/values-v24.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,121,182,248",
+                        "endColumns": "65,60,65,66",
+                        "endOffsets": "116,177,243,310"
+                    },
+                    "to": {
+                        "startLines": "4,5,6,7",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "347,413,474,540",
+                        "endColumns": "65,60,65,66",
+                        "endOffsets": "408,469,535,602"
+                    }
+                },
+                {
+                    "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/values-v24/values-v24.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,212",
+                        "endColumns": "156,134",
+                        "endOffsets": "207,342"
                     }
                 }
             ]
@@ -578,6 +578,38 @@
             ]
         },
         {
+            "outputFile": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/values-vi_values-vi.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/values-vi/values-vi.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,219,327,436,520,623,742,819,896,980,1084,1193,1294,1399,1513,1618,1775,1874",
+                        "endColumns": "113,107,108,83,102,118,76,76,83,103,108,100,104,113,104,156,98,83",
+                        "endOffsets": "214,322,431,515,618,737,814,891,975,1079,1188,1289,1394,1508,1613,1770,1869,1953"
+                    }
+                },
+                {
+                    "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/012af558818cc5373ae9aa7d68e2d2f3/res/values-vi/values-vi.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "1958",
+                        "endColumns": "100",
+                        "endOffsets": "2054"
+                    }
+                }
+            ]
+        },
+        {
             "outputFile": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/values-sw600dp-v13_values-sw600dp-v13.arsc.flat",
             "map": [
                 {
@@ -607,38 +639,6 @@
                         "endLines": "10,11,12,13,14,15,16,17,18,22",
                         "endColumns": "59,69,70,71,57,57,105,63,62,12",
                         "endOffsets": "666,736,807,879,937,995,1101,1165,1228,1410"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/values-vi_values-vi.arsc.flat",
-            "map": [
-                {
-                    "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/values-vi/values-vi.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,219,327,436,520,623,742,819,896,980,1084,1193,1294,1399,1513,1618,1775,1874",
-                        "endColumns": "113,107,108,83,102,118,76,76,83,103,108,100,104,113,104,156,98,83",
-                        "endOffsets": "214,322,431,515,618,737,814,891,975,1079,1188,1289,1394,1508,1613,1770,1869,1953"
-                    }
-                },
-                {
-                    "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/012af558818cc5373ae9aa7d68e2d2f3/res/values-vi/values-vi.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "1958",
-                        "endColumns": "100",
-                        "endOffsets": "2054"
                     }
                 }
             ]
@@ -915,38 +915,6 @@
             ]
         },
         {
-            "outputFile": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/values-ar_values-ar.arsc.flat",
-            "map": [
-                {
-                    "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/values-ar/values-ar.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,222,326,435,517,618,732,811,890,969,1074,1175,1271,1379,1482,1585,1740,1837",
-                        "endColumns": "116,103,108,81,100,113,78,78,78,104,100,95,107,102,102,154,96,80",
-                        "endOffsets": "217,321,430,512,613,727,806,885,964,1069,1170,1266,1374,1477,1580,1735,1832,1913"
-                    }
-                },
-                {
-                    "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/012af558818cc5373ae9aa7d68e2d2f3/res/values-ar/values-ar.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "1918",
-                        "endColumns": "100",
-                        "endOffsets": "2014"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/values-uz_values-uz.arsc.flat",
             "map": [
                 {
@@ -974,6 +942,38 @@
                         "startOffsets": "1965",
                         "endColumns": "100",
                         "endOffsets": "2061"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/xxovek/AndroidStudioProjects/Foodkor/app/build/intermediates/res/merged/debug/values-ar_values-ar.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/9af9dd238773850854fdfd1a8732ba72/res/values-ar/values-ar.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,222,326,435,517,618,732,811,890,969,1074,1175,1271,1379,1482,1585,1740,1837",
+                        "endColumns": "116,103,108,81,100,113,78,78,78,104,100,95,107,102,102,154,96,80",
+                        "endOffsets": "217,321,430,512,613,727,806,885,964,1069,1170,1266,1374,1477,1580,1735,1832,1913"
+                    }
+                },
+                {
+                    "source": "/home/xxovek/.gradle/caches/transforms-2/files-2.1/012af558818cc5373ae9aa7d68e2d2f3/res/values-ar/values-ar.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "1918",
+                        "endColumns": "100",
+                        "endOffsets": "2014"
                     }
                 }
             ]

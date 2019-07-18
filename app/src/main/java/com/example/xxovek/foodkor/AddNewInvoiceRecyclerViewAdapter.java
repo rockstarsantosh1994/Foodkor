@@ -12,8 +12,8 @@ import java.util.List;
 
 public class AddNewInvoiceRecyclerViewAdapter extends RecyclerView.Adapter<AddNewInvoiceRecyclerViewAdapter.ViewHolder> {
 
-    private List<String> mData1,mData2,mData3,mData4,mData5,mData6,mData7,mData8;
-    private List<String> mData9,mData10,mData11,mData12,mData13,mData14,mData15;
+    public List<String> mData1,mData2,mData3,mData4,mData5,mData6,mData7,mData8;
+    public List<String> mData9,mData10,mData11,mData12,mData13,mData14,mData15;
     private LayoutInflater mInflater;
     private static ItemClickListener mClickListener;
     private String mData;
@@ -34,8 +34,10 @@ public class AddNewInvoiceRecyclerViewAdapter extends RecyclerView.Adapter<AddNe
         this.mData = mData;
     }*/
 
-    public AddNewInvoiceRecyclerViewAdapter(Context context, List<String> mData1, List<String> mData2, List<String> mData3, List<String> mData4,
-                                            List<String> mData5, List<String> mData6, List<String> mData7, List<String> mData8, List<String> mData9, List<String> mData10, List<String> mData11, List<String> mData12, List<String> mData13, List<String> mData14, List<String> mData15,String mData) {
+    public AddNewInvoiceRecyclerViewAdapter(Context context, List<String> mData1, List<String> mData2, List<String> mData3,
+                                            List<String> mData4, List<String> mData5, List<String> mData6, List<String> mData7,
+                                            List<String> mData8, List<String> mData9, List<String> mData10, List<String> mData11,
+                                            List<String> mData12, List<String> mData13, List<String> mData14, List<String> mData15,String mData) {
 
         this.mInflater = LayoutInflater.from(context);
         this.mData1 = mData1;
@@ -77,12 +79,12 @@ public class AddNewInvoiceRecyclerViewAdapter extends RecyclerView.Adapter<AddNe
         String t7 = mData7.get(position);
         String t8 = mData8.get(position);
         String t9 = mData9.get(position);
-        String t10 = mData10.get(position);
-        String t11 = mData11.get(position);
-        String t12 = mData12.get(position);
-        String t13 = mData13.get(position);
-        String t14 = mData14.get(position);
-        String t15 = mData15.get(position);
+        String t10= mData10.get(position);
+        String t11= mData11.get(position);
+        String t12= mData12.get(position);
+        String t13= mData13.get(position);
+        String t14= mData14.get(position);
+        String t15= mData15.get(position);
 
 
 
@@ -151,7 +153,8 @@ public class AddNewInvoiceRecyclerViewAdapter extends RecyclerView.Adapter<AddNe
     // stores and recycles views as they are scrolled off screen
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView myTextView1,myTextView2,myTextView3,myTextView4,myTextView5,myTextView6,myTextView7,myTextView8;
-        TextView myTextView9,myTextView10,myTextView11,myTextView12,myTextView13,myTextView14,myTextView15,myTextView16;
+        TextView myTextView9,myTextView10,myTextView11,myTextView12,myTextView13,myTextView14,myTextView15;
+
         //public Spinner siteSpinner;
         ImageButton ib_delete;
 
@@ -166,14 +169,13 @@ public class AddNewInvoiceRecyclerViewAdapter extends RecyclerView.Adapter<AddNe
             myTextView7 = itemView.findViewById(R.id.t7);
             myTextView8 = itemView.findViewById(R.id.t8);
             myTextView9 = itemView.findViewById(R.id.t9);
-            myTextView10 = itemView.findViewById(R.id.t10);
-            myTextView11 = itemView.findViewById(R.id.t11);
-            myTextView12 = itemView.findViewById(R.id.t12);
-            myTextView13 = itemView.findViewById(R.id.t13);
-            myTextView14 = itemView.findViewById(R.id.t14);
-            myTextView15 = itemView.findViewById(R.id.t15);
-
-            ib_delete=itemView.findViewById(R.id.ib_delete);
+            myTextView10= itemView.findViewById(R.id.t10);
+            myTextView11= itemView.findViewById(R.id.t11);
+            myTextView12= itemView.findViewById(R.id.t12);
+            myTextView13= itemView.findViewById(R.id.t13);
+            myTextView14= itemView.findViewById(R.id.t14);
+            myTextView15= itemView.findViewById(R.id.t15);
+               ib_delete=itemView.findViewById(R.id.ib_delete);
 
 
             myTextView1.setOnClickListener(this);
@@ -186,7 +188,6 @@ public class AddNewInvoiceRecyclerViewAdapter extends RecyclerView.Adapter<AddNe
             myTextView8.setOnClickListener(this);
             ib_delete.setOnClickListener(this);
             itemView.setOnClickListener(this);
-
 
         }
 

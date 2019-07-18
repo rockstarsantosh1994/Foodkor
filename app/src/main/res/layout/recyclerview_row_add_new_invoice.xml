@@ -146,7 +146,7 @@
                     style="@style/Theme.AppCompat.DayNight.DarkActionBar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/t9"
+                    android:layout_below="@id/t10"
                     android:layout_marginLeft="30dp"
                     android:layout_marginRight="40dp"
                     android:textColor="@color/black"
