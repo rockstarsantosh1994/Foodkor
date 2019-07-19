@@ -111,6 +111,14 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
         // Required empty public constructor
         try {
 
+            ql1.clear();
+            ql2.clear();
+            ql3.clear();
+            ql4.clear();
+            ql5.clear();
+            ql6.clear();
+            ql7.clear();
+            ql8.clear();
             itemdetailid_arr.clear();
             st_spinner1_arr.clear();
             etqty_arr.clear();
@@ -923,7 +931,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
 
                 for (r = 0; r < count; r++) {
 
-                    Log.d("mytag1", "ql3 of 0: COunt" + ql3.get(r));
+                    Log.d("mytag1", "ql3 of 0: COunt\n" + ql3.get(r));
 
                     final String qty = ql3.get(r).toString();
                     final String billqty = ql4.get(r).toString();
@@ -934,9 +942,15 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                     final String stsubpacking=st_subpackingqty_arr.get(r).toString();
                     final String stpackingqty=st_packingqty_arr.get(r).toString();
                     final String sttotalqty=st_totalqty_arr.get(r).toString();
-                    final String stqtybyid=st_quantitybyid_arr.get(r).toString();
+                     final String stqtybyid=st_quantitybyid_arr.get(r).toString();
                     final String sttaxvalue=st_taxvalue_arr.get(r).toString();
 
+                    Log.d("mytag", "\n\nGetting Values: Intialising For Loop\n formid" + form_id +
+                            "\ntransactionId" + itemdetailid + "\nitemdetailid" + spinner1_arr + "\nqty" + qty +
+                            "\nbilling qty" + billqty + "\nrate" + rate + "\nitemdiscount" + discount +
+                            "\nitemunits" + unitid_arr + "\nunitsubpackingqty" + stsubpacking +
+                            "\nunitremainqty" + sttotalqty + "\nunitpackingqty" + stpackingqty +
+                            "\nhiddenqtyonhand" + stqtybyid + "\ntax" + sttaxvalue + "\ncompany_id" + company_id);
                     // final String st_spinner1_arr = ;
 
 
@@ -1214,7 +1228,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
                                     @Override
                                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                                        st_spinner1_arr.clear();
+                                       // st_spinner1_arr.clear();
 
                                         st_spinner1 = (String) spinnerMap.get(spinner1.getSelectedItemPosition());
 
@@ -3309,7 +3323,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
     @Override
     public void onDestroy() {
                 super.onDestroy();
-        try {
+      /*  try {
             itemdetailid_arr.clear();
             st_spinner1_arr.clear();
             etqty_arr.clear();
@@ -3322,7 +3336,7 @@ public class AddNewInvoice extends Fragment implements MyRecyclerViewAdapter.Ite
             st_totalqty_arr.clear();
             st_quantitybyid_arr.clear();
             st_taxvalue_arr.clear();
-        }catch(NullPointerException e){e.printStackTrace();}
+        }catch(NullPointerException e){e.printStackTrace();}*/
     }
 
 }
